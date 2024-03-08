@@ -1,0 +1,42 @@
+/* body {
+    overflow: hidden;
+} */
+
+/* style buat hero */
+.pembungkus {
+  /* background: src "../../../../public/Images/bghero.jpg"; */
+  /* background-position: 100vw 100vh; */
+
+  /* background-image: url(../../../../public/Images/bghero.jpg); */
+  /* background-image: url(../../../../public/Images/Bgimage/weblangit.PNG); */
+  background-size: 100vw 100vh;
+  overflow: hidden;
+  /* padding: 20px; */
+}
+
+/* style buat divisi bagian home */
+.info-box-wrapper {
+  position: relative;
+  top: -300px;
+  left: 800px;
+  background-color: aquamarine;
+  padding: 10px;
+  width: 200px;
+}
+
+.fancy-carousel-wrapper-element {
+  margin: auto;
+}
+
+.fancy-carousel {
+  margin: auto;
+}
+
+.main {
+  position: relative;
+  margin: auto;
+  display: flex;
+
+  /* top: 80px;
+    left: 80px; */
+}
