@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Divisihome from "../Component/Home/Divisihome";
-import Intro from "../Component/Home/Intro";
+import Divisihome from "../Component/Home/Divisihome/Divisihome";
+import Rangkaian from "../Component/Home/Rangkaian/Rangkaian";
+// import Intro from "../Divisihome/Component/Home/Intro";
 
 function Home() {
   const [showIntro, setShowIntro] = useState(true);
@@ -22,13 +23,14 @@ function Home() {
 
   return (
     <>
-      {showIntro ? (
+      {/* {showIntro ? (
         <Intro onIntroEnd={handleIntroEnd} />
       ) : (
         <div className="text-blue-500">no intro</div>
-      )}
+      )} */}
 
-      {/* <Divisihome /> */}
+      <Divisihome />
+      <Rangkaian />
     </>
   );
 }

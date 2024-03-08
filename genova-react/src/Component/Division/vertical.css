@@ -1,0 +1,219 @@
+@font-face {
+  font-family: "Title"; /* Specify the desired font-family name */
+  src: url("../../Assets/Font/akbaal/akbaal.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+.bungkusan {
+  background-image: url(../../Assets/Bgimg/websitebg3.png);
+  background-size: cover;
+  overflow: hidden;
+}
+
+@media (min-width: 678px) {
+  .swiper {
+    height: 100vh;
+    overflow: visible;
+    width: 100vw;
+    margin-right: 30% !important;
+  }
+
+  .swiper-slide {
+    display: flex;
+    padding-right: 100px;
+    transition: 0.5s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -ms-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+  }
+
+  .swiper-slide p {
+    /* margin: auto; */
+  }
+
+  .infodivisi {
+    display: list-item;
+    width: calc(100vw - 70%);
+    height: fit-content;
+    z-index: 10;
+    /* margin-left: calc(50vw - 90%); */
+    overflow: visible;
+  }
+
+  .juduldivisi h1 {
+    font-family: Title;
+    font-size: 3rem;
+  }
+
+  .swiper-slide .bungkusimg {
+    display: flex;
+    width: fit-content;
+    height: 100%;
+    margin-right: 4px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 0.7rem rgb(155, 95, 95));
+    -webkit-filter: drop-shadow(0 0 0.7rem rgb(155, 95, 95));
+  }
+
+  .swiper-slide-prev .bungkusimg {
+    height: 70%;
+  }
+
+  .swiper-slide-next .bungkusimg {
+    height: 70%;
+  }
+
+  .swiper-slide-prev {
+    transform: rotate(-20deg) translateX(-40px) translateY(-105px) !important;
+    -webkit-transform: rotate(-20deg) translateX(-40px) translateY(-105px) !important;
+    -moz-transform: rotate(-20deg) translateX(-40px) translateY(-105px) !important;
+    -ms-transform: rotate(-20deg) translateX(-40px) translateY(-105px) !important;
+    -o-transform: rotate(-20deg) translateX(-40px) translateY(-105px) !important;
+    --tw-blur: blur(1px) !important;
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    margin-bottom: 10px;
+  }
+
+  .swiper-slide-next {
+    margin-top: 50px;
+    transform: rotate(10deg) translateX(-60px) translateY(70px) !important;
+    -webkit-transform: rotate(10deg) translateX(-60px) translateY(70px) !important;
+    -moz-transform: rotate(10deg) translateX(-60px) translateY(70px) !important;
+    -ms-transform: rotate(10deg) translateX(-60px) translateY(70px) !important;
+    -o-transform: rotate(10deg) translateX(-60px) translateY(70px) !important;
+    --tw-blur: blur(1px) !important;
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  }
+
+  .swiper-slide-prev .infodivisi {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .swiper-slide-next .infodivisi {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  @media screen and (min-width: 904px) and (max-width: 1156px) {
+    .swiper {
+      margin-right: 20% !important;
+    }
+  }
+
+  @media (max-width: 903px) {
+    .swiper {
+      margin-right: 10% !important;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .infodivisi {
+      /* w-[200px] sm:w-[500px] lg:w-[900px] */
+    }
+
+    .swiper {
+      margin-right: 30% !important;
+    }
+
+    .swiper-slide img {
+      width: 500px;
+      height: 100%;
+    }
+
+    .swiper-slide p {
+      /* margin: auto; */
+    }
+
+    .juduldivisi h1 {
+      font-family: Title;
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 500px) {
+    .swiper-slide-active {
+      transform: translateX(120px) !important;
+      -webkit-transform: translateX(120px) !important;
+      -moz-transform: translateX(120px) !important;
+      -ms-transform: translateX(120px) !important;
+      -o-transform: translateX(120px) !important;
+    }
+  }
+
+  .swiper-slide-active {
+    --tw-blur: blur(0px) !important;
+    div {
+      opacity: 1;
+      transition: opacity 0.7s ease-in;
+    }
+  }
+
+  .swiper-vertical > .swiper-pagination-bullets,
+  .swiper-pagination-vertical.swiper-pagination-bullets {
+    right: var(--swiper-pagination-right, 8px);
+    left: 10px;
+    @media (min-width: 500px) {
+      margin-left: 5%;
+    }
+    @media (max-width: 499px) {
+      /* left: 0px; */
+      margin-left: 5%;
+    }
+    top: 50%;
+    transform: translate3d(0px, -50%, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .mySwiper {
+    /* Ensures that the edges of the Swiper container allow for partially visible slides */
+    overflow: visible;
+  }
+
+  .swiper {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 20%;
+    width: 100%;
+    height: 70%;
+  }
+
+  .swiper-slide-active {
+    --tw-blur: blur(0px);
+    div {
+      opacity: 1;
+      transition: opacity 0.7s ease-in;
+    }
+    flex-shrink: 0;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .bungkusimg {
+    display: flex;
+    width: 50%;
+    margin-right: 4px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 0.7rem rgb(155, 95, 95));
+    -webkit-filter: drop-shadow(0 0 0.7rem rgb(155, 95, 95));
+  }
+
+  .juduldivisi h1 {
+    font-size: 30px;
+  }
+
+  .artidivisi p {
+    font-size: 12px;
+  }
+}
