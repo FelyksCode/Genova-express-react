@@ -40,7 +40,7 @@ function Carousel() {
     slideimg11,
     slideimg12,
     slideimg13,
-    // slideimg14,
+    // slideimg14,  // 2 ini yang comming soon
     // slideimg15,
   ];
   const images = [image1, image2, image3];

@@ -6,6 +6,7 @@ import Navbar from "../Component/Navbar/Navbar";
 import Alert from "../Component/Alert/Alert";
 import Tujuan from "../Component/Tujuan/Tujuan";
 import { Fade } from "react-reveal";
+import HomePart2 from "../Component/Home/HomePart2";
 
 function Home() {
   const [showIntro, setShowIntro] = useState(true);
@@ -40,10 +41,12 @@ function Home() {
             <Tujuan />
           </Fade>
         </section>
-
         <section className="snap-y snap-mandatory overflow-hidden">
-          <Divisihome />
-          <Rangkaian />
+          <Fade>
+            <Divisihome />
+            {/* <HomePart2 /> */}
+            <Rangkaian />
+          </Fade>
         </section>
       </div>
     </>
