@@ -5,7 +5,7 @@ function Intro({ onIntroEnd }) {
   const [videoPlayed, setVideoPlayed] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
 
-  const videoUrl = require("../../Assets/Images/introWebsite.mp4");
+  const videoUrl = require("../../Assets/Videos/introWebsite.mp4");
 
   const handleVideoEnd = () => {
     onIntroEnd();

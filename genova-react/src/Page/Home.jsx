@@ -3,6 +3,9 @@ import Divisihome from "../Component/Home/Divisihome/Divisihome";
 import Rangkaian from "../Component/Home/Rangkaian/Rangkaian";
 import Intro from "../Component/Home/Intro";
 import Navbar from "../Component/Navbar/Navbar";
+import Alert from "../Component/Alert/Alert";
+import Tujuan from "../Component/Tujuan/Tujuan";
+import { Fade } from "react-reveal";
 
 function Home() {
   const [showIntro, setShowIntro] = useState(true);
@@ -29,9 +32,20 @@ function Home() {
       ) : (
         <div className="text-blue-500">no intro</div>
       )} */}
-      <Navbar />
-      <Divisihome />
-      <Rangkaian />
+      <div>
+        <Navbar />
+        <section className="snap-y overflow-hidden focus:scroll-auto">
+          <Alert />
+          <Fade duration={100}>
+            <Tujuan />
+          </Fade>
+        </section>
+
+        <section className="snap-y snap-mandatory overflow-hidden">
+          <Divisihome />
+          <Rangkaian />
+        </section>
+      </div>
     </>
   );
 }
