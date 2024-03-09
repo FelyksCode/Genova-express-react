@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Page/Home";
 import Pagedivisi from "./Page/Pagedivisi";
 import Faqpage from "./Page/Faqpage";
+import MapPage from "./Page/MapPage";
 
 import "./App.css";
 
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/division" element={<Pagedivisi />} />
         <Route path="/faq" element={<Faqpage />} />
+        <Route path="/map" element={<MapPage />} />
       </Routes>
     </Router>
   );
