@@ -36,7 +36,7 @@ function ImageOne() {
         <source src={Trailer} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="absolute inset-0 bg-black opacity-60"></div>
+      <div className="absolute inset-0 bg-black" style={{ opacity: 0.6 }}></div>
       <Fade clear duration={3500}>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold font-custom">

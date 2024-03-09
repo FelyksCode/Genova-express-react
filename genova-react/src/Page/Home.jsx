@@ -7,6 +7,8 @@ import Alert from "../Component/Alert/Alert";
 import Tujuan from "../Component/Tujuan/Tujuan";
 import { Fade } from "react-reveal";
 import HomePart2 from "../Component/Home/HomePart2";
+import Footer from "../Component/Footer/Footer";
+import FindMore from "../Component/Home/FindMore";
 
 function Home() {
   const [showIntro, setShowIntro] = useState(true);
@@ -46,6 +48,8 @@ function Home() {
             <Divisihome />
             {/* <HomePart2 /> */}
             <Rangkaian />
+            {/* <FindMore /> */}
+            <Footer />
           </Fade>
         </section>
       </div>
