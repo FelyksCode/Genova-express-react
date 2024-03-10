@@ -30,11 +30,12 @@ function Home() {
 
   return (
     <>
-      {/* {showIntro ? (
+      {showIntro ? (
         <Intro onIntroEnd={handleIntroEnd} />
       ) : (
-        <div className="text-blue-500">no intro</div>
-      )} */}
+        // <div className="text-blue-500">no intro</div>
+        <div className=""></div>
+      )}
       <div>
         <Navbar />
         <section className="snap-y overflow-hidden focus:scroll-auto">

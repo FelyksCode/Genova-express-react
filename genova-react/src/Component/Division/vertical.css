@@ -185,7 +185,7 @@
   }
 
   .swiper-slide-active {
-    --tw-blur: blur(0px);
+    --tw-blur: blur(0px) !important;
     div {
       opacity: 1;
       transition: opacity 0.7s ease-in;

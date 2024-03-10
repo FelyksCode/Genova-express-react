@@ -5,7 +5,7 @@ import Logo from "../../Assets/Images/UfestLogo.png";
 
 function Navbar() {
   let Links = [
-    { name: "HOME", link: "/home" },
+    { name: "HOME", link: "/" },
     { name: "FAQ", link: "/faq" },
     { name: "DIVISION", link: "/division" },
     { name: "MAP", link: "/map" },
