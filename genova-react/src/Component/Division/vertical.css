@@ -10,7 +10,7 @@
   overflow: hidden;
 }
 
-@media (min-width: 678px) {
+@media (min-width: 799px) {
   .swiper {
     height: 100vh;
     overflow: visible;
@@ -170,7 +170,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .mySwiper {
     /* Ensures that the edges of the Swiper container allow for partially visible slides */
     overflow: visible;
@@ -178,6 +178,7 @@
 
   .swiper {
     display: flex;
+    overflow: visible;
     flex-direction: column-reverse;
     margin-top: 20%;
     width: 100%;
@@ -194,6 +195,7 @@
   }
 
   .swiper-slide {
+    overflow: visible !important;
     display: flex;
     flex-direction: column;
     align-items: center;

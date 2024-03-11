@@ -35,7 +35,7 @@ import "swiper/css/effect-fade";
 
 function Spinner() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const isWideScreen = windowWidth <= 768;
+  const isWideScreen = windowWidth <= 799;
 
   const verticalimages = [
     {
@@ -149,9 +149,9 @@ function Spinner() {
                 key={index}
                 className="transition-all duration-3000 hover:blur-none blur cursor-pointer"
               >
-                <div className="opacity-0 bg-white/70 infodivisi p-5 rounded-2xl">
+                <div className="opacity-0 bg-white/70 infodivisi p-5 text-slate-950">
                   <div className="juduldivisi">
-                    <h1 className="text-center">{item.Judul}</h1>
+                    <h1 className="text-center ">{item.Judul}</h1>
                   </div>
                   <div className="artidivisi">
                     <p className="text-center">{item.Text}</p>
