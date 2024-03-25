@@ -147,7 +147,7 @@ function Spinner() {
             {verticalimages.map((item, index) => (
               <SwiperSlide
                 key={index}
-                className="transition-all duration-3000 hover:blur-none blur cursor-pointer"
+                className="transition-all duration-3000 hover:blur-none blur-sm cursor-pointer"
               >
                 <div className="opacity-0 bg-white/70 infodivisi p-5 text-slate-950">
                   <div className="juduldivisi">

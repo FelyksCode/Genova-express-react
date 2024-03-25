@@ -1,6 +1,13 @@
 @font-face {
-  font-family: "Title"; /* Specify the desired font-family name */
+  font-family: "Title";
   src: url("../../Assets/Font/akbaal/akbaal.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Content";
+  src: url("../../Assets/Font/Forum/Forum-Regular.ttf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -39,11 +46,16 @@
     z-index: 10;
     /* margin-left: calc(50vw - 90%); */
     overflow: visible;
+    color: rgb(71, 71, 71);
   }
 
   .juduldivisi h1 {
     font-family: Title;
     font-size: 3rem;
+  }
+
+  .artidivisi p {
+    font-family: Content;
   }
 
   .swiper-slide .bungkusimg {
@@ -65,11 +77,11 @@
   }
 
   .swiper-slide-prev {
-    transform: rotate(-20deg) translateX(-40px) translateY(-105px) !important;
-    -webkit-transform: rotate(-20deg) translateX(-40px) translateY(-105px) !important;
-    -moz-transform: rotate(-20deg) translateX(-40px) translateY(-105px) !important;
-    -ms-transform: rotate(-20deg) translateX(-40px) translateY(-105px) !important;
-    -o-transform: rotate(-20deg) translateX(-40px) translateY(-105px) !important;
+    transform: rotate(-20deg) translateX(-20px) translateY(-120px) !important;
+    -webkit-transform: rotate(-20deg) translateX(-20px) translateY(-120px) !important;
+    -moz-transform: rotate(-20deg) translateX(-20px) translateY(-120px) !important;
+    -ms-transform: rotate(-20deg) translateX(-20px) translateY(-120px) !important;
+    -o-transform: rotate(-20deg) translateX(-20px) translateY(-120px) !important;
     --tw-blur: blur(1px) !important;
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
       var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
@@ -79,11 +91,11 @@
 
   .swiper-slide-next {
     margin-top: 50px;
-    transform: rotate(10deg) translateX(-60px) translateY(70px) !important;
-    -webkit-transform: rotate(10deg) translateX(-60px) translateY(70px) !important;
-    -moz-transform: rotate(10deg) translateX(-60px) translateY(70px) !important;
-    -ms-transform: rotate(10deg) translateX(-60px) translateY(70px) !important;
-    -o-transform: rotate(10deg) translateX(-60px) translateY(70px) !important;
+    transform: rotate(10deg) translateX(-50px) translateY(10px) !important;
+    -webkit-transform: rotate(10deg) translateX(-50px) translateY(10px) !important;
+    -moz-transform: rotate(10deg) translateX(-50px) translateY(10px) !important;
+    -ms-transform: rotate(10deg) translateX(-50px) translateY(10px) !important;
+    -o-transform: rotate(10deg) translateX(-50px) translateY(10px) !important;
     --tw-blur: blur(1px) !important;
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
       var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
@@ -212,10 +224,17 @@
   }
 
   .juduldivisi h1 {
+    font-family: Title;
     font-size: 30px;
   }
 
   .artidivisi p {
-    font-size: 12px;
+    font-size: 15px;
+    font-family: Content;
+  }
+
+  .infodivisi {
+    width: 95%;
+    border-radius: 10px;
   }
 }

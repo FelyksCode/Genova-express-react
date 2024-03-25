@@ -13,10 +13,10 @@ function Navbar() {
   let [open, setOpen] = useState(false);
   return (
     <div className="shadow-md lg:md:shadow-none w-[95%] fixed top-2 left-3 md:left-8 z-10 rounded-full">
-      <div className="lg:md:flex items-center justify-between bg-slate-100 lg:md:bg-opacity-0 py-4 lg:md:px-10 px-7 rounded-full">
+      <div className="lg:md:flex items-center justify-between bg-slate-100 py-4 lg:md:px-10 px-7 rounded-full">
         <a
           href="/"
-          className="font-bold text-2xl cursor-pointer flex items-center lg:md:text-white text-gray-600 lg:md:font-[Poppins text-gray-800] font-custom"
+          className="font-bold text-2xl cursor-pointer flex items-center text-gray-600 lg:md:font-[Poppins text-gray-800] font-custom"
         >
           <span className="w-[40px] mr-5 pt-auto">
             <img src={Logo} alt="ufest logo" />
@@ -41,7 +41,7 @@ function Navbar() {
             >
               <a
                 href={link.link}
-                className="lg:md:text-white text-gray-800 hover:text-gray-600 lg:md:hover:text-gray-400 duration-500 font-custom font-extrabold md:text-[20px] text-[17px]"
+                className="text-gray-600 hover:text-gray-600 lg:md:hover:text-gray-400 duration-500 font-custom font-extrabold md:text-[20px] text-[17px]"
               >
                 {link.name}
               </a>
