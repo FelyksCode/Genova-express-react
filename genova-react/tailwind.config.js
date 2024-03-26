@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         maps: "url('./Assets/Map/MapsUfestTXT.png')",
+        mobile: "url('./Assets/Map/bgMapmobile.jpg')"
       },
     },
   },
