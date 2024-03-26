@@ -6,6 +6,10 @@ import React, { useEffect, useState } from "react";
 import { Fade } from "react-reveal";
 
 function MapPage() {
+  useEffect(() => {
+    document.title = "UMN Festival | Rangkaian";
+  }, []);
+
   const [showMapVid, setShowMapVid] = useState(true);
 
   const handleVideoEnd = () => {

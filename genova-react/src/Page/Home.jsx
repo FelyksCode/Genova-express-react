@@ -6,15 +6,14 @@ import Navbar from "../Component/Navbar/Navbar";
 import Alert from "../Component/Alert/Alert";
 import Tujuan from "../Component/Tujuan/Tujuan";
 import { Fade } from "react-reveal";
-import HomePart2 from "../Component/Home/HomePart2";
 import Footer from "../Component/Footer/Footer";
-import FindMore from "../Component/Home/FindMore";
 
 function Home() {
   const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
     // Check if intro has been shown before
+    document.title = "UMN Festival | Home";
     const introShownBefore = localStorage.getItem("introShown");
     if (introShownBefore) {
       // If intro has been shown before, hide it
@@ -47,9 +46,7 @@ function Home() {
         <section className="snap-y snap-mandatory overflow-hidden">
           <Fade>
             <Divisihome />
-            {/* <HomePart2 /> */}
             <Rangkaian />
-            {/* <FindMore /> */}
             <Footer />
           </Fade>
         </section>

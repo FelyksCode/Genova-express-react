@@ -56,6 +56,12 @@ function Divisihome() {
           peripheralImageRadius: 28,
           centralImageRadius: 60,
         }
+      : windowWidth <= 1000
+      ? {
+          carouselRadius: 200,
+          peripheralImageRadius: 35,
+          centralImageRadius: 90,
+        }
       : {
           carouselRadius: 250,
           peripheralImageRadius: 43,
