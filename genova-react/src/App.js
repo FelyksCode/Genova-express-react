@@ -3,6 +3,7 @@ import Home from "./Page/Home";
 import Pagedivisi from "./Page/Pagedivisi";
 import Faqpage from "./Page/Faqpage";
 import MapPage from "./Page/MapPage";
+import Admin from "./Page/Admin";
 
 import "./App.css";
 
@@ -14,8 +15,10 @@ function App() {
         <Route path="/division" element={<Pagedivisi />} />
         <Route path="/faq" element={<Faqpage />} />
         <Route path="/map" element={<MapPage />} />
+        <Route path="/admin" element={<Admin/>} />
       </Routes>
     </Router>
+    
   );
 }
 
