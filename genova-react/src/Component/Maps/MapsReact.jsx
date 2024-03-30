@@ -23,28 +23,28 @@ function MapsReact() {
             className="absolute top-0 left-0 z-5 w-full h-full object-cover blend-overlay"
             style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
           ></video>
-          <div className="md:bg-maps bg-cover bg-mobile w-screen md:bg-center z-5 md:h-screen">
+          <div className="md:bg-maps md:bg-cover bg-cover bg-mobile md:w-screen w-[100vw] h-[700px] md:bg-center z-5 md:h-screen">
             <Fade clear duration={2000}>
               <div className="flex justify-between items-center h-full flex-col">
-                <div className="md:flex ml-[100px] mt-4 md:mr-10">
-                  <div className="tooltip tooltip-bottom transition-all duration-200 ease-in-out md:hover:w-[220px] md:mr-[60px] md:w-[200px] w-[140px] hover:w-[160px] md:mt-5 mt-[160px] mr-[-60px]" data-tip="UNIFY">
-                    <img src={img1} alt="Image 1" />   
+                <div className="md:flex ml-[100px] md:mt-4 -mt-20 md:mr-10 mr-2">
+                  <div className="tooltip tooltip-bottom transition-all duration-200 ease-in-out md:hover:w-[220px] md:mr-[60px] md:w-[200px] w-[140px] hover:w-[160px] md:mt-5 mt-[200px] mr-[-60px]" data-tip="UNIFY">
+                    <a href=""><img src={img1} alt="Image 1" /></a>
                   </div>
-                  <div className='tooltip tooltip-bottom transition-all duration-200 ease-in-out md:mt-[70px] md:mr-[170px] md:ml-[70px] ml-[100px] md:hover:w-[220px] md:w-[200px] w-[140px] hover:w-[160px] mb-[-120px]' data-tip="U-CARE">
-                    <img src={img2} alt="Image 2" />
+                  <div className='tooltip tooltip-bottom transition-all duration-200 ease-in-out md:mt-[70px] md:mr-[170px] md:ml-[70px] ml-[130px] md:hover:w-[220px] md:w-[200px] w-[140px] -mt-[30px] hover:w-[160px] mb-[-120px]' data-tip="U-CARE">
+                    <a href=""><img src={img2} alt="Image 2" /></a>
                   </div>
                 </div>
                 <div className="md:flex  md:mt-[10px]">
                   <div className='tooltip tooltip-bottom transition-all duration-200 ease-in-out md:hover:w-[220px] md:w-[200px] ml-[100px] mr-[200px] md:mr-[410px] w-[140px] hover:w-[160px]' data-tip="UNVEILING">
-                    <img src={img3} alt="Image 3" />
+                    <a href=""><img src={img3} alt="Image 3" /></a>
                   </div>
-                  <div className='tooltip tooltip-bottom transition-all duration-200 ease-in-out md:hover:w-[220px] md:w-[200px] w-[140px] hover:w-[160px] md:mr-[230px] ml-[100px] md:-mt-10 md:ml-0 mt-10' data-tip="ULYMPIC">
-                    <img src={img4} alt="Image 4" />
+                  <div className='tooltip tooltip-bottom transition-all duration-200 ease-in-out md:hover:w-[220px] md:w-[200px] w-[140px] hover:w-[160px] md:mr-[230px] ml-[100px] md:-mt-10 md:ml-0 mt-0' data-tip="ULYMPIC">
+                    <a href=""><img src={img4} alt="Image 4" /></a>
                   </div>
                 </div>
-                <div className="md:flex md:mr-[480px] md:mb-20 mr-[-240px] mt-[-100px] mb-20">
+                <div className="md:flex md:mr-[480px] md:mb-20 mr-[-240px] mt-[-100px] mb-40">
                   <div className='tooltip tooltip-bottom transition-all duration-200 ease-in-out md:hover:w-[320px] md:w-[300px] w-[240px] hover:w-[260px]' data-tip="E-ULYMPIC">
-                    <img src={img5} alt="Image 5" />
+                    <a href=""><img src={img5} alt="Image 5" /></a>
                   </div>
                 </div>
               </div>

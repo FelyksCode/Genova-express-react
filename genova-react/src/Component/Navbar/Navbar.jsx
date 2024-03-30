@@ -30,7 +30,7 @@ function Navbar() {
           <IonIcon name={open ? "close" : "menu"}></IonIcon>
         </div>
         <ul
-          className={`rounded-3xl lg:md:flex lg:md:items-center lg:md:pb-0 pb-12 absolute lg:md:static bg-slate-100 lg:md:bg-opacity-0 md:z-auto z-[-1] left-0 w-full lg:md:w-auto lg:md:px-0 px-[200px] transition-all duration-500 ease-in ${
+          className={`rounded-3xl lg:md:flex lg:md:items-center lg:md:pb-0 pb-12 absolute lg:md:static bg-slate-100 lg:md:bg-opacity-0 md:z-auto z-[-1] left-0 w-full lg:md:w-auto lg:md:px-0 px-[120px] transition-all duration-500 ease-in ${
             open ? "top-[90px] opacity-100" : "top-[-485px]"
           } md:opacity-100 opacity-0`}
         >
