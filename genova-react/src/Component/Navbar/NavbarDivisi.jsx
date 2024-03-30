@@ -2,6 +2,7 @@ import IonIcon from "@reacticons/ionicons";
 import React, { useState } from "react";
 import Button from "./Button";
 import Logo from "../../Assets/Images/UfestLogo.png";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   let Links = [
