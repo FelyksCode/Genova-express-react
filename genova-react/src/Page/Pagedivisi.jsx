@@ -13,7 +13,6 @@ function Pagedivisi() {
     <div>
         <Navbar />
       <section className="snap-y overflow-hidden focus:scroll-auto">
-        <Alert />
         <Fade>
           <Divisi />
         </Fade>

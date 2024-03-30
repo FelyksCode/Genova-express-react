@@ -20,7 +20,6 @@ function MapPage() {
     <>
       <Navbar />
       <section className="snap-y overflow-scroll focus:scroll-auto">
-        <Alert />
         {showMapVid ? (
           <Fade>
             <MapVid onVideoEnd={handleVideoEnd} />

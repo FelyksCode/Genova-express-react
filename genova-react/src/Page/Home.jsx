@@ -38,7 +38,6 @@ function Home() {
       <div>
         <Navbar />
         <section className="snap-y overflow-hidden focus:scroll-auto">
-          <Alert />
           <Fade duration={100}>
             <Tujuan />
           </Fade>
