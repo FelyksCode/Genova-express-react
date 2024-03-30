@@ -51,14 +51,14 @@ export default function BasicTable() {
           component={Paper}
           style={{ boxShadow: "0px 13px 20px 0px #80808029" }}
         >
-          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <Table sx={{ minWidth: 1000 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell>Product</TableCell>
-                <TableCell align="left">Tracking ID</TableCell>
-                <TableCell align="left">Date</TableCell>
-                <TableCell align="left">Status</TableCell>
-                <TableCell align="left"></TableCell>
+                <TableCell>Nama</TableCell>
+                <TableCell align="left">NIM</TableCell>
+                <TableCell align="left">Email</TableCell>
+                <TableCell align="left">Photo</TableCell>
+                <TableCell align="left">Lomba</TableCell>
               </TableRow>
             </TableHead>
             <TableBody style={{ color: "white" }}>

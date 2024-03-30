@@ -9,7 +9,6 @@ function Admin() {
       <div className="AppGlass">
         <Sidebar/>
         <MainDash/>
-        <RightSide/>
       </div>
     </div>
   );

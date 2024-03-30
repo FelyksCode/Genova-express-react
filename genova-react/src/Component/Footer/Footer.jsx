@@ -1,5 +1,9 @@
 import React from "react";
 import logo from "../../Assets/Images/UfestLogo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope as regularEnvelope} from "@fortawesome/free-regular-svg-icons";
+import { faLine,faInstagram,faFacebook } from "@fortawesome/free-brands-svg-icons";
+
 
 function Footer() {
     return (
@@ -11,9 +15,9 @@ function Footer() {
                             <div className="text-4xl font-bold mb-5">Alamat</div>
                             <div className="text-md w-80">Universitas Multimedia Nusantara Jl. Scientia Boulevard, Gading Serpong, Tangerang Banten 15811, Indonesia.</div>
                         </div>
-                        <div className="py-3 ps-3 ">
-                            <img src={logo} className=" w-64" alt="Logo" />
-                            <div className="text-center hidden lg:block">
+                        <div className="py-3 mx-auto"> 
+                            <img src={logo} className=" w-40 mx-auto lg:-ml-10 ml-0" alt="Logo" />
+                            <div className="text-center hidden ml-0 lg:-ml-20 lg:block">
                                 <div>&#9400; UMN Festival 2024</div>
                                 <div>By Genova</div>
                             </div>
@@ -22,16 +26,16 @@ function Footer() {
                             <div className="text-4xl ps-3 font-bold text-center lg:text-left">Kontak</div>
                             <div className="flex justify-center lg:block px-3">
                                 <div className="p-3 lg:p-0">
-                                    <div className="text-md my-3 lg:text-left">Email <a href="#" className="block lg:inline-block">ufest@umn.ac.id</a>
+                                    <div className="text-md my-3 lg:text-left"><FontAwesomeIcon icon={regularEnvelope} className="lg:me-2"/><a href="#" className="block lg:inline-block">ufest@umn.ac.id</a>
                                     </div>
                                     <div>
-                                        <div className="text-md my-3 lg:text-left">Line <a href="#" className="block lg:inline-block">@1234ufest</a></div>
+                                        <div className="text-md my-3 lg:text-left"><FontAwesomeIcon icon={faLine} className="lg:me-2"/><a href="#" className="block lg:inline-block">@1234ufest</a></div>
                                     </div>
                                 </div>
                                 <div className="p-3 lg:p-0">
-                                    <div className="text-md my-3 lg:text-left">Instagram <a href="https://www.instagram.com/umnfestival/" target="_blank" className="block lg:inline-block">@umnfestival</a>
+                                    <div className="text-md my-3 lg:text-left"><FontAwesomeIcon icon={faInstagram} className="lg:me-2"/><a href="https://www.instagram.com/umnfestival/" target="_blank" className="block lg:inline-block">@umnfestival</a>
                                     </div>
-                                    <div className="text-md lg:text-left">Facebook <a href="#" className="block lg:inline-block">umnfestival</a></div>
+                                    <div className="text-md lg:text-left"><FontAwesomeIcon icon={faFacebook} className="lg:me-2"/><a href="#" className="block lg:inline-block">umnfestival</a></div>
                                 </div>
                             </div>
                         </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
-import Logo from "../../Assets/imgs/logo.png";
-import { UilSignOutAlt, UilBars } from "@iconscout/react-unicons"; // Mengimpor UilBars juga
+import Logo from "../../Assets/LogoDivisi_Baru/Website.png";
+import { UilSignOutAlt, UilBars } from "@iconscout/react-unicons";
 import { SidebarData } from "../Admin/Data/Data";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -29,7 +29,7 @@ const Sidebar = () => {
           <div className="logo">
             <img src={Logo} alt="logo" />
             <span>
-              Sh<span>o</span>ps
+              Admin Ufest
             </span>
           </div>
 
