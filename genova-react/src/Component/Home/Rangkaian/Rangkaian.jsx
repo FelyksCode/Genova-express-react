@@ -29,34 +29,34 @@ function Rangkaian() {
   const Titles = ["Unveiling", "Unify", "ulympic", "E-Ulympic"];
   const [isHovered, setIsHovered] = useState(false);
 
-  // if (isWideScreen) {
-  //   return (
-  //     <div className="w-full h-full bg-gray-700">
-  //       {images.map((image, index) => (
-  //         <div key={index} className="relative w-full h-[200px]">
-  //           <div className="flex justify-center items-center h-full hover:scale-110">
-  //             <img
-  //               src={image}
-  //               className="object-cover  h-[200px] w-full block duration-300 transition-transform hover:scale-110"
-  //             />
-  //           </div>
-  //           <div
-  //             className="inset-0 flex absolute justify-center items-center text-white text-xl font-extrabold bg-black bg-opacity-50 opacity-100 hover:opacity-0 transition-opacity duration-300"
-  //             onMouseEnter={() => setIsHovered(false)}
-  //             onMouseLeave={() => setIsHovered(true)}
-  //           >
-  //             <h1 className="pl-10">{Titles[index]}</h1>
-  //             {isHovered && (
-  //               <div className="flex items-center justify-end w-full top-full pr-10 mt-2">
-  //                 <img src={logos[index]} className="w-20" />
-  //               </div>
-  //             )}
-  //           </div>
-  //         </div>
-  //       ))}
-  //     </div>
-  //   );
-  // } else {
+  if (isWideScreen) {
+    return (
+      <div className="w-full h-full bg-gray-700">
+        {images.map((image, index) => (
+          <div key={index} className="relative w-full h-[200px]">
+            <div className="flex justify-center items-center h-full hover:scale-110">
+              <img
+                src={image}
+                className="object-cover  h-[200px] w-full block duration-300 transition-transform hover:scale-110"
+              />
+            </div>
+            <div
+              className="inset-0 flex absolute justify-center items-center text-white text-xl font-extrabold bg-black bg-opacity-50 opacity-100 hover:opacity-0 transition-opacity duration-300"
+              onMouseEnter={() => setIsHovered(false)}
+              onMouseLeave={() => setIsHovered(true)}
+            >
+              <h1 className="pl-10">{Titles[index]}</h1>
+              {isHovered && (
+                <div className="flex items-center justify-end w-full top-full pr-10 mt-2">
+                  <img src={logos[index]} className="w-20" />
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  } else {
     return (
       <div className="rangkaianwrapper">
         <div className="overlaycolor"></div>
@@ -178,5 +178,5 @@ function Rangkaian() {
       </div>
     );
   }
-
+}
 export default Rangkaian;
