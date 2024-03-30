@@ -14,15 +14,15 @@ function Navbar() {
   return (
     <div className="shadow-md lg:md:shadow-none w-[95%] fixed top-2 left-3 md:left-8 z-10 rounded-full">
       <div className="lg:md:flex items-center justify-between bg-slate-100 py-4 lg:md:px-10 px-7 rounded-full">
-        <a
-          href="/"
+        <Link
+          to="/"
           className="font-bold text-2xl cursor-pointer flex items-center text-gray-600 lg:md:font-[Poppins text-gray-800] font-custom"
         >
           <span className="w-[40px] mr-5 pt-auto">
             <img src={Logo} alt="ufest logo" />
           </span>
           UMN FESTIVAL
-        </a>
+        </Link>
         <div
           onClick={() => setOpen(!open)}
           className="text-3xl absolute right-8 top-6 cursor-pointer lg:md:hidden"
@@ -39,12 +39,12 @@ function Navbar() {
               key={link.name}
               className="lg:md:ml-8 text-xl lg:md:my-0 my-7 text-center "
             >
-              <a
-                href={link.link}
+              <Link
+                to={link.link}
                 className="text-gray-600 hover:text-gray-600 lg:md:hover:text-gray-400 duration-500 font-custom font-extrabold md:text-[20px] text-[17px]"
               >
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
           <Button>Register</Button>
