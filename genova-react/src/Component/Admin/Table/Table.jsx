@@ -41,7 +41,7 @@ export default function BasicTable({ data }) {
 
   // Transform the provided data into rows for the table
   const rows = data.map((item) =>
-    createData(item.nama, item.nim, item.email, item.ktm, item.lomba)
+    createData(item.name, item.nim, item.email, item.ktm, item.lomba)
   );
 
   return (
