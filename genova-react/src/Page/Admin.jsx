@@ -29,9 +29,22 @@ function Admin() {
     <div className="App">
       <div className="AppGlass">
         <Sidebar />
-        <div className="flex flex-col">
+        <div
+          className="flex flex-col overflow-scroll overflow-x-hidden"
+          style={{
+            scrollbarWidth: "none" /* Firefox */,
+            msOverflowStyle: "none" /* Internet Explorer 10+ */,
+            "&::-webkit-scrollbar": {
+              display: "none" /* WebKit */,
+            },
+          }}
+        >
           {races.map((race) => (
-            <MainDash raceId={race._id} raceName={race.race_name} />
+            <MainDash
+              key={race._id}
+              raceId={race._id}
+              raceName={race.race_name}
+            />
           ))}
         </div>
       </div>
