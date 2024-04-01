@@ -10,6 +10,7 @@ import {
 
 // Analytics Cards imports
 import { UilUsdSquare, UilMoneyWithdrawal } from "@iconscout/react-unicons";
+import gambar1 from "../../../Assets/imgs/img1.png";
 import { keyboard } from "@testing-library/user-event/dist/keyboard";
 
 // Recent Card Imports
@@ -21,25 +22,78 @@ import img3 from "../../../Assets/imgs/img3.png";
 export const SidebarData = [
   {
     icon: UilEstate,
-    heading: "Dashboard",
+    heading: "All Registered",
   },
   {
     icon: UilClipboardAlt,
-    heading: "Orders",
+    heading: "Mobile Legend",
   },
   {
     icon: UilUsersAlt,
-    heading: "Customers",
-  },
-  {
-    icon: UilPackage,
-    heading: 'Products'
-  },
-  {
-    icon: UilChart,
-    heading: 'Analytics'
+    heading: "Valorant",
   },
 ];
+
+export const rows = [
+  {
+    nama: "John Doe",
+    nim: "1234567890",
+    email: "johndoe@gmail.com",
+    ktm: gambar1,
+    lomba: "Mobile Legend",
+  },
+  {
+    nama: "Hosea",
+    nim: "1234567891",
+    email: "hosea@gmail.com",
+    ktm: gambar1,
+    lomba: "Valorant",
+  },
+  {
+    nama: "Jane Doe",
+    nim: "0987654321",
+    email: "janedoe@gmail.com",
+    ktm: gambar1,
+    lomba: "Mobile Legend",
+  },
+  {
+    nama: "Alice",
+    nim: "1122334455",
+    email: "alice@gmail.com",
+    ktm: gambar1,
+    lomba: "Valorant",
+  },
+  {
+    nama: "Bob",
+    nim: "5432167890",
+    email: "bob@gmail.com",
+    ktm: gambar1,
+    lomba: "Mobile Legend",
+  },
+  {
+    nama: "Charlie",
+    nim: "0987654322",
+    email: "charlie@gmail.com",
+    ktm: gambar1,
+    lomba: "Valorant",
+  },
+  {
+    nama: "David",
+    nim: "0987654323",
+    email: "david@gmail.com",
+    ktm: gambar1,
+    lomba: "Mobile Legend",
+  },
+  {
+    nama: "Eve",
+    nim: "0987654324",
+    email: "eve@gmail.com",
+    ktm: gambar1,
+    lomba: "Valorant",
+  },
+  // Tambahkan data palsu lainnya di sini
+];
+
 
 // Analytics Cards Data
 export const cardsData = [

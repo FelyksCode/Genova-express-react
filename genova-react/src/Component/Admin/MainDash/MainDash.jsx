@@ -1,65 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Table from "../Table/Table";
 import "./MainDash.css";
+import { SidebarData, rows } from "../Data/Data";
 
-const MainDash = ({ raceId, raceName }) => {
-  const [data, setData] = useState([]);
+const MainDash = ({ selectedSection }) => {
+  const [tableData, setTableData] = useState([]);
 
-  async function getDataApi() {
-    try {
-      // Fetch the list of users
-      const usersResponse = await fetch("http://localhost:8090/users");
-      if (!usersResponse.ok) {
-        throw new Error(`HTTP error! status: ${usersResponse.status}`);
-      }
-      const usersData = await usersResponse.json();
-      // console.log("ListUsers: ", usersData);
-
-      // For each user, fetch their details using their _id
-      const userDetails = [];
-      for (const user of usersData.users) {
-        const detailResponse = await fetch(
-          `http://localhost:8090/users/${user._id}`
-        );
-        if (!detailResponse.ok) {
-          throw new Error(`HTTP error! status: ${detailResponse.status}`);
-        }
-        const userDetail = await detailResponse.json();
-        userDetails.push({ user, ...userDetail });
-      }
-
-      // console.log("UserDetails: ", userDetails);
-
-      // Filter the user details based on raceId, nyambungin nama nim email ktm biar gampang di mapping
-      const filteredData = userDetails.flatMap(({ user, data }) =>
-        data.races_joined
-          .filter((race) => race.race_name === raceName)
-          .map((race) => ({
-            nim: user.nim,
-            name: user.name,
-            email: user.email,
-            ktm: user.ktm,
-            ...race,
-          }))
+  const updateTableData = (section) => {
+    let newData = [];
+    if (section === 0) {
+      newData = rows;
+    } else {
+      newData = rows.filter(
+        (row) => row.lomba === SidebarData[section].heading
       );
-
-      // console.log("Filtered: ", filteredData);
-
-      setData(filteredData);
-    } catch (error) {
-      console.error("Error:", error);
     }
-  }
+    setTableData(newData);
+  };
 
-  useEffect(() => {
-    getDataApi();
-  }, []); // Runs once on mount
+  React.useEffect(() => {
+    updateTableData(selectedSection);
+  }, [selectedSection]);
 
   return (
     <div className="MainDash">
       <div>
-        <h1 className="text-2xl font-semibold text-center mb-5">{raceName}</h1>
-        <Table data={data} />
+        <h1 className="text-2xl font-semibold text-center mb-5">
+          {SidebarData[selectedSection].heading}
+        </h1>
+        <Table data={tableData} />
       </div>
     </div>
   );

@@ -5,9 +5,14 @@ import { UilSignOutAlt, UilBars } from "@iconscout/react-unicons";
 import { SidebarData } from "../Admin/Data/Data";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Sidebar = () => {
+const Sidebar = ({ setSelectedSection }) => {
   const [selected, setSelected] = useState(0);
   const [expanded, setExpanded] = useState(true);
+
+  const handleMenuItemClick = (index) => {
+    setSelected(index);
+    setSelectedSection(index); // Memperbarui state di MainDash.jsx
+  };
 
   return (
     <>
@@ -28,9 +33,7 @@ const Sidebar = () => {
         >
           <div className="logo">
             <img src={Logo} alt="logo" />
-            <span>
-              Admin Ufest
-            </span>
+            <span>Admin Ufest</span>
           </div>
 
           <div className="menu">
@@ -38,7 +41,7 @@ const Sidebar = () => {
               <div
                 className={selected === index ? "menuItem active" : "menuItem"}
                 key={index}
-                onClick={() => setSelected(index)}
+                onClick={() => handleMenuItemClick(index)} // Menggunakan fungsi handleMenuItemClick
               >
                 <item.icon />
                 <span>{item.heading}</span>
