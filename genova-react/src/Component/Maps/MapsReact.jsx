@@ -26,7 +26,7 @@ function MapsReact() {
           <div className="md:bg-maps md:bg-cover bg-cover bg-mobile md:w-screen w-[100vw] h-[700px] md:bg-center z-5 md:h-screen">
             <Fade clear duration={2000}>
               <div className="flex justify-between items-center h-full flex-col">
-                <div className="xl:md:flex ml-[100px] xl:mt-4 md:mt-[140px] -mt-20 md:mr-10 mr-2">
+                <div className="xl:md:flex ml-[100px] lg:mt-[120px] md:mt-[160px] -mt-20 md:mr-10 mr-2">
                   <div className="tooltip tooltip-bottom transition-all duration-200 ease-in-out md:hover:w-[220px] md:mr-[60px] md:w-[200px] w-[140px] hover:w-[160px] md:mt-5 mt-[200px] mr-[-60px]" data-tip="UNIFY">
                     <a href=""><img src={img1} alt="Image 1" /></a>
                   </div>
