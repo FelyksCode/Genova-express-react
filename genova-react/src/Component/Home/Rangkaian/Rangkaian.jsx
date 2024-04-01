@@ -28,7 +28,7 @@ function Rangkaian() {
   }, []);
 
   // home hp
-  const logos = [logo1, logo2, logo3, logo4,  logo5];
+  const logos = [logo1, logo2, logo3, logo4, logo5];
   const images = [image1, image2, image3, image4, image4];
   const Titles = ["Unify", "Ucare", "Unveiling", "ulympic", "E-Ulympic"];
   const [isHovered, setIsHovered] = useState(false);
