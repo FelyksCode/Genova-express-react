@@ -29,11 +29,11 @@ const Sidebar = ({ setSelectedSection }) => {
           initial={{ left: "-60%" }}
           animate={{ left: expanded ? "0%" : "-60%" }}
           exit={{ left: "-60%" }}
-          transition={{ type: "tween" }}
+          transition={{ type: "tween", duration: 0.5 }}
         >
           <div className="logo">
             <img src={Logo} alt="logo" />
-            <span>Admin Ufest</span>
+            <span className="textAdmin">Admin Ufest</span>
           </div>
 
           <div className="menu">

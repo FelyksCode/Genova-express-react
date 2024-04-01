@@ -110,7 +110,7 @@
 
 .AppGlass {
   display: grid;
-  height: 97%;
+  height: 100%;
   width: 97%;
   background: var(--glass);
   border-radius: 2rem;

@@ -25,7 +25,7 @@ const MainDash = ({ selectedSection }) => {
   return (
     <div className="MainDash">
       <div>
-        <h1 className="text-2xl font-semibold text-center mb-5">
+        <h1 className="text-2xl font-semibold text-center mb-5 sm:text-center md:text-left lg:text-center">
           {SidebarData[selectedSection].heading}
         </h1>
         <Table data={tableData} />

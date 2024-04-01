@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Sidebar from "../Component/Admin/Sidebar";
 import MainDash from "../Component/Admin/MainDash/MainDash";
-import RightSide from "../Component/Admin/RigtSide/RightSide";
 
 function Admin() {
   const [selectedSection, setSelectedSection] = useState(0);
