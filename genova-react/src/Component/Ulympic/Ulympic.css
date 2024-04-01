@@ -1,0 +1,227 @@
+.ulympic {
+  background: linear-gradient(to bottom, #f1c423, #f2bf20, #f3bb1e, #f3b61c, #f4b11a, #f6b417, #f7b614, #f9b911, #fbc50b, #fbd006, #fbdc06, #fae80b);
+  padding: 2%;
+}
+.kartu {
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  justify-content: center;
+}
+
+.kartu-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.3s;
+}
+
+.kartu:hover .kartu-inner {
+  transform: rotateY(180deg);
+}
+
+.kartu-front,
+.kartu-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 24px;
+}
+
+.kartu-front {
+  transform: rotateY(0deg);
+}
+
+.kartu-back {
+  transform: rotateY(180deg);
+}
+
+.logo-image {
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain; 
+  border-radius: 10px;
+
+}
+.logo-image1 {
+  width: 75%; 
+  height: 75%; 
+  object-fit: contain; 
+  border-radius: 10px;
+
+}
+.garis{
+  width: 500px;
+  height: 500px;
+  border-left: 3px solid;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+
+}
+
+
+.bio {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: min-content;
+  grid-gap: 24px;
+}
+
+.listlomba ul {
+  margin-left: 100px;
+  overflow-x: hidden;
+  display: flex;
+  min-height: 980px;
+  height: 50vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style-type: none;
+  width: 100%;
+  min-width: 100%;
+  flex-direction: column;
+}
+@media only screen and (min-width: 1280px) {
+  .listlomba ul {
+    flex-direction: row;
+  }
+}
+
+.listlomba li {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  cursor: pointer;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.listlomba li:before {
+  content: "";
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.75);
+}
+.listlomba li.active {
+  flex: 6;
+  cursor: default;
+}
+.listlomba li.active:before {
+  background: linear-gradient(180deg, rgba(15, 15, 15, 0) 0%, #111111 100%);
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  h2 {
+    font-size: 48px;
+    line-height: 48px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  h2 {
+    font-size: 64px;
+    line-height: 64px;
+  }
+}
+
+h3 {
+  font-weight: bold;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 30;
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+  transition: top 0.35s, opacity 0.15s;
+  transform-origin: 0 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+@media only screen and (min-width: 1280px) {
+  h3 {
+    top: 85%;
+    left: 50%;
+    font-size: 24px;
+    transform: translate(-20px, -50%) rotate(-90deg);
+  }
+}
+.active h3 {
+  opacity: 0;
+  top: 200%;
+}
+
+.section-content {
+  position: relative;
+  z-index: 30;
+  opacity: 0;
+  align-self: flex-end;
+  width: 100%;
+  transition: all 0.35s 0.1s ease-out;
+}
+.active .section-content {
+  opacity: 1;
+}
+.section-content .inner {
+  position: absolute;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 1fr;
+  grid-column-gap: 20px;
+  align-items: flex-end;
+  left: 0;
+  bottom: 0;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
+}
+@media only screen and (min-width: 768px) {
+  .section-content .inner {
+    grid-auto-flow: column;
+    grid-template-columns: calc(100% - 340px) 300px;
+    grid-column-gap: 40px;
+    padding: 40px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .section-content .inner {
+    grid-auto-flow: column;
+    grid-template-columns: 460px 200px;
+    grid-column-gap: 40px;
+    padding: 40px;
+  }
+}
+.active .section-content .inner {
+  opacity: 1;
+}
+
+.artist-profile-link {
+  pointer-events: none;
+}
+.active .artist-profile-link {
+  pointer-events: all;
+}
+
+
