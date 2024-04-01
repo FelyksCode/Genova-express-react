@@ -1,52 +1,16 @@
-import React, { useState, useEffect } from "react";
+// Admin.jsx
+import React, { useState } from "react";
 import Sidebar from "../Component/Admin/Sidebar";
 import MainDash from "../Component/Admin/MainDash/MainDash";
-import RightSide from "../Component/Admin/RigtSide/RightSide";
 
 function Admin() {
-  const [races, setRaces] = useState([]);
-
-  async function getRaceApi() {
-    // Get races api
-    try {
-      const response = await fetch("http://localhost:8090/race");
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      setRaces(data.data);
-      // console.log(data.data);
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  }
-
-  useEffect(() => {
-    getRaceApi();
-  }, []); // Empty dependency array means this effect runs once on mount
+  const [selectedSection, setSelectedSection] = useState(0);
 
   return (
     <div className="App">
       <div className="AppGlass">
-        <Sidebar />
-        <div
-          className="flex flex-col overflow-scroll overflow-x-hidden"
-          style={{
-            scrollbarWidth: "none" /* Firefox */,
-            msOverflowStyle: "none" /* Internet Explorer 10+ */,
-            "&::-webkit-scrollbar": {
-              display: "none" /* WebKit */,
-            },
-          }}
-        >
-          {races.map((race) => (
-            <MainDash
-              key={race._id}
-              raceId={race._id}
-              raceName={race.race_name}
-            />
-          ))}
-        </div>
+        <Sidebar setSelectedSection={setSelectedSection} />
+        <MainDash selectedSection={selectedSection} />
       </div>
     </div>
   );
