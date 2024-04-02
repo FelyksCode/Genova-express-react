@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Ulympic.css";
 import FormTemplate from "./FormTemplate";
-
-//  "_id": "660ab388747695f586c790aa",
-// "race_name": "E-Ulympic - Valorant",
-
-//  "_id": "660ab388747695f586c790ab",
-// "race_name": "E-Ulympic - Mobile Legends",
-
+import axios from "axios";
 // "_id": "660ab388747695f586c790b0",
 // "race_name": "Ulympic - Basket",
 
@@ -24,12 +18,14 @@ import FormTemplate from "./FormTemplate";
 // "race_name": "Ulympic - Badminton (Ganda Campuran)",
 
 const FormUlympic = () => {
+  let id = "";
   const [showModal, setShowModal] = useState(false);
   const [step, setStep] = useState(1);
 
   const [teamName, setTeamName] = useState("");
   const [leaderIdLine, setLeaderIdLine] = useState("");
   const [selectedSport, setSelectedSport] = useState("");
+  const [selectedSportID, setSelectedSportID] = useState("");
 
   const [members, setMembers] = useState([]);
 
@@ -44,7 +40,9 @@ const FormUlympic = () => {
     setLeaderIdLine(e.target.value);
   };
   const handleSportChange = (e) => {
-    setSelectedSport(e.target.value);
+    const newSelectedSport = e.target.value;
+    console.log("e.target.value: ", newSelectedSport);
+    setSelectedSport(newSelectedSport);
   };
 
   const handleNextStep = () => {
@@ -58,7 +56,8 @@ const FormUlympic = () => {
   const sportsToMembersMap = {
     volleyball: 10,
     basketball: 7,
-    badminton: 2,
+    badmintonCampuran: 2,
+    badmintonPutra: 2,
     futsal: 12,
   };
 
@@ -74,7 +73,30 @@ const FormUlympic = () => {
         }))
       );
     }
-  }, [selectedSport]);
+    let newId = "";
+    switch (selectedSport) {
+      case "volleyball":
+        newId = "660ab388747695f586c790b2";
+        break;
+      case "basketball":
+        newId = "660ab388747695f586c790b0";
+        break;
+      case "badmintonCampuran":
+        newId = "660ab388747695f586c790ac";
+        break;
+      case "badmintonPutra":
+        newId = "660ab388747695f586c790ad";
+        break;
+      case "futsal":
+        newId = "660ab388747695f586c790b1";
+        break;
+      default:
+        newId = "";
+        break;
+    }
+    setSelectedSportID(newId);
+    console.log(selectedSportID);
+  }, [selectedSport, selectedSportID]);
 
   const handleInputChange = (e, index) => {
     const { name, value, files } = e.target;
@@ -91,45 +113,62 @@ const FormUlympic = () => {
     setTransferProof(e.target.files[0]);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const formData = new FormData();
     formData.append("team_name", teamName);
     formData.append("line_id", leaderIdLine);
-    formData.append("selectedSport", selectedSport);
 
     // Append each team member's details to formData
     members.forEach((member, index) => {
-      formData.append(`members[${index}][fullName]`, member.fullName);
-      formData.append(`members[${index}][nim]`, member.nim);
-      formData.append(`members[${index}][email]`, member.email);
+      formData.append(`users[${index}][name]`, member.fullName);
+      formData.append(`users[${index}][nim]`, member.nim);
+      formData.append(`users[${index}][email]`, member.email);
 
       // Check if ktmPhoto is not null before appending
       if (member.ktmPhoto) {
         formData.append(
-          `members[${index}][ktmPhoto]`,
+          `users[${index}][ktm]`,
           member.ktmPhoto,
           member.ktmPhoto.name
         );
       }
     });
 
-    if (transferProof) {
-      formData.append("transferProof", transferProof, transferProof.name);
-    }
+    // if (transferProof) {
+    //   formData.append("transferProof", transferProof, transferProof.name);
+    // }
 
-    // Here you would typically send formData to your server using fetch or another HTTP client
-    // Example:
-    /*
-    fetch('your-endpoint-url', {
-      method: 'POST',
-      body: formData,
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error('Error:', error));
-    */
+    // fetch(`http://localhost:8090/users/register/${selectedSportID}`, {
+    //   method: "POST",
+    //   body: formData,
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => console.log(data))
+    //   .catch((error) => console.error("Error:", error));
+
+    try {
+      // Note: You don't need to manually set the `Content-Type` header here.
+      // Axios and the browser will handle it when you pass a FormData object.
+      const response = await axios.post(
+        `http://localhost:8090/users/register/${selectedSportID}`,
+        formData
+      );
+      console.log("response: ", response.data);
+    } catch (error) {
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.error("Error: ", error.response.data);
+      } else if (error.request) {
+        // The request was made but no response was received
+        console.error("Error: ", error.request);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.error("Error: ", error.message);
+      }
+    }
 
     // For demonstration, logging the FormData keys and values
     // Note: FormData entries won't necessarily show file content directly in logs
@@ -257,7 +296,12 @@ const FormUlympic = () => {
                       <option value="">Select a sport</option>
                       <option value="volleyball">Volleyball</option>
                       <option value="basketball">Basketball</option>
-                      <option value="badminton">Badminton</option>
+                      <option value="badmintonCampuran">
+                        Badminton Ganda Campuran
+                      </option>
+                      <option value="badmintonPutra">
+                        Badminton Ganda Putra
+                      </option>
                       <option value="futsal">Futsal</option>
                     </select>
                   </div>
