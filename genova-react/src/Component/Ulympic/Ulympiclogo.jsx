@@ -17,8 +17,8 @@ function UlympicLogo() {
                 </div>
             </div>
         </div>
-        <div className="descUlympic h-500 bg-gray-300 rounded-lg shadow-lg">
-            <p className='p-5'>
+        <div className="descUlympic h-500 rounded-lg shadow-lg">
+            <p className='fontt p-5'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Proin nec ex ac diam porttitor lacinia. Nullam quis neque at sapien lobortis posuere. 
                 Mauris vel sapien id justo interdum lobortis. Duis ut tellus libero. Sed vehicula est et odio feugiat, 

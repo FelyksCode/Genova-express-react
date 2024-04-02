@@ -33,7 +33,7 @@ function ListLomba(){
   ]
     return(
 <div className="listlomba text-white">
-    <h1 className='text-center text-6xl'>Pilih Lomba</h1>
+    <h1 className='pilih text-center text-6xl'>Pilih Lomba</h1>
       <ul>
         {Lomba.map((Lomba, i) => (
           <li
@@ -44,12 +44,12 @@ function ListLomba(){
             onMouseEnter={() => setActive(i)}
           >
             
-            <h3>{Lomba.name}</h3>
+            <h3 className='pilih listlomba'>{Lomba.name}</h3>
             <div className="section-content">
               <div className="inner">
                 <div className="bio">
-                  <h2>{Lomba.name}</h2>
-                  <p>{Lomba.description}</p>
+                  <h2 className='fontt listlomba'>{Lomba.name}</h2>
+                  <p className='fontt listlomba'>{Lomba.description}</p>
                 </div>
               </div>
             </div>
