@@ -1,55 +1,50 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Ulympic.css";
+import FormTemplate from "./FormTemplate";
+
+//  "_id": "660ab388747695f586c790aa",
+// "race_name": "E-Ulympic - Valorant",
+
+//  "_id": "660ab388747695f586c790ab",
+// "race_name": "E-Ulympic - Mobile Legends",
+
+// "_id": "660ab388747695f586c790b0",
+// "race_name": "Ulympic - Basket",
+
+// "_id": "660ab388747695f586c790b1",
+// "race_name": "Ulympic - Futsal",
+
+// "_id": "660ab388747695f586c790b2",
+// "race_name": "Ulympic - Volly",
+
+// "_id": "660ab388747695f586c790ad",
+// "race_name": "Ulympic - Badminton (Ganda Putra)",
+
+// "_id": "660ab388747695f586c790ac",
+// "race_name": "Ulympic - Badminton (Ganda Campuran)",
 
 const FormUlympic = () => {
   const [showModal, setShowModal] = useState(false);
-  const [step, setStep] = useState(1); // state untuk mengatur langkah dalam proses pendaftaran
+  const [step, setStep] = useState(1);
 
   const [teamName, setTeamName] = useState("");
   const [leaderIdLine, setLeaderIdLine] = useState("");
   const [selectedSport, setSelectedSport] = useState("");
 
-  const [fullName, setFullName] = useState("");
-  const [nim, setNim] = useState("");
-  const [email, setEmail] = useState("");
-  const [ktmPhoto, setKtmPhoto] = useState("");
+  const [members, setMembers] = useState([]);
 
   const [transferProof, setTransferProof] = useState("");
-
   const toggleModal = () => {
     setShowModal(!showModal);
   };
-
   const handleTeamNameChange = (e) => {
     setTeamName(e.target.value);
   };
-
   const handleLeaderIdLineChange = (e) => {
     setLeaderIdLine(e.target.value);
   };
-
   const handleSportChange = (e) => {
     setSelectedSport(e.target.value);
-  };
-
-  const handleFullNameChange = (e) => {
-    setFullName(e.target.value);
-  };
-
-  const handleNimChange = (e) => {
-    setNim(e.target.value);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleKtmPhotoChange = (e) => {
-    setKtmPhoto(e.target.value);
-  };
-
-  const handleTransferProofChange = (e) => {
-    setTransferProof(e.target.files[0]);
   };
 
   const handleNextStep = () => {
@@ -59,36 +54,108 @@ const FormUlympic = () => {
   const handlePreviousStep = () => {
     setStep(step - 1);
   };
+  // Define the sports to members mapping outside the component if it doesn't change
+  const sportsToMembersMap = {
+    volleyball: 10,
+    basketball: 7,
+    badminton: 2,
+    futsal: 12,
+  };
+
+  useEffect(() => {
+    // Initialize or update members based on the selected sport
+    if (selectedSport) {
+      setMembers(
+        Array.from({ length: sportsToMembersMap[selectedSport] || 0 }, () => ({
+          fullName: "",
+          nim: "",
+          email: "",
+          ktmPhoto: null, // Assuming you want to track the file as null initially
+        }))
+      );
+    }
+  }, [selectedSport]);
+
+  const handleInputChange = (e, index) => {
+    const { name, value, files } = e.target;
+    const updatedMembers = [...members];
+    if (name === "ktmPhoto") {
+      updatedMembers[index][name] = files[0]; // Handle file input
+    } else {
+      updatedMembers[index][name] = value; // Handle text inputs
+    }
+    setMembers(updatedMembers);
+  };
+
+  const handleTransferProofChange = (e) => {
+    setTransferProof(e.target.files[0]);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Proses submit form sesuai dengan kebutuhan Anda
-    // Misalnya, simpan data ke database atau tampilkan informasi pendaftaran
-    // Setelah selesai, atur state kembali ke awal untuk pendaftaran berikutnya
+
+    const formData = new FormData();
+    formData.append("team_name", teamName);
+    formData.append("line_id", leaderIdLine);
+    formData.append("selectedSport", selectedSport);
+
+    // Append each team member's details to formData
+    members.forEach((member, index) => {
+      formData.append(`members[${index}][fullName]`, member.fullName);
+      formData.append(`members[${index}][nim]`, member.nim);
+      formData.append(`members[${index}][email]`, member.email);
+
+      // Check if ktmPhoto is not null before appending
+      if (member.ktmPhoto) {
+        formData.append(
+          `members[${index}][ktmPhoto]`,
+          member.ktmPhoto,
+          member.ktmPhoto.name
+        );
+      }
+    });
+
+    if (transferProof) {
+      formData.append("transferProof", transferProof, transferProof.name);
+    }
+
+    // Here you would typically send formData to your server using fetch or another HTTP client
+    // Example:
+    /*
+    fetch('your-endpoint-url', {
+      method: 'POST',
+      body: formData,
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+    */
+
+    // For demonstration, logging the FormData keys and values
+    // Note: FormData entries won't necessarily show file content directly in logs
+    for (let [key, value] of formData.entries()) {
+      console.log(`${key}:`, value);
+    }
+
+    // Reset form and state after submission
     setShowModal(false);
     setStep(1);
     setTeamName("");
     setLeaderIdLine("");
     setSelectedSport("");
-    setFullName("");
-    setNim("");
-    setEmail("");
-    setKtmPhoto("");
+    setMembers([]);
     setTransferProof("");
   };
+
   const handleCloseModal = () => {
     setShowModal(false);
     setStep(1);
     setTeamName("");
     setLeaderIdLine("");
     setSelectedSport("");
-    setFullName("");
-    setNim("");
-    setEmail("");
-    setKtmPhoto("");
+    setMembers([]);
     setTransferProof("");
   };
-
   return (
     <>
       <button
@@ -206,310 +273,17 @@ const FormUlympic = () => {
               {step === 2 && (
                 <form className="space-y-4" action="#" onSubmit={handleSubmit}>
                   <div className="h-96 overflow-scroll overflow-x-hidden">
-                    {selectedSport === "basketball" && (
-                      <>
-                        {[...Array(7)].map((_, index) => (
-                          <div key={index}>
-                            <label
-                              htmlFor={`fullName${index}`}
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                            >
-                              Full Name {index + 1}
-                            </label>
-                            <input
-                              type="text"
-                              name={`fullName${index}`}
-                              id={`fullName${index}`}
-                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                              placeholder={`Enter full name ${index + 1}`}
-                              required
-                            />
-                            <div>
-                              <label
-                                htmlFor={`nim${index}`}
-                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                              >
-                                NIM {index + 1}
-                              </label>
-                              <input
-                                type="text"
-                                name={`nim${index}`}
-                                id={`nim${index}`}
-                                // value={nim}
-                                onChange={handleNimChange}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                placeholder="Enter your NIM"
-                                required
-                              />
-                            </div>
-                            <div>
-                              <label
-                                htmlFor={`email${index}`}
-                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                              >
-                                Email {index + 1}
-                              </label>
-                              <input
-                                type="email"
-                                name={`email${index}`}
-                                id={`email${index}`}
-                                // value={email}
-                                onChange={handleEmailChange}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                placeholder="name@company.com"
-                                required
-                              />
-                            </div>
-                            <div>
-                              <label
-                                htmlFor={`ktmPhoto${index}`}
-                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                              >
-                                KTM Photo {index + 1}
-                              </label>
-                              <input
-                                type="file"
-                                name={`ktmPhoto${index}`}
-                                id={`ktmPhoto${index}`}
-                                accept="image/*"
-                                onChange={handleKtmPhotoChange}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                required
-                              />
-                            </div>
-                            <br />
-                          </div>
-                        ))}
-                      </>
-                    )}
-                    {selectedSport === "badminton" && (
-                      <>
-                        {[...Array(2)].map((_, index) => (
-                          <div key={index}>
-                            <label
-                              htmlFor={`fullName${index}`}
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                            >
-                              Full Name {index + 1}
-                            </label>
-                            <input
-                              type="text"
-                              name={`fullName${index}`}
-                              id={`fullName${index}`}
-                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                              placeholder={`Enter full name ${index + 1}`}
-                              required
-                            />
-                            <div>
-                              <label
-                                htmlFor={`nim${index}`}
-                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                              >
-                                NIM {index + 1}
-                              </label>
-                              <input
-                                type="text"
-                                name={`nim${index}`}
-                                id={`nim${index}`}
-                                // value={nim}
-                                onChange={handleNimChange}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                placeholder="Enter your NIM"
-                                required
-                              />
-                            </div>
-                            <div>
-                              <label
-                                htmlFor={`email${index}`}
-                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                              >
-                                Email {index + 1}
-                              </label>
-                              <input
-                                type="email"
-                                name={`email${index}`}
-                                id={`email${index}`}
-                                // value={email}
-                                onChange={handleEmailChange}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                placeholder="name@company.com"
-                                required
-                              />
-                            </div>
-                            <div>
-                              <label
-                                htmlFor={`ktmPhoto${index}`}
-                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                              >
-                                KTM Photo {index + 1}
-                              </label>
-                              <input
-                                type="file"
-                                name={`ktmPhoto${index}`}
-                                id={`ktmPhoto${index}`}
-                                accept="image/*"
-                                onChange={handleKtmPhotoChange}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                required
-                              />
-                            </div>
-                            <br />
-                          </div>
-                        ))}
-                      </>
-                    )}
-                    {selectedSport === "futsal" && (
-                      <>
-                        {[...Array(12)].map((_, index) => (
-                          <div key={index}>
-                            <label
-                              htmlFor={`fullName${index}`}
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                            >
-                              Full Name {index + 1}
-                            </label>
-                            <input
-                              type="text"
-                              name={`fullName${index}`}
-                              id={`fullName${index}`}
-                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                              placeholder={`Enter full name ${index + 1}`}
-                              required
-                            />
-                            <div>
-                              <label
-                                htmlFor={`nim${index}`}
-                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                              >
-                                NIM {index + 1}
-                              </label>
-                              <input
-                                type="text"
-                                name={`nim${index}`}
-                                id={`nim${index}`}
-                                // value={nim}
-                                onChange={handleNimChange}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                placeholder="Enter your NIM"
-                                required
-                              />
-                            </div>
-                            <div>
-                              <label
-                                htmlFor={`email${index}`}
-                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                              >
-                                Email {index + 1}
-                              </label>
-                              <input
-                                type="email"
-                                name={`email${index}`}
-                                id={`email${index}`}
-                                // value={email}
-                                onChange={handleEmailChange}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                placeholder="name@company.com"
-                                required
-                              />
-                            </div>
-                            <div>
-                              <label
-                                htmlFor={`ktmPhoto${index}`}
-                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                              >
-                                KTM Photo {index + 1}
-                              </label>
-                              <input
-                                type="file"
-                                name={`ktmPhoto${index}`}
-                                id={`ktmPhoto${index}`}
-                                accept="image/*"
-                                onChange={handleKtmPhotoChange}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                required
-                              />
-                            </div>
-                            <br />
-                          </div>
-                        ))}
-                      </>
-                    )}
-                    {selectedSport === "volleyball" && (
-                      <>
-                        {[...Array(10)].map((_, index) => (
-                          <div key={index}>
-                            <label
-                              htmlFor={`fullName${index}`}
-                              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                            >
-                              Full Name {index + 1}
-                            </label>
-                            <input
-                              type="text"
-                              name={`fullName${index}`}
-                              id={`fullName${index}`}
-                              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                              placeholder={`Enter full name ${index + 1}`}
-                              required
-                            />
-                            <div>
-                              <label
-                                htmlFor={`nim${index}`}
-                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                              >
-                                NIM {index + 1}
-                              </label>
-                              <input
-                                type="text"
-                                name={`nim${index}`}
-                                id={`nim${index}`}
-                                // value={nim}
-                                onChange={handleNimChange}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                placeholder="Enter your NIM"
-                                required
-                              />
-                            </div>
-                            <div>
-                              <label
-                                htmlFor={`email${index}`}
-                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                              >
-                                Email {index + 1}
-                              </label>
-                              <input
-                                type="email"
-                                name={`email${index}`}
-                                id={`email${index}`}
-                                // value={email}
-                                onChange={handleEmailChange}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                placeholder="name@company.com"
-                                required
-                              />
-                            </div>
-                            <div>
-                              <label
-                                htmlFor={`ktmPhoto${index}`}
-                                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                              >
-                                KTM Photo {index + 1}
-                              </label>
-                              <input
-                                type="file"
-                                name={`ktmPhoto${index}`}
-                                id={`ktmPhoto${index}`}
-                                accept="image/*"
-                                onChange={handleKtmPhotoChange}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                required
-                              />
-                            </div>
-                            <br />
-                          </div>
-                        ))}
-                      </>
-                    )}
+                    {members.map((member, index) => (
+                      <FormTemplate
+                        key={index}
+                        index={index}
+                        member={member}
+                        handleInputChange={(e) => handleInputChange(e, index)}
+                        handleKtmPhotoChange={(e) =>
+                          handleInputChange(e, index)
+                        }
+                      />
+                    ))}
                   </div>
 
                   <button
