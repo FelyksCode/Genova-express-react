@@ -1,11 +1,11 @@
 import React from "react";
-import RegisForm from "../Component/Regis/RegisForm";
+import FormEUlympic from "../Component/Regis/FormEulympic/FormEulympic";
 
 function PageRegis() {
   return (
     <div>
       <h1>Regis E-Ulympic</h1>
-      <RegisForm />
+      <FormEUlympic />
     </div>
   );
 }
