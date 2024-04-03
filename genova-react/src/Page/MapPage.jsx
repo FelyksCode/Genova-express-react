@@ -1,4 +1,3 @@
-import Alert from "../Component/Alert/Alert";
 import MapVid from "../Component/Maps/Maps";
 import MapsReact from "../Component/Maps/MapsReact";
 import Navbar from "../Component/Navbar/Navbar";

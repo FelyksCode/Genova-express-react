@@ -1,9 +1,7 @@
 // Unify.jsx
 import React from "react";
 import "./Unifyy.css";
-import { Fade } from "react-reveal";
 import Unifyy from "../../Assets/Rangkaian/Unify.png";
-import Tombolunify from "./Tombolunify/Tombolunify";
 
 function Unify() {
   return (

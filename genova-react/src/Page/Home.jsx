@@ -6,7 +6,7 @@ import Navbar from "../Component/Navbar/Navbar";
 import Tujuan from "../Component/Tujuan/Tujuan";
 import { Fade } from "react-reveal";
 import Footer from "../Component/Footer/Footer";
-import Bracket from "../Component/Home/Callonge/Bracket";
+// import Bracket from "../Component/Home/Callonge/Bracket";
 
 function Home() {
   const [showIntro, setShowIntro] = useState(true);
@@ -46,7 +46,7 @@ function Home() {
           <Fade>
             <Divisihome />
             <Rangkaian />
-            <Bracket />
+            {/* <Bracket /> */}
             <Footer />
           </Fade>
         </section>

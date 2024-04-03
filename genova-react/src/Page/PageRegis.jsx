@@ -1,11 +1,11 @@
 import React from "react";
-import FormEUlympic from "../Component/Regis/FormEulympic/FormEulympic";
+import FormTim from "../Component/Regis/Testing/FormTim";
 
 function PageRegis() {
   return (
     <div>
       <h1>Regis E-Ulympic</h1>
-      <FormEUlympic />
+      <FormTim />
     </div>
   );
 }
