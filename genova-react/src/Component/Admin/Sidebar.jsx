@@ -11,7 +11,7 @@ const Sidebar = ({ setSelectedSection }) => {
 
   const handleMenuItemClick = (index) => {
     setSelected(index);
-    setSelectedSection(index); // Memperbarui state di MainDash.jsx
+    setSelectedSection(index);
   };
 
   return (
@@ -31,7 +31,7 @@ const Sidebar = ({ setSelectedSection }) => {
           exit={{ left: "-60%" }}
           transition={{ type: "tween", duration: 0.5 }}
         >
-          <div className="logo">
+          <div className="logoGenova">
             <img src={Logo} alt="logo" />
             <span className="textAdmin">Admin Ufest</span>
           </div>
