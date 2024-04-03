@@ -31,7 +31,7 @@ function MapsReact() {
                     className="tooltip tooltip-bottom transition-all duration-200 ease-in-out md:hover:w-[220px] md:mr-[60px] md:w-[200px] w-[140px] hover:w-[160px] md:mt-5 mt-[200px] mr-[-60px]"
                     data-tip="UNIFY"
                   >
-                    <a href="">
+                    <a href="/unify">
                       <img src={img1} alt="Image 1" />
                     </a>
                   </div>
@@ -49,7 +49,7 @@ function MapsReact() {
                     className="tooltip tooltip-bottom transition-all duration-200 ease-in-out md:hover:w-[220px] md:w-[200px] ml-[100px] mr-[200px] md:mr-[410px] w-[140px] hover:w-[160px]"
                     data-tip="UNVEILING"
                   >
-                    <a href="">
+                    <a href="/unveiling">
                       <img src={img3} alt="Image 3" />
                     </a>
                   </div>
@@ -67,7 +67,7 @@ function MapsReact() {
                     className="tooltip tooltip-bottom transition-all duration-200 ease-in-out md:hover:w-[320px] md:w-[300px] w-[240px] hover:w-[260px]"
                     data-tip="E-ULYMPIC"
                   >
-                    <a href="">
+                    <a href="#">
                       <img src={img5} alt="Image 5" />
                     </a>
                   </div>

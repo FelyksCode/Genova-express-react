@@ -19,7 +19,7 @@ function MapPage() {
   return (
     <>
       <Navbar />
-      <section className="snap-y overflow-scroll focus:scroll-auto">
+      <section className="snap-y overflow-y-scroll overflow-x-hidden focus:scroll-auto">
         {showMapVid ? (
           <Fade>
             <MapVid onVideoEnd={handleVideoEnd} />
