@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import FormData from "form-data";
 // import fs from "fs";
@@ -34,15 +34,43 @@ const FormTim = () => {
   const [anggotaTim, setAnggotaTim] = useState([]);
   const [namateam, setNamaTeam] = useState("");
   const [idline, setIdLine] = useState("");
+  const [transferProof, setTransferProof] = useState("");
+  const [selectedSportID, setSelectedSportID] = useState("");
+  let newId = "";
 
   const handleJenisTimChange = (e) => {
     const jenis = e.target.value;
+
+    // Immediately calculate newId based on the selected sport
+    let immediateNewId = "";
+    switch (jenis) {
+      case "volly":
+        immediateNewId = "660ab388747695f586c790b2";
+        break;
+      case "basket":
+        immediateNewId = "660ab388747695f586c790b0";
+        break;
+      case "badminton": // Note: Make sure this matches the value in your <option>
+        immediateNewId = "660ab388747695f586c790ac"; // Adjusted as per your actual options
+        break;
+      case "futsal":
+        immediateNewId = "660ab388747695f586c790b1";
+        break;
+      default:
+        immediateNewId = "";
+        break;
+    }
+    setSelectedSportID(immediateNewId); // Directly update selectedSportID
+
+    // Calculate the number of team members
     const jumlahAnggota = getJumlahAnggota(jenis);
     setAnggotaTim(
       Array(jumlahAnggota)
         .fill()
         .map(() => ({ nama: "", nim: "", email: "", username: "", foto: null }))
     );
+
+    console.log(selectedSportID);
   };
 
   const getJumlahAnggota = (jenis) => {
@@ -50,7 +78,7 @@ const FormTim = () => {
       case "basket":
         return 7;
       case "badminton":
-        return 6;
+        return 2;
       case "futsal":
         return 12;
       case "volly":
@@ -83,6 +111,10 @@ const FormTim = () => {
     setIdLine(e.target.value);
   };
 
+  const handleTransferProofChange = (e) => {
+    setTransferProof(e.target.files[0]);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -98,10 +130,8 @@ const FormTim = () => {
         formData.append(`users[${index}][game_id]`, anggota.username);
       });
 
-      console.log(formData.entries());
-
       const response = await axios.post(
-        "http://localhost:8090/users/register/660ab388747695f586c790aa",
+        `http://localhost:8090/users/register/${selectedSportID}`,
         formData,
         {
           headers: {
@@ -109,9 +139,16 @@ const FormTim = () => {
           },
         }
       );
+      const teamId = response.data.data.team.team_id;
 
-      console.log();
-      console.log("Response:", response.data);
+      if (transferProof) {
+        const formProof = new FormData();
+        formProof.append("proof", transferProof);
+        const resProof = await axios.post(
+          `http://localhost:8090/team/${teamId}/confirmPayment`,
+          formProof
+        );
+      }
     } catch (error) {
       console.error("Error:", error);
     }
@@ -149,6 +186,9 @@ const FormTim = () => {
           handleInputChange={(e) => handleInputChange(e, index)}
         />
       ))}
+      <br />
+      <label>Foto Pembayaran:</label>
+      <input type="file" name={`proof`} onChange={handleTransferProofChange} />
       <button type="submit">Submit</button>
     </form>
   );
