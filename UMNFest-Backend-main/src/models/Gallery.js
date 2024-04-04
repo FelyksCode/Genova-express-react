@@ -1,13 +1,15 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const GallerySchema = new mongoose.Schema({
-  image: {
-    type: String,
-    required: true,
+const GallerySchema = new mongoose.Schema(
+  {
+    image: {
+      type: String,
+      required: true,
+    },
   },
-},
-{
-  versionKey: false
-});
+  {
+    versionKey: false,
+  }
+);
 
-module.exports = mongoose.model('Gallery', GallerySchema);
+module.exports = mongoose.model("Gallery", GallerySchema);

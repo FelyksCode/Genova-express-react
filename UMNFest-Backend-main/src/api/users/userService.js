@@ -22,27 +22,9 @@ exports.getUserById = async (req, res) => {
       return res.status(404).json({ error: true, message: 'User not found' });
     }
 
-    const races = await Race.find({ user_id: id });
-
-    const raceDetails = await Promise.all(
-      races.map(async (race) => {
-        const raceDetail = await RaceDetail.findById(race.race_id);
-        return {
-          _id: id,
-          race_name: raceDetail.race_name,
-          race_description: raceDetail.race_description,
-        };
-      })
-    );
-
     const responseData = {
       error: false,
-      data: {
-        user_id: user._id,
-        name: user.name,
-        email: user.email,
-        races_joined: raceDetails,
-      },
+      data:  user,
     };
 
     return res.status(200).json(responseData);
@@ -72,13 +54,13 @@ exports.createUser = async (req, res) => {
 };
 
 
-exports.updateUser = async (req, res) => {
+exports.updateUserByID = async (req, res) => {
   try {
     const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!user) {
-      return res.status(404).send('User not found');
+      return res.status(404).json({error: true, message: "User not found"});
     }
-    res.json(user);
+    res.status(200).json({error: false, message: "user successfully updated", "data": user});
   } catch (err) {
     res.status(400).send(err.message);
   }
