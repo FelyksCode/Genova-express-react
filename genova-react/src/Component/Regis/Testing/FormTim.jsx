@@ -17,6 +17,12 @@ const AnggotaTim = ({ index, handleInputChange }) => {
         name={`email-${index}`}
         onChange={handleInputChange}
       />
+      <label>Username {index}:</label>
+      <input
+        type="text"
+        name={`username-${index}`}
+        onChange={handleInputChange}
+      />
       <label>Foto {index}:</label>
       <input type="file" name={`foto-${index}`} onChange={handleInputChange} />
     </div>
@@ -26,6 +32,8 @@ const AnggotaTim = ({ index, handleInputChange }) => {
 // Komponen FormTim
 const FormTim = () => {
   const [anggotaTim, setAnggotaTim] = useState([]);
+  const [namateam, setNamaTeam] = useState("");
+  const [idline, setIdLine] = useState("");
 
   const handleJenisTimChange = (e) => {
     const jenis = e.target.value;
@@ -33,7 +41,7 @@ const FormTim = () => {
     setAnggotaTim(
       Array(jumlahAnggota)
         .fill()
-        .map(() => ({ nama: "", nim: "", email: "", foto: null }))
+        .map(() => ({ nama: "", nim: "", email: "", username: "", foto: null }))
     );
   };
 
@@ -42,7 +50,7 @@ const FormTim = () => {
       case "basket":
         return 7;
       case "badminton":
-        return 2;
+        return 6;
       case "futsal":
         return 12;
       case "volly":
@@ -53,25 +61,44 @@ const FormTim = () => {
   };
 
   const handleInputChange = (e, index) => {
-    const { name, value } = e.target;
+    const { name } = e.target;
     const [field, anggotaIndex] = name.split("-");
     const updatedAnggotaTim = [...anggotaTim];
-    updatedAnggotaTim[parseInt(anggotaIndex, 10)][field] = value; // Perbaikan di sini
+
+    if (e.target.type === "file") {
+      updatedAnggotaTim[parseInt(anggotaIndex, 10)][field] = e.target.files[0];
+    } else {
+      const { value } = e.target;
+      updatedAnggotaTim[parseInt(anggotaIndex, 10)][field] = value;
+    }
+
     setAnggotaTim(updatedAnggotaTim);
+  };
+
+  const handleNamaTeamChange = (e) => {
+    setNamaTeam(e.target.value);
+  };
+
+  const handleIdLineChange = (e) => {
+    setIdLine(e.target.value);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Mengirim data ke backend
     try {
       const formData = new FormData();
+      formData.append("team_name", namateam);
+      formData.append("line_id", idline);
       anggotaTim.forEach((anggota, index) => {
         formData.append(`users[${index}][name]`, anggota.nama);
         formData.append(`users[${index}][email]`, anggota.email);
         formData.append(`users[${index}][nim]`, anggota.nim);
         formData.append(`users[${index}][ktm]`, anggota.foto);
+        formData.append(`users[${index}][game_id]`, anggota.username);
       });
+
+      console.log(formData.entries());
 
       const response = await axios.post(
         "http://localhost:8090/users/register/660ab388747695f586c790aa",
@@ -82,6 +109,8 @@ const FormTim = () => {
           },
         }
       );
+
+      console.log();
       console.log("Response:", response.data);
     } catch (error) {
       console.error("Error:", error);
@@ -90,6 +119,21 @@ const FormTim = () => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <label>Nama Team:</label>
+      <input
+        type="text"
+        name="nameteam"
+        value={namateam}
+        onChange={handleNamaTeamChange}
+      />
+
+      <label>Id Line:</label>
+      <input
+        type="text"
+        name="idline"
+        value={idline}
+        onChange={handleIdLineChange}
+      />
       <label>Pilih Jenis Tim:</label>
       <select onChange={handleJenisTimChange}>
         <option value="">Pilih Jenis Tim</option>
