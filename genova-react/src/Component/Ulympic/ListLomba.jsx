@@ -33,7 +33,7 @@ function ListLomba(){
   ]
     return(
 <div className="listlomba text-white">
-    <h1 className='pilih text-center text-3xl text-black'>Pilih Lomba</h1>
+    <h1 className='pilih text-center text-3xl text-black '>Pilih Lomba</h1>
       <ul>
         {Lomba.map((Lomba, i) => (
           <li

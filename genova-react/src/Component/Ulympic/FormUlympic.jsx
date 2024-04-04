@@ -2,18 +2,34 @@ import React, { useState, useEffect } from "react";
 import "./Ulympic.css";
 import FormTemplate from "./FormTemplate";
 import axios from "axios";
+// "_id": "660ab388747695f586c790b0",
+// "race_name": "Ulympic - Basket",
+
+// "_id": "660ab388747695f586c790b1",
+// "race_name": "Ulympic - Futsal",
+
+// "_id": "660ab388747695f586c790b2",
+// "race_name": "Ulympic - Volly",
+
+// "_id": "660ab388747695f586c790ad",
+// "race_name": "Ulympic - Badminton (Ganda Putra)",
+
+// "_id": "660ab388747695f586c790ac",
+// "race_name": "Ulympic - Badminton (Ganda Campuran)",
 
 const FormUlympic = () => {
   let id = "";
   const [showModal, setShowModal] = useState(false);
   const [step, setStep] = useState(1);
+
   const [teamName, setTeamName] = useState("");
   const [leaderIdLine, setLeaderIdLine] = useState("");
   const [selectedSport, setSelectedSport] = useState("");
   const [selectedSportID, setSelectedSportID] = useState("");
-  const [members, setMembers] = useState([]);
-  const [transferProof, setTransferProof] = useState("");
 
+  const [members, setMembers] = useState([]);
+
+  const [transferProof, setTransferProof] = useState("");
   const toggleModal = () => {
     setShowModal(!showModal);
   };
@@ -25,6 +41,7 @@ const FormUlympic = () => {
   };
   const handleSportChange = (e) => {
     const newSelectedSport = e.target.value;
+    console.log("e.target.value: ", newSelectedSport);
     setSelectedSport(newSelectedSport);
   };
 
@@ -78,6 +95,7 @@ const FormUlympic = () => {
         break;
     }
     setSelectedSportID(newId);
+    console.log(selectedSportID);
   }, [selectedSport, selectedSportID]);
 
   const handleInputChange = (e, index) => {
@@ -107,32 +125,55 @@ const FormUlympic = () => {
       formData.append(`users[${index}][name]`, member.fullName);
       formData.append(`users[${index}][nim]`, member.nim);
       formData.append(`users[${index}][email]`, member.email);
-      formData.append(`users[${index}][game_id]`, selectedSport);
 
       // Check if ktmPhoto is not null before appending
       if (member.ktmPhoto) {
-        formData.append(`users[${index}][ktm]`, member.ktmPhoto);
+        formData.append(
+          `users[${index}][ktm]`,
+          member.ktmPhoto,
+          member.ktmPhoto.name
+        );
       }
     });
 
+    if (transferProof) {
+      formData.append("transferProof", transferProof, transferProof.name);
+    }
+
+    fetch(`http://localhost:8090/users/register/${selectedSportID}`, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error("Error:", error));
+
     try {
-      const res = await axios.post(
+      // Note: You don't need to manually set the `Content-Type` header here.
+      // Axios and the browser will handle it when you pass a FormData object.
+      const response = await axios.post(
         `http://localhost:8090/users/register/${selectedSportID}`,
         formData
       );
-      const teamId = res.data.data.team.team_id;
-
-      if (transferProof) {
-        const formProof = new FormData();
-        formProof.append("proof", transferProof);
-        const resProof = await axios.post(
-          `http://localhost:8090/team/${teamId}/confirmPayment`,
-          formProof
-        );
-      }
+      console.log("response: ", response.data);
     } catch (error) {
-      // Something happened in setting up the request that triggered an Error
-      console.error("Error: ", error.message);
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.error("Error: ", error.response.data);
+      } else if (error.request) {
+        // The request was made but no response was received
+        console.error("Error: ", error.request);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.error("Error: ", error.message);
+      }
+    }
+
+    // For demonstration, logging the FormData keys and values
+    // Note: FormData entries won't necessarily show file content directly in logs
+    for (let [key, value] of formData.entries()) {
+      console.log(`${key}:`, value);
     }
 
     // Reset form and state after submission
@@ -156,11 +197,8 @@ const FormUlympic = () => {
   };
   return (
     <>
-      <button
-        onClick={toggleModal}
-        className="bentukbutton type1 w-full sm:w-auto md:w-full"
-      >
-        <span className="btn-txt1">Daftar Lomba</span>
+      <button onClick={toggleModal} className="bentukbutton type1 w-full sm:w-auto md:w-full">
+        <span className='btn-txt1'>Daftar Lomba</span>  
       </button>
 
       {showModal && (
