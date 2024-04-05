@@ -7,36 +7,12 @@ import axios from "axios";
 const MainDash = ({ selectedSection, response }) => {
   const [tableData, setTableData] = useState([]);
   useEffect(() => {
-    // Define a function to update the table data based on the selected section
     const updateTableData = async () => {
-      let newData = [];
-
-      // If there is a response and it has a users property
-      if (response && response.teams) {
-        if (selectedSection === 0) {
-          // For section 0, use all users
-          newData = response.teams;
-        } else {
-          // For other sections, filter teams based on some criteria related to the section
-          // Example: Assuming each user object has a 'sport' field
-          const sectionSport = SidebarData[selectedSection].heading;
-          newData = response.teams.filter(
-            (user) => user.sport === sectionSport
-          );
-        }
+      let basicData = [];
+      if (response) {
+        basicData = response;
       }
-
-      // Update the table data state
-      setTableData(newData);
-
-      try {
-        // NOTE: BELOM SELESAI ngambil team daftar di sport mana
-        // const resDetail = await axios.get(
-        //   `http://localhost:8090/team/${response.teams._id}`
-        // );
-      } catch (e) {
-        console.log(e.message);
-      }
+      setTableData(basicData);
     };
 
     // Call the update function

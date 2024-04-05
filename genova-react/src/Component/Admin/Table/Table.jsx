@@ -37,8 +37,9 @@ export default function BasicTable({ data }) {
 
   const handleTeamClick = (teamName) => {
     setSelectedTeam(teamName);
-    const members = anggota.filter((member) => member.namaTeam === teamName);
-    setTeamMembers(members);
+    const members = data.filter((member) => member.team_name === teamName);
+
+    setTeamMembers(members[0].data.members);
     setOpenTeamModal(true);
   };
 
@@ -78,7 +79,7 @@ export default function BasicTable({ data }) {
                     component="th"
                     scope="row"
                     style={{ width: "33.33%" }}
-                    onClick={() => handleTeamClick(row.namaTeam)}
+                    onClick={() => handleTeamClick(row.team_name)}
                   >
                     {row.team_name}
                   </TableCell>
@@ -86,7 +87,7 @@ export default function BasicTable({ data }) {
                     {row.line_id}
                   </TableCell>
                   <TableCell align="center" style={{ width: "33.33%" }}>
-                    {row.sport}
+                    {row.data.races.race_name}
                   </TableCell>
                 </TableRow>
               ))}
@@ -131,7 +132,7 @@ export default function BasicTable({ data }) {
                           }}
                           onClick={() => handleMemberClick(member)}
                         >
-                          <TableCell align="center">{member.nama}</TableCell>
+                          <TableCell align="center">{member.name}</TableCell>
                           <TableCell align="center">{member.nim}</TableCell>
                           <TableCell align="center">{member.email}</TableCell>
                           <TableCell align="center">
