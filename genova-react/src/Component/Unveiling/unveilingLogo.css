@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Akbaal';
+    src: local('Akbaal'), url('../../Assets/Font/akbaal/akbaal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal; 
+}
+  
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins'), url('../../Assets/Font/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.content, .joinUs {
+    animation: fadeIn 1s ease-in;
+  }
+  
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+  
+img {
+    animation: bounceIn 1s ease-out;
+}
+
+img:hover{
+    transform: scale(1.1);
+}
+
+button{
+    animation: bounceIn 1s ease-out;
+}
+  
+@keyframes bounceIn {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+
+.unveiling-details{
+  animation: slideInRight 1s ease-out;
+}
+
+.unveiling-details h1{
+    font-family: 'Akbaal';
+}
+
+.unveiling-details p{
+    font-family: 'Poppins';
+}
+
+@keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
