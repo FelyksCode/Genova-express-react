@@ -125,20 +125,12 @@ const FormUlympic = () => {
       formData.append(`users[${index}][name]`, member.fullName);
       formData.append(`users[${index}][nim]`, member.nim);
       formData.append(`users[${index}][email]`, member.email);
-
+      formData.append(`users[${index}][game_id]`, selectedSport);
       // Check if ktmPhoto is not null before appending
       if (member.ktmPhoto) {
-        formData.append(
-          `users[${index}][ktm]`,
-          member.ktmPhoto,
-          member.ktmPhoto.name
-        );
+        formData.append(`users[${index}][ktm]`, member.ktmPhoto);
       }
     });
-
-    if (transferProof) {
-      formData.append("transferProof", transferProof, transferProof.name);
-    }
 
     try {
       // Note: You don't need to manually set the `Content-Type` header here.
@@ -147,6 +139,16 @@ const FormUlympic = () => {
         `http://localhost:8090/users/register/${selectedSportID}`,
         formData
       );
+      const teamId = response.data.data.team.team_id;
+
+      if (transferProof) {
+        const formProof = new FormData();
+        formProof.append("proof", transferProof);
+        const resProof = await axios.post(
+          `http://localhost:8090/team/${teamId}/confirmPayment`,
+          formProof
+        );
+      }
     } catch (error) {
       if (error.response) {
         // The request was made and the server responded with a status code
