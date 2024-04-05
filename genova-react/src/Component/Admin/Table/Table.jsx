@@ -9,22 +9,18 @@ import Paper from "@mui/material/Paper";
 import TablePagination from "@mui/material/TablePagination";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
+import Modal from "../Modal/Modal";
 import "./Table.css";
+import { anggota } from "../Data/Data";
 
 export default function BasicTable({ data }) {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const [open, setOpen] = React.useState(false);
-  const [selectedImage, setSelectedImage] = React.useState(null);
-
-  const handleClickOpen = (image) => {
-    setSelectedImage(image);
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const [openTeamModal, setOpenTeamModal] = React.useState(false);
+  const [openMemberModal, setOpenMemberModal] = React.useState(false);
+  const [selectedTeam, setSelectedTeam] = React.useState(null);
+  const [selectedMember, setSelectedMember] = React.useState(null);
+  const [teamMembers, setTeamMembers] = React.useState([]);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -35,11 +31,22 @@ export default function BasicTable({ data }) {
     setPage(0);
   };
 
-  // Menentukan jumlah data yang akan ditampilkan
   const paginatedData =
     rowsPerPage === -1
       ? data
       : data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
+
+  const handleTeamClick = (teamName) => {
+    setSelectedTeam(teamName);
+    const members = anggota.filter((member) => member.namaTeam === teamName);
+    setTeamMembers(members);
+    setOpenTeamModal(true);
+  };
+
+  const handleMemberClick = (member) => {
+    setSelectedMember(member);
+    setOpenMemberModal(true);
+  };
 
   return (
     <div className="Table">
@@ -48,18 +55,16 @@ export default function BasicTable({ data }) {
           component={Paper}
           style={{
             boxShadow: "0px 13px 20px 0px #80808029",
-            maxHeight: 400, // Set maksimum tinggi TableContainer
-            overflow: "auto", // Menambahkan scroll jika konten melebihi tinggi maksimum
+            maxHeight: 400,
+            overflow: "auto",
           }}
         >
           <Table sx={{ minWidth: 500 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell>Nama</TableCell>
-                <TableCell align="left">NIM</TableCell>
-                <TableCell align="left">Email</TableCell>
-                <TableCell align="left">KTM</TableCell>
-                <TableCell align="left">Lomba</TableCell>
+                <TableCell align="center">Team Name</TableCell>
+                <TableCell align="center">Line Ketua</TableCell>
+                <TableCell align="center">Sport</TableCell>
               </TableRow>
             </TableHead>
 
@@ -69,60 +74,21 @@ export default function BasicTable({ data }) {
                   key={index}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell component="th" scope="row">
-                    {row.nama}
+                  <TableCell
+                    align="center"
+                    component="th"
+                    scope="row"
+                    style={{ width: "33.33%" }}
+                    onClick={() => handleTeamClick(row.namaTeam)}
+                  >
+                    {row.namaTeam}
                   </TableCell>
-                  <TableCell align="left">{row.nim}</TableCell>
-                  <TableCell align="left">{row.email}</TableCell>
-                  <TableCell align="left">
-                    <div
-                      style={{
-                        position: "relative",
-                        width: "100px",
-                        height: "auto",
-                      }}
-                    >
-                      <img
-                        src={row.ktm}
-                        alt="gambar"
-                        style={{
-                          cursor: "pointer",
-                          width: "100%",
-                          height: "auto",
-                          maxWidth: "100%",
-                          maxHeight: "100px", // Set maksimum tinggi gambar
-                        }}
-                        onClick={() => handleClickOpen(row.ktm)}
-                      />
-                      <div
-                        style={{
-                          position: "absolute",
-                          top: "0",
-                          left: "0",
-                          width: "100%",
-                          height: "100%",
-                          backgroundColor: "rgba(0, 0, 0, 0.5)",
-                          display: "none",
-                          justifyContent: "center",
-                          alignItems: "center",
-                        }}
-                        onClick={() => handleClickOpen(row.ktm)}
-                      >
-                        <span
-                          style={{
-                            color: "#fff",
-                            fontSize: "20px",
-                            fontWeight: "bold",
-                            textAlign: "center",
-                            display: "block",
-                          }}
-                        >
-                          Click to Enlarge
-                        </span>
-                      </div>
-                    </div>
+                  <TableCell align="center" style={{ width: "33.33%" }}>
+                    {row.lineKetua}
                   </TableCell>
-                  <TableCell align="left">{row.lomba}</TableCell>
+                  <TableCell align="center" style={{ width: "33.33%" }}>
+                    {row.sport}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -139,13 +105,66 @@ export default function BasicTable({ data }) {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
 
-        <Dialog open={open} onClose={handleClose}>
+        <Dialog open={openTeamModal} onClose={() => setOpenTeamModal(false)}>
           <DialogContent>
-            <img
-              src={selectedImage}
-              alt="gambar"
-              style={{ maxWidth: "100%" }}
+            <Modal
+              open={openTeamModal}
+              onClose={() => setOpenTeamModal(false)}
+              title={selectedTeam}
+              content={
+                <TableContainer component={Paper}>
+                  <Table aria-label="simple table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell align="center">Nama</TableCell>
+                        <TableCell align="center">NIM</TableCell>
+                        <TableCell align="center">Email</TableCell>
+                        <TableCell align="center">KTM</TableCell>
+                      </TableRow>
+                    </TableHead>
+
+                    <TableBody>
+                      {teamMembers.map((member, index) => (
+                        <TableRow
+                          key={index}
+                          sx={{
+                            "&:last-child td, &:last-child th": { border: 0 },
+                          }}
+                          onClick={() => handleMemberClick(member)}
+                        >
+                          <TableCell align="center">{member.nama}</TableCell>
+                          <TableCell align="center">{member.nim}</TableCell>
+                          <TableCell align="center">{member.email}</TableCell>
+                          <TableCell align="center">
+                            <img
+                              src={member.ktm}
+                              alt="KTM"
+                              style={{ cursor: "pointer" }}
+                            />
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              }
             />
+          </DialogContent>
+        </Dialog>
+
+        <Dialog
+          open={openMemberModal}
+          onClose={() => setOpenMemberModal(false)}
+        >
+          <DialogContent>
+            {selectedMember && (
+              <Modal
+                open={openMemberModal}
+                onClose={() => setOpenMemberModal(false)}
+                title={selectedMember.nama}
+                content={<img src={selectedMember.ktm} alt="KTM" />}
+              />
+            )}
           </DialogContent>
         </Dialog>
       </div>

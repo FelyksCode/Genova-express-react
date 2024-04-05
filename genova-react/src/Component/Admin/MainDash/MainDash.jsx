@@ -12,7 +12,7 @@ const MainDash = ({ selectedSection }) => {
       newData = rows;
     } else {
       newData = rows.filter(
-        (row) => row.lomba === SidebarData[section].heading
+        (row) => row.sport === SidebarData[section].heading
       );
     }
     setTableData(newData);

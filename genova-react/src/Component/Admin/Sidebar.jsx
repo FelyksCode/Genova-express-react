@@ -6,11 +6,9 @@ import { SidebarData } from "../Admin/Data/Data";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Sidebar = ({ setSelectedSection }) => {
-  const [selected, setSelected] = useState(0);
   const [expanded, setExpanded] = useState(true);
 
   const handleMenuItemClick = (index) => {
-    setSelected(index);
     setSelectedSection(index);
   };
 
@@ -39,9 +37,9 @@ const Sidebar = ({ setSelectedSection }) => {
           <div className="menu">
             {SidebarData.map((item, index) => (
               <div
-                className={selected === index ? "menuItem active" : "menuItem"}
+                className="menuItem"
                 key={index}
-                onClick={() => handleMenuItemClick(index)} // Menggunakan fungsi handleMenuItemClick
+                onClick={() => handleMenuItemClick(index)}
               >
                 <item.icon />
                 <span>{item.heading}</span>
