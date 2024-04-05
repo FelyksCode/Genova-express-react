@@ -1,26 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Table from "../Table/Table";
 import "./MainDash.css";
 import { SidebarData, rows } from "../Data/Data";
+import axios from "axios";
 
-const MainDash = ({ selectedSection }) => {
+const MainDash = ({ selectedSection, response }) => {
   const [tableData, setTableData] = useState([]);
+  useEffect(() => {
+    // Define a function to update the table data based on the selected section
+    const updateTableData = async () => {
+      let newData = [];
 
-  const updateTableData = (section) => {
-    let newData = [];
-    if (section === 0) {
-      newData = rows;
-    } else {
-      newData = rows.filter(
-        (row) => row.sport === SidebarData[section].heading
-      );
-    }
-    setTableData(newData);
-  };
+      // If there is a response and it has a users property
+      if (response && response.teams) {
+        if (selectedSection === 0) {
+          // For section 0, use all users
+          newData = response.teams;
+        } else {
+          // For other sections, filter teams based on some criteria related to the section
+          // Example: Assuming each user object has a 'sport' field
+          const sectionSport = SidebarData[selectedSection].heading;
+          newData = response.teams.filter(
+            (user) => user.sport === sectionSport
+          );
+        }
+      }
 
-  React.useEffect(() => {
-    updateTableData(selectedSection);
-  }, [selectedSection]);
+      // Update the table data state
+      setTableData(newData);
+
+      try {
+        // NOTE: BELOM SELESAI ngambil team daftar di sport mana
+        // const resDetail = await axios.get(
+        //   `http://localhost:8090/team/${response.teams._id}`
+        // );
+      } catch (e) {
+        console.log(e.message);
+      }
+    };
+
+    // Call the update function
+    updateTableData();
+  }, [selectedSection, response]);
 
   return (
     <div className="MainDash">

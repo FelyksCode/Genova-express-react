@@ -21,7 +21,6 @@ export default function BasicTable({ data }) {
   const [selectedTeam, setSelectedTeam] = React.useState(null);
   const [selectedMember, setSelectedMember] = React.useState(null);
   const [teamMembers, setTeamMembers] = React.useState([]);
-
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -81,10 +80,10 @@ export default function BasicTable({ data }) {
                     style={{ width: "33.33%" }}
                     onClick={() => handleTeamClick(row.namaTeam)}
                   >
-                    {row.namaTeam}
+                    {row.team_name}
                   </TableCell>
                   <TableCell align="center" style={{ width: "33.33%" }}>
-                    {row.lineKetua}
+                    {row.line_id}
                   </TableCell>
                   <TableCell align="center" style={{ width: "33.33%" }}>
                     {row.sport}

@@ -4,12 +4,37 @@ import Logo from "../../Assets/LogoDivisi_Baru/Website.png";
 import { UilSignOutAlt, UilBars } from "@iconscout/react-unicons";
 import { SidebarData } from "../Admin/Data/Data";
 import { motion, AnimatePresence } from "framer-motion";
+import axios from "axios";
 
-const Sidebar = ({ setSelectedSection }) => {
+const Sidebar = ({ setSelectedSection, setResponse }) => {
   const [expanded, setExpanded] = useState(true);
 
-  const handleMenuItemClick = (index) => {
+  const handleMenuItemClick = async (index) => {
     setSelectedSection(index);
+
+    try {
+      switch (index) {
+        case 0: // All Regis
+          const res = await axios.get(`http://localhost:8090/team`);
+          if (setResponse) setResponse(res.data);
+
+          break;
+        case 1: // Voli
+          break;
+        case 2: // Basket
+          break;
+        case 3: // Badmin Putra Ganda
+          break;
+        case 4: // Badmin Campur Ganda
+          break;
+        case 5: // Futsal
+          break;
+        default: // Default All
+          break;
+      }
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
