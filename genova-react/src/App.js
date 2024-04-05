@@ -14,6 +14,7 @@ import PageRegis from "./Page/PageRegis";
 import Ulympic from "./Page/Ulympic";
 import Ucare from "./Page/Ucare";
 import PageUnify from "./Page/PageUnify";
+import PageEulympic from "./Page/PageEulympic";
 
 import "./App.css";
 
@@ -43,6 +44,7 @@ function App() {
         <Route path="/ulympic" element={<Ulympic />} />
         <Route path="/ucare" element={<Ucare />} />
         <Route path="/unify" element={<PageUnify />} />
+        <Route path="/eulympic" element={<PageEulympic />} />
       </Routes>
     </Router>
   );
