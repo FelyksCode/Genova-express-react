@@ -29,12 +29,8 @@ function Logo() {
           </p>
         </div>
       </div>
-      <div className="joinUs">
-        <center>
-          <button className="rounded-xl bg-white border-4 border-black my-10 px-12 py-6 text-3xl font-bold text-yellow-400 hover:bg-zinc-900 sm:px-16 sm:py-8 sm:text-5xl lg:px-24 lg:py-12">
-            Join Us!
-          </button>
-        </center>
+      <div className="flex justify-center">
+        <button className="tombol mb-10">Join Us!</button>
       </div>
     </div>
   );
