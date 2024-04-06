@@ -19,12 +19,15 @@ function FaqAccordion() {
               What is UMN Festival
             </AccordionTitle>
             <AccordionContent>
-              <p className="mb-2 text-gray-500 dark:text-gray-400">
-                Flowbite is an open-source library of interactive components
-                built on top of Tailwind CSS including buttons, dropdowns,
-                modals, navbars, and more.
+              <p className="mb-2 text-black dark:text-gray-600 rounded-md p-2">
+                UMN Festival merupakan festival tahunan terbesar di Universitas
+                Multimedia Nusantara sebagai bentuk perayaan ulang tahun UMN.
+                Ruang lingkup UMN Festival tak hanya meliputi perayaan,
+                melainkan terdapat pula 5 rangkaian utama yang berada di dalam
+                UMN Festival 2024 yaitu: 'UNVEILING, E-ULYMPIC, U-CARE, ULYMPIC,
+                DAN UNIFY'
               </p>
-              <p className="text-gray-500 dark:text-gray-400">
+              {/* <p className="text-gray-500 dark:text-gray-400">
                 Check out this guide to learn how to&nbsp;
                 <a
                   href="https://flowbite.com/docs/getting-started/introduction/"
@@ -34,7 +37,7 @@ function FaqAccordion() {
                 </a>
                 and start developing websites even faster with components on top
                 of Tailwind CSS.
-              </p>
+              </p> */}
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>

@@ -1,33 +1,33 @@
-import React from 'react';
+import React from "react";
 import "./Ulympic.css";
-import img1 from "../../Assets/Rangkaian/Ulympic.png";
-import img2 from "../../Assets/Images/UfestLogo.png";
+import img1 from "../../Assets/Rangkaian/Ulympic.webp";
+import img2 from "../../Assets/Images/UfestLogo.webp";
 
 function UlympicLogo() {
-    
   return (
-    <div className=" mx-auto flex flex-col xl:flex-row md:flex-row items-center h-screen w-full overflow-hidden">
-        <div className="kartu">
-            <div className="kartu-inner">
-                <div className="kartu-front flex justify-center items-center">
-                    <img src={img1} alt="Logo" className="logo-image" />
-                </div>
-                <div className="kartu-back flex justify-center items-center">
-                    <img src={img2} alt="Logo" className="logo-image1" />
-                </div>
-            </div>
+    <div className=" kartukecil mx-auto justify-center flex flex-col xl:flex-row md:flex-row items-center overflow-hidden">
+      <div className="kartu">
+        <div className="kartu-inner flex justify-center">
+          <div className="kartu-front flex justify-center items-center">
+            <img src={img1} alt="Logo" className="logo-image" />
+          </div>
+          <div className="kartu-back flex justify-center items-center">
+            <img src={img2} alt="Logo" className="logo-image1" />
+          </div>
         </div>
-        <div className="descUlympic h-500 rounded-lg shadow-lg">
-            <p className='fontt p-5'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Proin nec ex ac diam porttitor lacinia. Nullam quis neque at sapien lobortis posuere. 
-                Mauris vel sapien id justo interdum lobortis. Duis ut tellus libero. Sed vehicula est et odio feugiat, 
-                vitae faucibus neque commodo. Aliquam sit amet nulla vitae sem luctus ultricies. Integer nec feugiat enim, 
-                non convallis neque. Donec at tellus eget eros ultricies faucibus. Sed ut turpis nec lectus tempor vestibulum vitae vitae ligula.
-            </p>
-        </div>
+      </div>
+      <div className="descUlympic h-500 rounded-lg shadow-lg">
+        <p className="font p-5">
+          𝐔𝐋𝐘𝐌𝐏𝐈𝐂 merupakan kegiatan yang akan dilalui bagi #Legions untuk
+          meraih kemenangan 🗡️🔥 Dalam tahap ini akan dipenuhi tantangan yang
+          memerlukan keberanian (Valiant) untuk bertarung serta kegigihan
+          (Persistence) dari para #Legions dalam menghadapi pertarungan yang
+          ajaib dan penuh dengan kegembiraan! 🤴🏻👸🏻✨ Join us as we forge ahead,
+          conquering with a valiant spirit and embracing the magical revelry!
+          🌟🏆❤️‍🔥
+        </p>
+      </div>
     </div>
-        
   );
 }
 

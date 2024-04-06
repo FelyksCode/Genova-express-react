@@ -1,12 +1,12 @@
 import React from "react";
 
 //Asset
-import img1 from "../../Assets/Rangkaian/Unify.png";
-import img2 from "../../Assets/Rangkaian/Ucare.png";
-import img3 from "../../Assets/Rangkaian/Unveiling.png";
-import img4 from "../../Assets/Rangkaian/Ulympic.png";
-import img5 from "../../Assets/Rangkaian/E-Ulympic.png";
-import CloudVid from "../../Assets/Map/cloud.mp4";
+import img1 from "../../Assets/Rangkaian/Unify.webp";
+import img2 from "../../Assets/Rangkaian/Ucare.webp";
+import img3 from "../../Assets/Rangkaian/Unveiling.webp";
+import img4 from "../../Assets/Rangkaian/Ulympic.webp";
+import img5 from "../../Assets/Rangkaian/E-Ulympic.webp";
+import CloudVid from "../../Assets/Map/cloud.webm";
 import "../../App.css";
 import { Fade } from "react-reveal";
 

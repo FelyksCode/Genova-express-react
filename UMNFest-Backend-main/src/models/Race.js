@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const RaceSchema = new mongoose.Schema({
-  user_id: {
+  team_id: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'User',
+    ref: 'Team',
   },
   race_id: {
     type: mongoose.Schema.Types.ObjectId,

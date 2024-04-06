@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import IonIcon from "@reacticons/ionicons";
-import Trailer from "../../Assets/Videos/Trailer.mp4";
+import Trailer from "../../Assets/Videos/Trailer.webm";
 import Carousel from "./Carousel"; // Import your Carousel component here
 import { Fade } from "react-reveal";
 

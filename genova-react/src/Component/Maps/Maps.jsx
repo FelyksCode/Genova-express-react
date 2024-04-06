@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Fade } from "react-reveal";
-import MapsVid from "../../Assets/Map/Bg_Maps_Ufest.mp4";
-import UfestLogo from "../../Assets/Images/UfestLogo.png";
+import MapsVid from "../../Assets/Map/Bg_Maps_Ufest.webm";
+import UfestLogo from "../../Assets/Images/UfestLogo.webp";
 
 function Maps({ onVideoEnd }) {
   const videoRef = useRef(null);
@@ -33,7 +33,7 @@ function Maps({ onVideoEnd }) {
           ref={videoRef}
           style={{ opacity: videoOpacity }}
         >
-          <source src={MapsVid} type="video/mp4" />
+          <source src={MapsVid} />
         </video>
         <Fade bottom>
           <h1

@@ -1,26 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Table from "../Table/Table";
 import "./MainDash.css";
 import { SidebarData, rows } from "../Data/Data";
+import axios from "axios";
 
-const MainDash = ({ selectedSection }) => {
+const MainDash = ({ selectedSection, response }) => {
   const [tableData, setTableData] = useState([]);
+  useEffect(() => {
+    const updateTableData = async () => {
+      let basicData = [];
+      if (response) {
+        basicData = response;
+      }
+      setTableData(basicData);
+    };
 
-  const updateTableData = (section) => {
-    let newData = [];
-    if (section === 0) {
-      newData = rows;
-    } else {
-      newData = rows.filter(
-        (row) => row.lomba === SidebarData[section].heading
-      );
-    }
-    setTableData(newData);
-  };
-
-  React.useEffect(() => {
-    updateTableData(selectedSection);
-  }, [selectedSection]);
+    // Call the update function
+    updateTableData();
+  }, [selectedSection, response]);
 
   return (
     <div className="MainDash">

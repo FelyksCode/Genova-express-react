@@ -1,7 +1,7 @@
 // Unify.jsx
 import React from "react";
 import "./Unifyy.css";
-import Unifyy from "../../Assets/Rangkaian/Unify.png";
+import Unifyy from "../../Assets/Rangkaian/Unify.webp";
 
 function Unify() {
   return (

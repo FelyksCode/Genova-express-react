@@ -1,18 +1,22 @@
 .ulympic {
   background: linear-gradient(to bottom, #f1c423, #f2bf20, #f3bb1e, #f3b61c, #f4b11a, #f6b417, #f7b614, #f9b911, #fbc50b, #fbd006, #fbdc06, #fae80b);
   padding: 2%;
+  height: auto;
+
+}
+.kartukecil {
+  height: 70vh;
 }
 .kartu {
-  width: 75%;
-  height: 75%;
-  perspective: 1000px;
+  width: 100%;
+  height: 100%;
   justify-content: center;
 }
 
 .kartu-inner {
   width: 100%;
   height: 100%;
-  position: relative;
+  justify-content: center;
   transform-style: preserve-3d;
   transition: transform 0.3s;
 }
@@ -24,7 +28,7 @@
 .kartu-front,
 .kartu-back {
   position: absolute;
-  width: 100%;
+  width: 100;
   height: 100%;
   backface-visibility: hidden;
   display: flex;
@@ -43,23 +47,19 @@
 }
 
 .logo-image {
-  width: 100%; 
-  height: 100%; 
+  width: 80%; 
+  height: 80%; 
   object-fit: contain; 
   border-radius: 10px;
 
 }
 .logo-image1 {
-  width: 75%; 
-  height: 75%; 
+  width: 80%; 
+  height: 80%; 
   object-fit: contain; 
   border-radius: 10px;
+  justify-content: center;
 
-}
-.garis{
-  width: 500px;
-  height: 500px;
-  border-left: 3px solid;
 }
 
 body::-webkit-scrollbar{
@@ -75,12 +75,12 @@ body::-webkit-scrollbar{
   grid-gap: 24px;
 }
 
+
 .listlomba ul {
   margin-left: 100px;
   overflow-x: hidden;
   display: flex;
-  min-height: 980px;
-  height: 50vh;
+  height: 70vh;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -178,7 +178,6 @@ body::-webkit-scrollbar{
   z-index: 30;
   opacity: 0;
   align-self: flex-end;
-  width: 100%;
   transition: all 0.35s 0.1s ease-out;
 }
 .active .section-content {
@@ -295,7 +294,7 @@ body::-webkit-scrollbar{
 }
 
 .pilih{
-  margin-top: 5px;
+  margin-top: 10px;
   font-family: "Akbaal";
   font-size: 3rem;
 }

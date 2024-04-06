@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../../Assets/Bgimg/websitebg2.png);
+  background-image: url(../../Assets/Bgimg/websitebg2.webp);
   background-size: 100vw 100vh;
   -webkit-backdrop-filter: opacity(50%);
   backdrop-filter: opacity(50%);

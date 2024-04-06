@@ -125,28 +125,12 @@ const FormUlympic = () => {
       formData.append(`users[${index}][name]`, member.fullName);
       formData.append(`users[${index}][nim]`, member.nim);
       formData.append(`users[${index}][email]`, member.email);
-
+      formData.append(`users[${index}][game_id]`, selectedSport);
       // Check if ktmPhoto is not null before appending
       if (member.ktmPhoto) {
-        formData.append(
-          `users[${index}][ktm]`,
-          member.ktmPhoto,
-          member.ktmPhoto.name
-        );
+        formData.append(`users[${index}][ktm]`, member.ktmPhoto);
       }
     });
-
-    if (transferProof) {
-      formData.append("transferProof", transferProof, transferProof.name);
-    }
-
-    fetch(`http://localhost:8090/users/register/${selectedSportID}`, {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.error("Error:", error));
 
     try {
       // Note: You don't need to manually set the `Content-Type` header here.
@@ -155,7 +139,16 @@ const FormUlympic = () => {
         `http://localhost:8090/users/register/${selectedSportID}`,
         formData
       );
-      console.log("response: ", response.data);
+      const teamId = response.data.data.team.team_id;
+
+      if (transferProof) {
+        const formProof = new FormData();
+        formProof.append("proof", transferProof);
+        const resProof = await axios.post(
+          `http://localhost:8090/team/${teamId}/confirmPayment`,
+          formProof
+        );
+      }
     } catch (error) {
       if (error.response) {
         // The request was made and the server responded with a status code
@@ -168,12 +161,6 @@ const FormUlympic = () => {
         // Something happened in setting up the request that triggered an Error
         console.error("Error: ", error.message);
       }
-    }
-
-    // For demonstration, logging the FormData keys and values
-    // Note: FormData entries won't necessarily show file content directly in logs
-    for (let [key, value] of formData.entries()) {
-      console.log(`${key}:`, value);
     }
 
     // Reset form and state after submission
@@ -197,8 +184,11 @@ const FormUlympic = () => {
   };
   return (
     <>
-      <button onClick={toggleModal} className="bentukbutton type1 w-full sm:w-auto md:w-full">
-        <span className='btn-txt1'>Daftar Lomba</span>  
+      <button
+        onClick={toggleModal}
+        className="bentukbutton type1 w-full sm:w-auto md:w-full"
+      >
+        <span className="btn-txt1">Daftar Lomba</span>
       </button>
 
       {showModal && (

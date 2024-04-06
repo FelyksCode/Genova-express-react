@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const { getAllNews, getNewsByID, createNews } = require('./newsService');
+const { getAllNews, getNewsByID, createNews, updateNews, deleteNews } = require('./newsService');
 const { validatePayload, newsSchema } = require('../../middlewares/schema');
 const { validateObjectId } = require('../../middlewares/validateHelper');
 const multer = require("multer");
@@ -42,14 +42,10 @@ router.post('/create', upload.single('image'), async(req, res) => {
     return createNews(req, res);
 });
 
-router.put('/update/:id', async(req, res) => {
-
-});
+router.put('/update/:id', validateObjectId, updateNews);
 
 
-router.delete('/delete/:id', async(req, res) => {
-    
-});
+router.delete('/delete/:id', validateObjectId, deleteNews);
 
 
 router.get('/:_id', async (req, res) => {

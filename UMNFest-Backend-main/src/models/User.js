@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const UserSchema = new mongoose.Schema({
   nim: {
@@ -19,6 +20,14 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  game_id: {
+    type: String,
+    required: true,
+  },
+  team_id: {
+    type: Schema.Types.ObjectId,
+    ref: 'Team'
+  }
 },{
   versionKey: false
 });

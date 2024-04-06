@@ -1,4 +1,4 @@
-.tombol {
+.tombol1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,13 +33,13 @@
     }
   }
   
-  .tombol:hover {
+  .tombol1:hover {
     background-color: #eee;
     transform: scale(105%);
     animation: movingBorders 3s infinite;
   }
   
-  .tombol svg {
+  .tombol1 svg {
     margin-right: 11px;
     fill: rgb(255, 110, 110);
     transition: opacity 100ms ease-in-out;
@@ -74,11 +74,11 @@
     }
   }
   
-  .tombol:hover .empty {
+  .tombol1:hover .empty {
     opacity: 0;
   }
   
-  .tombol:hover .filled {
+  .tombol1:hover .filled {
     opacity: 1;
     animation: beatingHeart 1.2s infinite;
   }
