@@ -62,7 +62,7 @@ function MapsReact() {
                     </a>
                   </div>
                 </div>
-                <div className="md:flex md:mr-[480px] xl:mb-20 mr-[-240px] md:mb-[230px] mt-[-100px] mb-40">
+                <div className="md:flex md:mr-[480px] xl:mb-20 mr-[-240px] md:mb-[230px] mt-[-80px] mb-40">
                   <div
                     className="tooltip tooltip-bottom transition-all duration-200 ease-in-out md:hover:w-[320px] md:w-[300px] w-[240px] hover:w-[260px]"
                     data-tip="E-ULYMPIC"
