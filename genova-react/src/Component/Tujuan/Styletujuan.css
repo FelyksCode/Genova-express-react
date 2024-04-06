@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Tujuan";
+  src: url("../../Assets/Font/festival_budaya_xxxi/FestivalBudayaXXXI.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-custom {
+  font-family: Tujuan;
+}

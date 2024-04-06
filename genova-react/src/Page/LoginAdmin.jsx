@@ -45,20 +45,52 @@ function LoginAdmin() {
   }, [navigate]);
 
   return (
-    <div className="flex">
+    <div className="flex justify-center items-center h-screen bg-slate-300">
       <div className="text-center">
-        <form onSubmit={handleLogin}>
-          <label>Email: </label>
-          <input type="email" name="email" onChange={handleEmailChange} />
-          <br />
-          <label>Password: </label>
-          <input
-            type="password"
-            name="password"
-            onChange={handlePasswordChange}
-          />
-          <br />
-          <button type="submit">Log In</button>
+        <form
+          onSubmit={handleLogin}
+          className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        >
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Email:
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="email"
+              type="email"
+              name="email"
+              onChange={handleEmailChange}
+              placeholder="Email Address"
+            />
+          </div>
+          <div className="mb-6">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="password"
+            >
+              Password:
+            </label>
+            <input
+              className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              id="password"
+              type="password"
+              name="password"
+              onChange={handlePasswordChange}
+              placeholder="********"
+            />
+          </div>
+          <div className="flex items-center justify-center">
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Log In
+            </button>
+          </div>
         </form>
       </div>
     </div>

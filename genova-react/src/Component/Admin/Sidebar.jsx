@@ -86,10 +86,10 @@ const Sidebar = ({ setSelectedSection, setResponse }) => {
           exit={{ left: "-60%" }}
           transition={{ type: "tween", duration: 0.5 }}
         >
-          <div className="logoGenova">
+          <a className="logoGenova" href="/">
             <img src={Logo} alt="logo" />
             <span className="textAdmin">Admin Ufest</span>
-          </div>
+          </a>
 
           <div className="menu">
             {SidebarData.map((item, index) => (

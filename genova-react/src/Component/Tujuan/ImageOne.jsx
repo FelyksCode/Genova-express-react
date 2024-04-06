@@ -3,6 +3,7 @@ import IonIcon from "@reacticons/ionicons";
 import Trailer from "../../Assets/Videos/Trailer.webm";
 import Carousel from "./Carousel"; // Import your Carousel component here
 import { Fade } from "react-reveal";
+import "./Styletujuan.css";
 
 function ImageOne() {
   const [paddingTop, setPaddingTop] = useState(0);
@@ -39,10 +40,12 @@ function ImageOne() {
       <div className="absolute inset-0 bg-black" style={{ opacity: 0.6 }}></div>
       <Fade clear duration={3500}>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-          <h1 className="text-4xl md:text-6xl font-bold font-custom">
+          <h1 className="text-4xl md:text-6xl mb-5 font-bold font-custom">
             UMN FESTIVAL
           </h1>
-          <p className="text-lg md:text-xl">SHOW YOUR VALOR FIGHT WITH HONOR</p>
+          <p className="text-lg md:text-xl font-custom">
+            SHOW YOUR VALOR FIGHT WITH HONOR
+          </p>
           <IonIcon
             name="caret-down-outline"
             className="mt-10 text-[50px] animate-bounce pt-10"
