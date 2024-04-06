@@ -40,13 +40,14 @@ function Spinner() {
   const verticalimages = [
     {
       image: Slideimg1,
-      Judul: "Rome",
-      Text: "Pusat ibu kota di Italia. menjadi destinasi utama para turis saat berkunjung. Divisi BPH menjadi pusat utama informasi acara dan divisi lainnya.",
+
+      Judul: "Tuscany",
+      Text: "Kota Tuscany dikenal sebagai kota pusat inovasi di masa Renaissance. Divisi acara menjadi pusat inovasi dalam acara ini.",
     },
     {
       image: Slideimg2,
-      Judul: "Tuscany",
-      Text: "Kota Tuscany dikenal sebagai kota pusat inovasi di masa Renaissance. Divisi acara menjadi pusat inovasi dalam acara ini.",
+      Judul: "Rome",
+      Text: "Pusat ibu kota di Italia. menjadi destinasi utama para turis saat berkunjung. Divisi BPH menjadi pusat utama informasi acara dan divisi lainnya.",
     },
     {
       image: Slideimg3,
