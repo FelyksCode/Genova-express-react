@@ -33,7 +33,7 @@ function Maps({ onVideoEnd }) {
           ref={videoRef}
           style={{ opacity: videoOpacity }}
         >
-          <source src={MapsVid} type="video/mp4/webm" />
+          <source src={MapsVid} />
         </video>
         <Fade bottom>
           <h1
