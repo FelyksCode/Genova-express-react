@@ -15,11 +15,11 @@ function FaqAccordion() {
         <div className="overlayfaq"></div>
         <Accordion className="md:w-[800px] w-[400px] mx-auto my-[200px] py-[40px] px-[40px] bg-white/70 rounded-xl">
           <AccordionPanel>
-            <AccordionTitle className="text-xl my-2">
-              What is UMN Festival
+            <AccordionTitle className="text-xl my-2 text-black dark:text-black left-0">
+              What is UMN Festival?
             </AccordionTitle>
             <AccordionContent>
-              <p className="mb-2 text-black dark:text-gray-600 rounded-md p-2">
+              <p className="mb-2 text-gray-800 dark:text-gray-800 textfaq rounded-md p-2">
                 UMN Festival merupakan festival tahunan terbesar di Universitas
                 Multimedia Nusantara sebagai bentuk perayaan ulang tahun UMN.
                 Ruang lingkup UMN Festival tak hanya meliputi perayaan,
@@ -27,7 +27,7 @@ function FaqAccordion() {
                 UMN Festival 2024 yaitu: 'UNVEILING, E-ULYMPIC, U-CARE, ULYMPIC,
                 DAN UNIFY'
               </p>
-              {/* <p className="text-gray-500 dark:text-gray-400">
+              {/* <p className="text-gray-800 dark:text-gray-400">
                 Check out this guide to learn how to&nbsp;
                 <a
                   href="https://flowbite.com/docs/getting-started/introduction/"
@@ -41,20 +41,20 @@ function FaqAccordion() {
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
-            <AccordionTitle className="text-xl my-2">
-              Is there a Figma file available?
+            <AccordionTitle className="text-xl my-2 text-black dark:text-black justify-self-start flex">
+              What is UMN Festival?
             </AccordionTitle>
             <AccordionContent>
-              <p className="mb-2 text-gray-500 dark:text-gray-400">
+              <p className="mb-2 text-gray-800 dark:text-gray-800 textfaq">
                 Flowbite is first conceptualized and designed using the Figma
                 software so everything you see in the library has a design
                 equivalent in our Figma file.
               </p>
-              <p className="text-gray-500 dark:text-gray-400">
+              <p className="text-gray-800 dark:text-gray-800 textfaq">
                 Check out the
                 <a
                   href="https://flowbite.com/figma/"
-                  className="text-cyan-600 hover:underline dark:text-cyan-500"
+                  className="text-cyan-600 hover:underline dark:text-cyan-600"
                 >
                   Figma design system
                 </a>
@@ -64,26 +64,26 @@ function FaqAccordion() {
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
-            <AccordionTitle className="text-xl my-2">
-              What are the differences between Flowbite and Tailwind UI?
+            <AccordionTitle className="text-xl my-2 text-black dark:text-black">
+              What is UMN Festival?
             </AccordionTitle>
             <AccordionContent>
-              <p className="mb-2 text-gray-500 dark:text-gray-400">
+              <p className="mb-2 text-gray-800 dark:text-gray-800 textfaq">
                 The main difference is that the core components from Flowbite
                 are open source under the MIT license, whereas Tailwind UI is a
                 paid product. Another difference is that Flowbite relies on
                 smaller and standalone components, whereas Tailwind UI offers
                 sections of pages.
               </p>
-              <p className="mb-2 text-gray-500 dark:text-gray-400">
+              <p className="mb-2 text-gray-800 dark:text-gray-800 textfaq">
                 However, we actually recommend using both Flowbite, Flowbite
                 Pro, and even Tailwind UI as there is no technical reason
                 stopping you from using the best of two worlds.
               </p>
-              <p className="mb-2 text-gray-500 dark:text-gray-400">
+              <p className="mb-2 text-gray-800 dark:text-gray-800 textfaq">
                 Learn more about these technologies:
               </p>
-              <ul className="list-disc pl-5 text-gray-500 dark:text-gray-400">
+              <ul className="list-disc pl-5 text-gray-800 dark:text-gray-400">
                 <li>
                   <a
                     href="https://flowbite.com/pro/"

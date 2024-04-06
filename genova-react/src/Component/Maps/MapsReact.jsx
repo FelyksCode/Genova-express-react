@@ -67,7 +67,7 @@ function MapsReact() {
                     className="tooltip tooltip-bottom transition-all duration-200 ease-in-out md:hover:w-[320px] md:w-[300px] w-[240px] hover:w-[260px]"
                     data-tip="E-ULYMPIC"
                   >
-                    <a href="#">
+                    <a href="/eulympic">
                       <img src={img5} alt="Image 5" />
                     </a>
                   </div>

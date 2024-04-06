@@ -48,7 +48,9 @@ function Navbar() {
               </Link>
             </li>
           ))}
-          <a href="/regis"><Button>Register</Button></a>
+          <a href="/eulympic">
+            <Button>Register</Button>
+          </a>
         </ul>
       </div>
     </div>
