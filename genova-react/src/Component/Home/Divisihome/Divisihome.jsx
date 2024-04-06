@@ -3,19 +3,19 @@ import FancyCarousel from "react-fancy-circular-carousel";
 import "react-fancy-circular-carousel/FancyCarousel.css";
 import "./stylehero.css";
 
-import Slideimg1 from "../../../Assets/LogoDivisi_Baru/Acara.png";
-import Slideimg2 from "../../../Assets/LogoDivisi_Baru/BPH.png";
-import Slideimg3 from "../../../Assets/LogoDivisi_Baru/Dekorasi.png";
-import Slideimg4 from "../../../Assets/LogoDivisi_Baru/Dokumentasi.png";
-import Slideimg5 from "../../../Assets/LogoDivisi_Baru/FreshMoney.png";
-import Slideimg6 from "../../../Assets/LogoDivisi_Baru/Konsumsi.png";
-import Slideimg7 from "../../../Assets/LogoDivisi_Baru/Lomba.png";
-import Slideimg8 from "../../../Assets/LogoDivisi_Baru/Perlengkapan.png";
-import Slideimg9 from "../../../Assets/LogoDivisi_Baru/Publikasi.png";
-import Slideimg10 from "../../../Assets/LogoDivisi_Baru/Sponsor.png";
-import Slideimg11 from "../../../Assets/LogoDivisi_Baru/Ticketing.png";
-import Slideimg12 from "../../../Assets/LogoDivisi_Baru/Visual.png";
-import Slideimg13 from "../../../Assets/LogoDivisi_Baru/Website.png";
+import Slideimg1 from "../../../Assets/LogoDivisi_Baru/Acara.webp";
+import Slideimg2 from "../../../Assets/LogoDivisi_Baru/BPH.webp";
+import Slideimg3 from "../../../Assets/LogoDivisi_Baru/Dekorasi.webp";
+import Slideimg4 from "../../../Assets/LogoDivisi_Baru/Dokumentasi.webp";
+import Slideimg5 from "../../../Assets/LogoDivisi_Baru/FreshMoney.webp";
+import Slideimg6 from "../../../Assets/LogoDivisi_Baru/Konsumsi.webp";
+import Slideimg7 from "../../../Assets/LogoDivisi_Baru/Lomba.webp";
+import Slideimg8 from "../../../Assets/LogoDivisi_Baru/Perlengkapan.webp";
+import Slideimg9 from "../../../Assets/LogoDivisi_Baru/Publikasi.webp";
+import Slideimg10 from "../../../Assets/LogoDivisi_Baru/Sponsor.webp";
+import Slideimg11 from "../../../Assets/LogoDivisi_Baru/Ticketing.webp";
+import Slideimg12 from "../../../Assets/LogoDivisi_Baru/Visual.webp";
+import Slideimg13 from "../../../Assets/LogoDivisi_Baru/Website.webp";
 
 function Divisihome() {
   const [focusElement, setFocusElement] = useState(0);

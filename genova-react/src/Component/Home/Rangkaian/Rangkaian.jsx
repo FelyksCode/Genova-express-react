@@ -3,16 +3,16 @@ import React, { useEffect, useState } from "react";
 import "./Stylerangkaian.css";
 
 //foto
-import image1 from "../../../Assets/NewsEvent/dumbimg1.jpeg";
-import image2 from "../../../Assets/NewsEvent/dumbimg2.jpeg";
-import image3 from "../../../Assets/NewsEvent/dumbimg3.jpeg";
-import image4 from "../../../Assets/NewsEvent/dumbimg4.jpeg";
+import image1 from "../../../Assets/NewsEvent/dumbimg1.webp";
+import image2 from "../../../Assets/NewsEvent/dumbimg2.webp";
+import image3 from "../../../Assets/NewsEvent/dumbimg3.webp";
+import image4 from "../../../Assets/NewsEvent/dumbimg4.webp";
 
-import logo1 from "../../../Assets/Rangkaian/Unify.png";
-import logo2 from "../../../Assets/Rangkaian/Ucare.png";
-import logo3 from "../../../Assets/Rangkaian/Unveiling.png";
-import logo4 from "../../../Assets/Rangkaian/Ulympic.png";
-import logo5 from "../../../Assets/Rangkaian/E-Ulympic.png";
+import logo1 from "../../../Assets/Rangkaian/Unify.webp";
+import logo2 from "../../../Assets/Rangkaian/Ucare.webp";
+import logo3 from "../../../Assets/Rangkaian/Unveiling.webp";
+import logo4 from "../../../Assets/Rangkaian/Ulympic.webp";
+import logo5 from "../../../Assets/Rangkaian/E-Ulympic.webp";
 
 function Rangkaian() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -78,7 +78,7 @@ function Rangkaian() {
                 />
               </div>
               <img
-                src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png"
+                src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.webp"
                 class="title"
               />
               <img
@@ -101,7 +101,7 @@ function Rangkaian() {
                 />
               </div>
               <img
-                src="https://ggayane.github.io/css-experiments/cards/force_mage-title.png"
+                src="https://ggayane.github.io/css-experiments/cards/force_mage-title.webp"
                 class="title"
               />
               <img
@@ -123,7 +123,7 @@ function Rangkaian() {
                 />
               </div>
               <img
-                src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png"
+                src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.webp"
                 class="title"
               />
               <img
@@ -146,7 +146,7 @@ function Rangkaian() {
                 />
               </div>
               <img
-                src="https://ggayane.github.io/css-experiments/cards/force_mage-title.png"
+                src="https://ggayane.github.io/css-experiments/cards/force_mage-title.webp"
                 class="title"
               />
               <img
@@ -169,7 +169,7 @@ function Rangkaian() {
                 />
               </div>
               <img
-                src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png"
+                src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.webp"
                 class="title"
               />
               <img
