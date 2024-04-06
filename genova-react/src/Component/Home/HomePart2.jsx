@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Fade } from "react-reveal";
-import image1 from "../../Assets/NewsEvent/dumbimg1.jpeg";
-import image2 from "../../Assets/NewsEvent/dumbimg2.jpeg";
-import image3 from "../../Assets/NewsEvent/dumbimg3.jpeg";
-import image4 from "../../Assets/NewsEvent/dumbimg4.jpeg";
+import image1 from "../../Assets/NewsEvent/dumbimg1.webp";
+import image2 from "../../Assets/NewsEvent/dumbimg2.webp";
+import image3 from "../../Assets/NewsEvent/dumbimg3.webp";
+import image4 from "../../Assets/NewsEvent/dumbimg4.webp";
 
-import logo1 from "../../Assets/Images/UfestLogo.png";
+import logo1 from "../../Assets/Images/UfestLogo.webp";
 
 function HomePart2() {
   const logos = [logo1, logo1, logo1, logo1];

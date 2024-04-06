@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../Assets/Images/UfestLogo.png";
+import logo from "../../Assets/Images/UfestLogo.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope as regularEnvelope } from "@fortawesome/free-regular-svg-icons";
 import {

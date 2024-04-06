@@ -78,11 +78,11 @@ function Rangkaian() {
                 />
               </div>
               <img
-                src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.webp"
+                src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png"
                 class="title"
               />
               <img
-                src="https://ggayane.github.io/css-experiments/cards/dark_rider-character.webp"
+                src="https://ggayane.github.io/css-experiments/cards/dark_rider-character.png"
                 class="character"
               />
             </div>
@@ -101,11 +101,11 @@ function Rangkaian() {
                 />
               </div>
               <img
-                src="https://ggayane.github.io/css-experiments/cards/force_mage-title.webp"
+                src="https://ggayane.github.io/css-experiments/cards/force_mage-title.png"
                 class="title"
               />
               <img
-                src="https://ggayane.github.io/css-experiments/cards/force_mage-character.webp"
+                src="https://ggayane.github.io/css-experiments/cards/force_mage-character.png"
                 class="character"
               />
             </div>
@@ -123,11 +123,11 @@ function Rangkaian() {
                 />
               </div>
               <img
-                src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.webp"
+                src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png"
                 class="title"
               />
               <img
-                src="https://ggayane.github.io/css-experiments/cards/dark_rider-character.webp"
+                src="https://ggayane.github.io/css-experiments/cards/dark_rider-character.png"
                 class="character"
               />
             </div>
@@ -146,11 +146,11 @@ function Rangkaian() {
                 />
               </div>
               <img
-                src="https://ggayane.github.io/css-experiments/cards/force_mage-title.webp"
+                src="https://ggayane.github.io/css-experiments/cards/force_mage-title.png"
                 class="title"
               />
               <img
-                src="https://ggayane.github.io/css-experiments/cards/force_mage-character.webp"
+                src="https://ggayane.github.io/css-experiments/cards/force_mage-character.png"
                 class="character"
               />
             </div>
@@ -169,11 +169,11 @@ function Rangkaian() {
                 />
               </div>
               <img
-                src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.webp"
+                src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png"
                 class="title"
               />
               <img
-                src="https://ggayane.github.io/css-experiments/cards/dark_rider-character.webp"
+                src="https://ggayane.github.io/css-experiments/cards/dark_rider-character.png"
                 class="character"
               />
             </div>

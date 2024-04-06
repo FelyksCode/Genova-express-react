@@ -1,7 +1,7 @@
 import IonIcon from "@reacticons/ionicons";
 import React, { useState } from "react";
 import Button from "./Button";
-import Logo from "../../Assets/Images/UfestLogo.png";
+import Logo from "../../Assets/Images/UfestLogo.webp";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -48,7 +48,9 @@ function Navbar() {
               </Link>
             </li>
           ))}
-          <a href="#"><Button>Register</Button></a>
+          <a href="#">
+            <Button>Register</Button>
+          </a>
         </ul>
       </div>
     </div>
