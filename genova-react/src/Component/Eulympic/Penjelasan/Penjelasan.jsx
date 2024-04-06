@@ -1,8 +1,9 @@
 import React from "react";
 import "./StylePenjelasan.css";
+import Logo from "../../../Assets/Images/Basket.png";
 
 function Penjelasan() {
-  return <div>Penjelasan</div>;
+  return <div></div>;
 }
 
 export default Penjelasan;

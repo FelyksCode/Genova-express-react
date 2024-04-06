@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../../../Assets/Bgimg/webbadan.PNG);
+  background-image: url(../../../Assets/Bgimg/webbadan.webp);
   background-size: 100vw 100vh;
   -webkit-backdrop-filter: opacity(50%);
   backdrop-filter: opacity(50%);
