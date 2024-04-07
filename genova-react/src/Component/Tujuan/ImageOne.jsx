@@ -43,7 +43,7 @@ function ImageOne() {
           <h1 className="text-4xl md:text-6xl mb-5 font-bold font-custom">
             UMN FESTIVAL
           </h1>
-          <p className="text-lg md:text-xl font-custom">
+          <p className="text-lg md:text-xl font-custom text-center">
             SHOW YOUR VALOR FIGHT WITH HONOR
           </p>
           <IonIcon
