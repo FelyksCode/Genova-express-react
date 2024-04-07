@@ -36,73 +36,85 @@ import "swiper/css/effect-fade";
 function Spinner() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const isWideScreen = windowWidth <= 799;
-
+  const [bgColor, setBgColor] = useState("bg-white/30");
   const verticalimages = [
     {
       image: Slideimg1,
-
       Judul: "Tuscany",
       Text: "Kota Tuscany dikenal sebagai kota pusat inovasi di masa Renaissance. Divisi acara menjadi pusat inovasi dalam acara ini.",
+      bgColor: "bg-red-500/30",
     },
     {
       image: Slideimg2,
       Judul: "Rome",
       Text: "Pusat ibu kota di Italia. menjadi destinasi utama para turis saat berkunjung. Divisi BPH menjadi pusat utama informasi acara dan divisi lainnya.",
+      bgColor: "bg-red-200/30",
     },
     {
       image: Slideimg3,
       Judul: "Florence",
       Text: "Kota Florence dikenal sebagai kota terindah di Italia karena warisan budaya, arsitektur, dan seni yang sangat menakjubkan. Seperti Florence yang dipenuhi dengan keindahan, divisi Dekorasi akan membantu memperindah venue-venue yang akan digunakan oleh UMN Festival 2024.",
+      bgColor: "bg-red-300/30",
     },
     {
       image: Slideimg4,
       Judul: "Napoli",
       Text: "Kota Napoli dikenal dengan perpaduan nuansa kuno dan modern. Napoli menjadi kota dengan seni, arsitektur, dan peninggalan arkeologi yang menarik banyak turis untuk berfoto. Divisi dokumentasi memiliki tugas dalam mengabdikan banyak momen acara.",
+      bgColor: "bg-red-600/30",
     },
     {
       image: Slideimg5,
       Judul: "Venezia",
       Text: "Kota Venezia merupakan kota yang terkenal karena aspek perdagangan dan pariwisata. Maka dari itu, Venezia memiliki pemasukan ekonomi yang besar bagi Italia. Seperti Venezia, divisi Fresh Money akan mendukung UMN Festival 2024 dengan berbagai kegiatan wirausaha.",
+      bgColor: "bg-red-500/30",
     },
     {
       image: Slideimg6,
       Judul: "Lazio",
       Text: "Kota Lazio dikenal sebagai kota yang menemukan banyak macam pasta yang kita kenal hingga saat ini. Seperti Lazio yang menyediakan makanan bagi para penduduknya, divisi Konsumsi juga akan menyediakan makanan bagi seluruh panitia.",
+      bgColor: "bg-red-500/30",
     },
     {
       image: Slideimg7,
       Judul: "Milan",
       Text: "Kota Milan yang terkenal dengan pusat sepak bola di Italia yaitu AC Milan. Terdapat banyak kompetisi yang berlangsung di kota tersebut khususnya sepak bola.",
+      bgColor: "bg-red-500/30",
     },
     {
       image: Slideimg8,
       Judul: "Ardea",
       Text: "Kota Ardea terkenal dengan tempat wisata yang beragam seperti pantai, hotel, destinasi, dan makanannya. Divisi perlengkapan siap menyediakan kebutuhan yang diperlukan, sama halnya dengan kota Ardea yang lengkap akan destinasi wisata.",
+      bgColor: "bg-red-500/30",
     },
     {
       image: Slideimg9,
       Judul: "Catania",
       Text: "Catania merupakan kota terbesar kedua di Sisilia, Italia. menjadikannya sebagai kota terpadat kedua di pulau tersebut. Divisi publikasi yang menarik banyak partisipan.",
+      bgColor: "bg-red-500/30",
     },
     {
       image: Slideimg10,
       Judul: "Turin",
       Text: "Kota Turin dikenal sebagai salah satu kota dengan pemasukan ekonomi terbesar di Italia karena merupakan pusat dari industri otomotif. Seperti Turin, divisi Sponsorship juga merupakan divisi yang bertugas untuk mencari pemasukan dana.",
+      bgColor: "bg-red-500/30",
     },
     {
       image: Slideimg11,
       Judul: "Alba",
       Text: "Kota Alba dikenal sebagai kota administrasi di Italia. Divisi ticketing yang bertanggung jawab atas administrasi tiket ufest.",
+      bgColor: "bg-red-500/30",
     },
     {
       image: Slideimg12,
       Judul: "Pisa",
       Text: "Kota Pisa dikenal sebagai kota yang memiliki banyak destinasi wisata yang berhubungan desain seperti desain arsitektur dan museum lukisan. Seperti kota Pisa yang dipenuhi dengan kreativitas, divisi Visual akan memenuhi kebutuhan kreatif dari acara ini.",
+      bgColor: "bg-red-500/30",
     },
     {
       image: Slideimg13,
       Judul: "Genova",
       Text: "Kota Genova dikenal sebagai pusat ekonomi industri, contohnya seperti baja. Genova, Italia menjadi kota perkembangan yang lebih berteknologi maju dan ramah lingkungan.",
+      bgColor: "bg-red-500/30",
     },
   ];
 
@@ -117,11 +129,19 @@ function Spinner() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handleSlideChange = (swiper) => {
+    const { activeIndex } = swiper;
+    const newBgColor =
+      verticalimages[activeIndex % verticalimages.length].bgColor;
+    setBgColor(newBgColor); // Update background color based on active slide
+  };
+
   if (isWideScreen) {
     return (
-      <div className="w-full h-[100vh] bungkusan">
+      <div className={`w-full h-[100vh] ${bgColor}`}>
         <div className="bg-white/30 w-full h-full flex justify-center items-center">
           <Swiper
+            onSlideChange={handleSlideChange}
             spaceBetween={0}
             slidesPerView={"auto"}
             centeredSlides={true}
@@ -169,9 +189,10 @@ function Spinner() {
     );
   } else {
     return (
-      <div className="w-full h-[100vh] bungkusan">
+      <div className={`w-full h-[100vh] ${bgColor}`}>
         <div className=" bg-white/30 w-full h-full flex justify-center items-center">
           <Swiper
+            onSlideChange={handleSlideChange}
             spaceBetween={0}
             slidesPerView={3}
             direction={"vertical"}
