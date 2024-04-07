@@ -137,7 +137,7 @@ function Spinner() {
 
   if (isWideScreen) {
     return (
-      <div className={`w-full h-[100vh] ${bgColor}`}>
+      <div className={`w-full h-[100vh] ${bgColor} bungkusan`}>
         <div className="bg-white/30 w-full h-full flex justify-center items-center">
           <Swiper
             onSlideChange={handleSlideChange}
@@ -188,7 +188,7 @@ function Spinner() {
     );
   } else {
     return (
-      <div className={`w-full h-[100vh] ${bgColor}`}>
+      <div className={`w-full h-[100vh] ${bgColor} bungkusan`}>
         <div className=" bg-white/30 w-full h-full flex justify-center items-center">
           <Swiper
             onSlideChange={handleSlideChange}
