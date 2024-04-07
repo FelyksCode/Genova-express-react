@@ -11,19 +11,19 @@ import "swiper/css/effect-cards";
 import "./card.css";
 import { EffectCards } from "swiper/modules";
 import { Fade } from "react-reveal";
-import slideimg1 from "../../Assets/LogoDivisi_Baru/Acara.png";
-import slideimg2 from "../../Assets/LogoDivisi_Baru/BPH.png";
-import slideimg3 from "../../Assets/LogoDivisi_Baru/Dekorasi.png";
-import slideimg4 from "../../Assets/LogoDivisi_Baru/Dokumentasi.png";
-import slideimg5 from "../../Assets/LogoDivisi_Baru/FreshMoney.png";
-import slideimg6 from "../../Assets/LogoDivisi_Baru/Konsumsi.png";
-import slideimg7 from "../../Assets/LogoDivisi_Baru/Lomba.png";
-import slideimg8 from "../../Assets/LogoDivisi_Baru/Perlengkapan.png";
-import slideimg9 from "../../Assets/LogoDivisi_Baru/Publikasi.png";
-import slideimg10 from "../../Assets/LogoDivisi_Baru/Sponsor.png";
-import slideimg11 from "../../Assets/LogoDivisi_Baru/Ticketing.png";
-import slideimg12 from "../../Assets/LogoDivisi_Baru/Visual.png";
-import slideimg13 from "../../Assets/LogoDivisi_Baru/Website.png";
+import slideimg1 from "../../Assets/LogoDivisi_Baru/Acara.webp";
+import slideimg2 from "../../Assets/LogoDivisi_Baru/BPH.webp";
+import slideimg3 from "../../Assets/LogoDivisi_Baru/Dekorasi.webp";
+import slideimg4 from "../../Assets/LogoDivisi_Baru/Dokumentasi.webp";
+import slideimg5 from "../../Assets/LogoDivisi_Baru/FreshMoney.webp";
+import slideimg6 from "../../Assets/LogoDivisi_Baru/Konsumsi.webp";
+import slideimg7 from "../../Assets/LogoDivisi_Baru/Lomba.webp";
+import slideimg8 from "../../Assets/LogoDivisi_Baru/Perlengkapan.webp";
+import slideimg9 from "../../Assets/LogoDivisi_Baru/Publikasi.webp";
+import slideimg10 from "../../Assets/LogoDivisi_Baru/Sponsor.webp";
+import slideimg11 from "../../Assets/LogoDivisi_Baru/Ticketing.webp";
+import slideimg12 from "../../Assets/LogoDivisi_Baru/Visual.webp";
+import slideimg13 from "../../Assets/LogoDivisi_Baru/Website.webp";
 
 function Carousel() {
   const slideimages = [

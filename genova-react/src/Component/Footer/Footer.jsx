@@ -1,11 +1,12 @@
 import React from "react";
-import logo from "../../Assets/Images/UfestLogo.png";
+import logo from "../../Assets/Images/UfestLogo.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope as regularEnvelope } from "@fortawesome/free-regular-svg-icons";
 import {
   faLine,
   faInstagram,
   faFacebook,
+  faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
@@ -39,16 +40,18 @@ function Footer() {
                       icon={regularEnvelope}
                       className="lg:me-2"
                     />
-                    <a href="#" className="block lg:inline-block">
-                      ufest@umn.ac.id
+                    <a
+                      href="mailto:umnfestival@umn.ac.id"
+                      className="block lg:inline-block"
+                      target="_blank"
+                    >
+                      umnfestival@umn.ac.id
                     </a>
                   </div>
                   <div>
                     <div className="text-md my-3 lg:text-left">
                       <FontAwesomeIcon icon={faLine} className="lg:me-2" />
-                      <a href="#" className="block lg:inline-block">
-                        @1234ufest
-                      </a>
+                      <div className="block lg:inline-block">@877tuixh</div>
                     </div>
                   </div>
                 </div>
@@ -64,9 +67,9 @@ function Footer() {
                     </a>
                   </div>
                   <div className="text-md lg:text-left">
-                    <FontAwesomeIcon icon={faFacebook} className="lg:me-2" />
+                    <FontAwesomeIcon icon={faTiktok} className="lg:me-2" />
                     <a href="#" className="block lg:inline-block">
-                      umnfestival
+                      @umnfestival
                     </a>
                   </div>
                 </div>

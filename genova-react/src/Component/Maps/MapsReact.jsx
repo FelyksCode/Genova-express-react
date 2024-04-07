@@ -1,12 +1,12 @@
 import React from "react";
 
 //Asset
-import img1 from "../../Assets/Rangkaian/Unify.png";
-import img2 from "../../Assets/Rangkaian/Ucare.png";
-import img3 from "../../Assets/Rangkaian/Unveiling.png";
-import img4 from "../../Assets/Rangkaian/Ulympic.png";
-import img5 from "../../Assets/Rangkaian/E-Ulympic.png";
-import CloudVid from "../../Assets/Map/cloud.mp4";
+import img1 from "../../Assets/Rangkaian/Unify.webp";
+import img2 from "../../Assets/Rangkaian/Ucare.webp";
+import img3 from "../../Assets/Rangkaian/Unveiling.webp";
+import img4 from "../../Assets/Rangkaian/Ulympic.webp";
+import img5 from "../../Assets/Rangkaian/E-Ulympic.webp";
+import CloudVid from "../../Assets/Map/cloud.webm";
 import "../../App.css";
 import { Fade } from "react-reveal";
 
@@ -62,12 +62,12 @@ function MapsReact() {
                     </a>
                   </div>
                 </div>
-                <div className="md:flex md:mr-[480px] xl:mb-20 mr-[-240px] md:mb-[230px] mt-[-100px] mb-40">
+                <div className="md:flex md:mr-[480px] xl:mb-20 mr-[-240px] md:mb-[230px] mt-[-80px] mb-40">
                   <div
                     className="tooltip tooltip-bottom transition-all duration-200 ease-in-out md:hover:w-[320px] md:w-[300px] w-[240px] hover:w-[260px]"
                     data-tip="E-ULYMPIC"
                   >
-                    <a href="#">
+                    <a href="/eulympic">
                       <img src={img5} alt="Image 5" />
                     </a>
                   </div>

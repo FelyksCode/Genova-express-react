@@ -1,18 +1,8 @@
-/* body {
-    overflow: hidden;
-} */
-
 /* style buat hero */
 .pembungkus {
-  /* background: src "../../../../public/Images/bghero.jpg"; */
-  /* background-position: 100vw 100vh; */
-
-  /* background-image: url(../../../../public/Images/bghero.jpg); */
-  /* background-color: aliceblue; SEMENTARA */
-  background-image: url(../../../Assets/Bgimg/weblangit.PNG);
+  background-image: url(../../../Assets/Bgimg/weblangit.webp);
   background-size: 100vw 100vh;
   overflow: hidden;
-  /* padding: 20px; */
 }
 
 /* style buat divisi bagian home */
@@ -37,7 +27,4 @@
   position: relative;
   margin: auto;
   display: flex;
-
-  /* top: 80px;
-  left: 80px; */
 }

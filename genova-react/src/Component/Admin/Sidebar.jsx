@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
-import Logo from "../../Assets/LogoDivisi_Baru/Website.png";
+import Logo from "../../Assets/LogoDivisi_Baru/Website.webp";
 import { UilSignOutAlt, UilBars } from "@iconscout/react-unicons";
 import { SidebarData } from "../Admin/Data/Data";
 import { motion, AnimatePresence } from "framer-motion";
@@ -13,12 +13,12 @@ const Sidebar = ({ setSelectedSection, setResponse }) => {
     setSelectedSection(index);
 
     try {
-      const res = await axios.get(`http://localhost:8090/team`);
+      const res = await axios.get(`http://127.0.0.1:8090/team`);
 
       // Ensure you're accessing the teams array correctly from the response
       const detailedDataPromises = res.data.teams.map(async (team) => {
         const resDetail = await axios.get(
-          `http://localhost:8090/team/${team._id}`
+          `http://127.0.0.1:8090/team/${team._id}`
         );
         return { ...team, ...resDetail.data }; // Correctly merge the team info
       });
@@ -69,6 +69,12 @@ const Sidebar = ({ setSelectedSection, setResponse }) => {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    window.location.reload();
+  };
+
   return (
     <>
       <motion.div
@@ -86,10 +92,10 @@ const Sidebar = ({ setSelectedSection, setResponse }) => {
           exit={{ left: "-60%" }}
           transition={{ type: "tween", duration: 0.5 }}
         >
-          <div className="logoGenova">
+          <a className="logoGenova" href="/">
             <img src={Logo} alt="logo" />
             <span className="textAdmin">Admin Ufest</span>
-          </div>
+          </a>
 
           <div className="menu">
             {SidebarData.map((item, index) => (
@@ -102,8 +108,9 @@ const Sidebar = ({ setSelectedSection, setResponse }) => {
                 <span>{item.heading}</span>
               </div>
             ))}
-            <div className="menuItem">
+            <div className="menuItem" onClick={handleLogout}>
               <UilSignOutAlt />
+              <span>Logout</span>
             </div>
           </div>
         </motion.div>

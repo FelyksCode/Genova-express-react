@@ -38,12 +38,12 @@ function Home() {
       <div>
         <Navbar />
         <section className="snap-y overflow-hidden focus:scroll-auto">
-          <Fade duration={100}>
+          <Fade duration={50}>
             <Tujuan />
           </Fade>
         </section>
         <section className="snap-y snap-mandatory overflow-hidden">
-          <Fade>
+          <Fade duration={50}>
             <Divisihome />
             <Rangkaian />
             {/* <Bracket /> */}

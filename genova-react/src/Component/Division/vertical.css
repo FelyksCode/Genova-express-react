@@ -11,10 +11,9 @@
   font-weight: normal;
   font-style: normal;
 }
+
 .bungkusan {
-  background-image: url(../../Assets/Bgimg/websitebg3.png);
-  background-size: cover;
-  overflow: hidden;
+  transition: background-color 1s ease; /* Adjust the time and easing function as needed */
 }
 
 @media (min-width: 799px) {

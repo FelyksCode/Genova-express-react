@@ -131,7 +131,7 @@ const FormTim = () => {
       });
 
       const response = await axios.post(
-        `http://localhost:8090/users/register/${selectedSportID}`,
+        `http://127.0.0.1:8090/users/register/${selectedSportID}`,
         formData,
         {
           headers: {
@@ -145,7 +145,7 @@ const FormTim = () => {
         const formProof = new FormData();
         formProof.append("proof", transferProof);
         const resProof = await axios.post(
-          `http://localhost:8090/team/${teamId}/confirmPayment`,
+          `http://127.0.0.1:8090/team/${teamId}/confirmPayment`,
           formProof
         );
       }

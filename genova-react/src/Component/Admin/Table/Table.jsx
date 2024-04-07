@@ -56,8 +56,8 @@ export default function BasicTable({ data }) {
           style={{
             boxShadow: "0px 13px 20px 0px #80808029",
             maxHeight: 400,
-            overflow: "auto",
           }}
+          className="overflow-scroll"
         >
           <Table sx={{ minWidth: 500 }} aria-label="simple table">
             <TableHead>
@@ -80,6 +80,7 @@ export default function BasicTable({ data }) {
                     scope="row"
                     style={{ width: "33.33%" }}
                     onClick={() => handleTeamClick(row.team_name)}
+                    className="cursor-pointer"
                   >
                     {row.team_name}
                   </TableCell>

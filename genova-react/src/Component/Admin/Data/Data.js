@@ -7,7 +7,7 @@ import {
   UilChart,
   UilSignOutAlt,
 } from "@iconscout/react-unicons";
-import gambar1 from "../../../Assets/imgs/img1.png";
+import gambar1 from "../../../Assets/imgs/img1.webp";
 
 // Sidebar Data
 export const SidebarData = [
@@ -80,7 +80,6 @@ export const rows = [
   },
 ];
 
-
 export const anggota = [
   {
     nama: "John Doe",
@@ -118,4 +117,3 @@ export const anggota = [
     namaTeam: "Charlie",
   },
 ];
-

@@ -1,39 +1,38 @@
-import { React, useState } from 'react';
+import { React, useState } from "react";
 import "./Ulympic.css";
-import img1 from "../../Assets/Images/badminton.jpeg"
-import img2 from "../../Assets/Images/Basket.jpg"
-import img3 from "../../Assets/Images/Futsal.jpg"
-import img4 from "../../Assets/Images/Voli.jpg"
+import img1 from "../../Assets/Images/badminton.webp";
+import img2 from "../../Assets/Images/Basket.webp";
+import img3 from "../../Assets/Images/Futsal.webp";
+import img4 from "../../Assets/Images/Voli.webp";
 
-
-function ListLomba(){
-    const [active, setActive] = useState(0);
+function ListLomba() {
+  const [active, setActive] = useState(0);
 
   const Lomba = [
     {
       name: "Badminton",
       description: `tes`,
-      backgroundUrl: img1
+      backgroundUrl: img1,
     },
     {
       name: "Basket",
       description: `tes`,
-      backgroundUrl: img2
+      backgroundUrl: img2,
     },
     {
       name: "Futsal",
       description: `tes`,
-      backgroundUrl: img3
+      backgroundUrl: img3,
     },
     {
       name: "Voli",
       description: `tes`,
-      backgroundUrl: img4
-    }
-  ]
-    return(
-<div className="listlomba text-white">
-    <h1 className='pilih text-center text-3xl text-black '>Pilih Lomba</h1>
+      backgroundUrl: img4,
+    },
+  ];
+  return (
+    <div className="listlomba text-white">
+      <h1 className="pilih text-center text-3xl text-black ">Pilih Lomba</h1>
       <ul>
         {Lomba.map((Lomba, i) => (
           <li
@@ -43,24 +42,20 @@ function ListLomba(){
             className={active === i ? "active" : ""}
             onMouseEnter={() => setActive(i)}
           >
-            
-            <h3 className='pilih listlomba'>{Lomba.name}</h3>
+            <h3 className="pilih listlomba">{Lomba.name}</h3>
             <div className="section-content">
               <div className="inner">
                 <div className="bio">
-                  <h2 className='fontt listlomba'>{Lomba.name}</h2>
-                  <p className='fontt listlomba'>{Lomba.description}</p>
+                  <h2 className="fontt listlomba">{Lomba.name}</h2>
+                  <p className="fontt listlomba">{Lomba.description}</p>
                 </div>
               </div>
             </div>
           </li>
         ))}
       </ul>
-      <div>
-
-      </div>
+      <div></div>
     </div>
-    );
-    
+  );
 }
 export default ListLomba;
