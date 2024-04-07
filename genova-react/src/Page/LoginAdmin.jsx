@@ -20,7 +20,7 @@ function LoginAdmin() {
     formData.append("password", password);
     try {
       const response = await axios.post(
-        `http://localhost:8090/admin/login`,
+        `http://127.0.0.1:8090/admin/login`,
         JSON.stringify({ email, password }), // Sending data as JSON
         {
           headers: {

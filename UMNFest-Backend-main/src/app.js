@@ -5,11 +5,11 @@ const connectDB = require("./config/db");
 const Race = require("./models/Race");
 const RaceDetail = require("./models/RaceDetail");
 const Admin = require("./models/Admin");
-const Team = require("./models/Team")
-const User = require("./models/User")
+const Team = require("./models/Team");
+const User = require("./models/User");
 const fs = require("fs");
-const bcrypt = require('bcrypt');
-var cors = require('cors');
+const bcrypt = require("bcrypt");
+var cors = require("cors");
 
 const MONGODB_URI = process.env.MONGODB_URI;
 if (!MONGODB_URI) {
@@ -21,7 +21,7 @@ const port = process.env.PORT || 3000; // default
 app.use(express.json());
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
-app.use(cors())
+app.use(cors());
 
 // e-ulympic: valo, dan ml
 // ulympic: basket, futsal, badmin, volly
@@ -41,7 +41,7 @@ const apiRoutes = require("./api/");
 app.use("/", apiRoutes);
 
 app.listen(port, () => {
-  console.log(`UMNFest API Listening at http://localhost:${port}`);
+  console.log(`UMNFest API Listening at http://127.0.0.1:${port}`);
 });
 
 async function firstStart() {
@@ -78,11 +78,11 @@ volly 10
   //   }
   // };
   // await removeTeamIdIndex()
-  
+
   // await User.deleteMany()
   // await Team.deleteMany();
   //  await Race.deleteMany()
-//  await RaceDetail.deleteMany()
+  //  await RaceDetail.deleteMany()
   await RaceDetail.estimatedDocumentCount()
     .then((count) => {
       const raceNames = [
@@ -99,42 +99,16 @@ volly 10
         "U-Care",
         "Unify",
       ];
-      const raceLimitTeams = [
-        0,
-        16,
-        32,
-        12,
-        12,
-        12,
-        12,
-        7,
-        0,
-        10,
-        1
-      ]
-      const raceMemberCount = [
-        0,
-        6,
-        6,
-        2,
-        2,
-        1,
-        1,
-        0,
-        10,
-        14,
-        6,
-        0,
-        0,
-      ]
+      const raceLimitTeams = [0, 16, 32, 12, 12, 12, 12, 7, 0, 10, 1];
+      const raceMemberCount = [0, 6, 6, 2, 2, 1, 1, 0, 10, 14, 6, 0, 0];
       if (count === 0 || count != raceNames.length) {
         var i = 0;
         raceNames.forEach((raceName) => {
           new RaceDetail({
             race_name: raceName,
-            race_description: "Lomba "+ raceName,
+            race_description: "Lomba " + raceName,
             race_limit_teams: raceLimitTeams[i],
-            race_members: raceMemberCount[i]
+            race_members: raceMemberCount[i],
           })
             .save()
             .then(() => {
@@ -164,15 +138,17 @@ volly 10
     ];
     const salt = bcrypt.genSaltSync(10);
     if (count == 0 || count < adminList) {
-        adminList.forEach((user) => {
-          const hash = bcrypt.hashSync(user.password, salt);
-            new Admin({email: user.email, password: hash}).save()
-            .then(() => {
-                console.log(`${user.email} Added as admin!`)
-            }).catch(e => {
-                console.log(`${user.email} failed to add as admin!`)
-            })
-        })
+      adminList.forEach((user) => {
+        const hash = bcrypt.hashSync(user.password, salt);
+        new Admin({ email: user.email, password: hash })
+          .save()
+          .then(() => {
+            console.log(`${user.email} Added as admin!`);
+          })
+          .catch((e) => {
+            console.log(`${user.email} failed to add as admin!`);
+          });
+      });
     }
   });
 }

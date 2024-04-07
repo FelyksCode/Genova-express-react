@@ -13,12 +13,12 @@ const Sidebar = ({ setSelectedSection, setResponse }) => {
     setSelectedSection(index);
 
     try {
-      const res = await axios.get(`http://localhost:8090/team`);
+      const res = await axios.get(`http://127.0.0.1:8090/team`);
 
       // Ensure you're accessing the teams array correctly from the response
       const detailedDataPromises = res.data.teams.map(async (team) => {
         const resDetail = await axios.get(
-          `http://localhost:8090/team/${team._id}`
+          `http://127.0.0.1:8090/team/${team._id}`
         );
         return { ...team, ...resDetail.data }; // Correctly merge the team info
       });
