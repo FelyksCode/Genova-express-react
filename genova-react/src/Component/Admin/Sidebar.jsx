@@ -69,6 +69,12 @@ const Sidebar = ({ setSelectedSection, setResponse }) => {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    window.location.reload();
+  };
+
   return (
     <>
       <motion.div
@@ -102,8 +108,9 @@ const Sidebar = ({ setSelectedSection, setResponse }) => {
                 <span>{item.heading}</span>
               </div>
             ))}
-            <div className="menuItem">
+            <div className="menuItem" onClick={handleLogout}>
               <UilSignOutAlt />
+              <span>Logout</span>
             </div>
           </div>
         </motion.div>
