@@ -3,16 +3,33 @@ import React, { useEffect, useState } from "react";
 import "./Stylerangkaian.css";
 
 //foto
-import image1 from "../../../Assets/NewsEvent/dumbimg1.webp";
-import image2 from "../../../Assets/NewsEvent/dumbimg2.webp";
-import image3 from "../../../Assets/NewsEvent/dumbimg3.webp";
+import image1 from "../../../Assets/NewsEvent/UNVEILING.webp";
+import image2 from "../../../Assets/NewsEvent/E-ULYMPIC.webp";
+import image3 from "../../../Assets/NewsEvent/UCARE.webp";
 import image4 from "../../../Assets/NewsEvent/dumbimg4.webp";
+import image5 from "../../../Assets/NewsEvent/dumbimg4.webp";
 
 import logo1 from "../../../Assets/Rangkaian/Unveiling.webp";
 import logo2 from "../../../Assets/Rangkaian/E-Ulympic.webp";
 import logo3 from "../../../Assets/Rangkaian/Ucare.webp";
 import logo4 from "../../../Assets/Rangkaian/Ulympic.webp";
 import logo5 from "../../../Assets/Rangkaian/Unify.webp";
+
+import bg1 from "../../../Assets/NewsEvent/UNVEILING_1.webp";
+import bg2 from "../../../Assets/NewsEvent/E-ULYMPIC_1.webp";
+import bg3 from "../../../Assets/NewsEvent/UCARE_1.webp";
+
+import gambar1 from "../../../Assets/Rangkaian/Unveiling_1.webp";
+import gambar2 from "../../../Assets/Rangkaian/E-Ulympic_1.webp";
+import gambar3 from "../../../Assets/Rangkaian/Ucare_1.webp";
+import gambar4 from "../../../Assets/Rangkaian/Ulympic_1.webp";
+import gambar5 from "../../../Assets/Rangkaian/Unify_1.webp";
+
+import judul1 from "../../../Assets/Rangkaian/Judul_Unveiling.webp";
+import judul2 from "../../../Assets/Rangkaian/Judul_E-Ulympic.webp";
+import judul3 from "../../../Assets/Rangkaian/Judul_Ucare.webp";
+import judul4 from "../../../Assets/Rangkaian/Judul_Ulympic.webp";
+import judul5 from "../../../Assets/Rangkaian/Judul_Unify.webp";
 
 function Rangkaian() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -29,7 +46,7 @@ function Rangkaian() {
 
   // home hp
   const logos = [logo1, logo2, logo3, logo4, logo5];
-  const images = [image1, image2, image3, image4, image4];
+  const images = [image1, image2, image3, image4, image5];
   const Titles = ["Unveiling", "E-Ulympic", "Ucare", "Ulympic", "Unify"];
   const Tujuan = ["unveiling", "eulympic", "ucare", "ulympic", "unify"];
   const [isHovered, setIsHovered] = useState(false);
@@ -39,12 +56,13 @@ function Rangkaian() {
       <div className="w-full h-full bg-gray-700">
         {images.map((image, index) => (
           <div key={index} className="relative w-full h-[200px]">
-            <a className="flex justify-center items-center h-full hover:scale-110">
+            <div className="flex justify-center items-center h-full hover:scale-110">
               <img
                 src={image}
                 className="object-cover  h-[200px] w-full block duration-300 transition-transform hover:scale-110"
+                alt="BACKGROUND"
               />
-            </a>
+            </div>
             <a
               className="inset-0 flex absolute justify-center items-center text-white text-xl font-extrabold bg-black bg-opacity-50 opacity-100 hover:opacity-0 transition-opacity duration-300"
               onMouseEnter={() => setIsHovered(false)}
@@ -54,7 +72,7 @@ function Rangkaian() {
               <h1 className="px-10">{Titles[index]}</h1>
               {isHovered && (
                 <div className="flex items-center justify-end w-full top-full pr-10 mt-2">
-                  <img src={logos[index]} className="w-20" />
+                  <img src={logos[index]} className="w-20" alt="LOGO" />
                 </div>
               )}
             </a>
@@ -70,56 +88,29 @@ function Rangkaian() {
           <a href="/unveiling" alt="unveiling" target="_blank">
             <div class="card">
               <div class="wrapper">
-                <img
-                  src="https://ggayane.github.io/css-experiments/cards/dark_rider-cover.jpg"
-                  class="cover-image"
-                />
+                <img src={bg1} class="cover-image" alt="coverimage" />
               </div>
-              <img
-                src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png"
-                class="title"
-              />
-              <img
-                src="https://ggayane.github.io/css-experiments/cards/dark_rider-character.png"
-                class="character"
-              />
+              <img src={judul1} class="title" alt="title" />
+              <img src={gambar1} class="character" alt="character" />
             </div>
           </a>
 
           <a href="/eulympic" alt="eulympic" target="_blank">
             <div class="card">
               <div class="wrapper">
-                <img
-                  src="https://ggayane.github.io/css-experiments/cards/force_mage-cover.jpg"
-                  class="cover-image"
-                />
+                <img src={bg2} class="cover-image" alt="coverimage" />
               </div>
-              <img
-                src="https://ggayane.github.io/css-experiments/cards/force_mage-title.png"
-                class="title"
-              />
-              <img
-                src="https://ggayane.github.io/css-experiments/cards/force_mage-character.png"
-                class="character"
-              />
+              <img src={judul2} class="title" alt="title" />
+              <img src={gambar2} class="character" alt="charcter" />
             </div>
           </a>
           <a href="/ucare" alt="ucare" target="_blank">
             <div class="card">
               <div class="wrapper">
-                <img
-                  src="https://ggayane.github.io/css-experiments/cards/dark_rider-cover.jpg"
-                  class="cover-image"
-                />
+                <img src={bg3} class="cover-image" alt="coverimage" />
               </div>
-              <img
-                src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png"
-                class="title"
-              />
-              <img
-                src="https://ggayane.github.io/css-experiments/cards/dark_rider-character.png"
-                class="character"
-              />
+              <img src={judul3} class="title" alt="title" />
+              <img src={gambar3} class="character" alt="character" />
             </div>
           </a>
 
@@ -129,16 +120,11 @@ function Rangkaian() {
                 <img
                   src="https://ggayane.github.io/css-experiments/cards/force_mage-cover.jpg"
                   class="cover-image"
+                  alt="coverimage"
                 />
               </div>
-              <img
-                src="https://ggayane.github.io/css-experiments/cards/force_mage-title.png"
-                class="title"
-              />
-              <img
-                src="https://ggayane.github.io/css-experiments/cards/force_mage-character.png"
-                class="character"
-              />
+              <img src={judul4} class="title" alt="title" />
+              <img src={gambar4} class="character4" alt="character" />
             </div>
           </a>
 
@@ -148,16 +134,11 @@ function Rangkaian() {
                 <img
                   src="https://ggayane.github.io/css-experiments/cards/dark_rider-cover.jpg"
                   class="cover-image"
+                  alt="coverimage"
                 />
               </div>
-              <img
-                src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png"
-                class="title"
-              />
-              <img
-                src="https://ggayane.github.io/css-experiments/cards/dark_rider-character.png"
-                class="character"
-              />
+              <img src={judul5} class="title" alt="title" />
+              <img src={gambar5} class="character5" alt="character" />
             </div>
           </a>
         </div>
