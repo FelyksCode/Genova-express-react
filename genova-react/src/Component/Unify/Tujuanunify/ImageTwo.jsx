@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import IonIcon from "@reacticons/ionicons";
-import Trailer from "../../../Assets/Videos/introoprec.webm";
+import Trailer from "../../../Assets/Videos/introoprec.mov";
 
 import { Fade } from "react-reveal";
 

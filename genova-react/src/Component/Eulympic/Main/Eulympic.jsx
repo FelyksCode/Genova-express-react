@@ -1,7 +1,7 @@
 // Unify.jsx
 import React from "react";
 import "./StyleEulympic.css";
-import LogoEulympic from "../../../Assets/Rangkaian/E-Ulympic.png";
+import LogoEulympic from "../../../Assets/Rangkaian/E-Ulympic.webp";
 
 function Eulympic() {
   return (
@@ -18,11 +18,14 @@ function Eulympic() {
           {/* Add your explanatory content here */}
           <h1>E-ulympic</h1>
           <p>
-            𝐄-𝐔𝐋𝐘𝐌𝐏𝐈𝐂 merupakan kegiatan yang bertujuan untuk menanamkan dan meningkatkan jiwa kompetitif para #Legions melalui e-sports! 🗡️💫👸🏻
-            E-Ulympic dapat menjadi wadah bagi seluruh mahasiswa/i untuk menunjukan bakat dan skill dalam turnamen e-sports! 🔥✨
+            𝐄-𝐔𝐋𝐘𝐌𝐏𝐈𝐂 merupakan kegiatan yang bertujuan untuk menanamkan dan
+            meningkatkan jiwa kompetitif para #Legions melalui e-sports! 🗡️💫👸🏻
+            E-Ulympic dapat menjadi wadah bagi seluruh mahasiswa/i untuk
+            menunjukan bakat dan skill dalam turnamen e-sports! 🔥✨
             <br />
             <br />
-            𝐄-𝐔𝐋𝐘𝐌𝐏𝐈𝐂 💫 mengajak #Legions untuk berani mengambil resiko (Daring) dalam menghadapi tantangan baru (Adventurous) ✨🗡️
+            𝐄-𝐔𝐋𝐘𝐌𝐏𝐈𝐂 💫 mengajak #Legions untuk berani mengambil resiko
+            (Daring) dalam menghadapi tantangan baru (Adventurous) ✨🗡️
           </p>
         </div>
       </div>

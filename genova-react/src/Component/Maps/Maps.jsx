@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Fade } from "react-reveal";
-import MapsVid from "../../Assets/Map/Bg_Maps_Ufest.webm";
+import MapsVid from "../../Assets/Map/Bg_Maps_Ufest.mov";
 import UfestLogo from "../../Assets/Images/UfestLogo.webp";
 
 function Maps({ onVideoEnd }) {

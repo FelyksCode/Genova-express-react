@@ -85,7 +85,7 @@ function DaftarPanti() {
               >
                 <p
                   style={{ fontFamily: "Akbaal, sans-serif" }}
-                  className="text-xl font-semibold"
+                  className="text-xl font-semibold text-center"
                 >
                   {d.name}
                 </p>

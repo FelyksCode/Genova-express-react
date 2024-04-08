@@ -6,7 +6,7 @@ import img2 from "../../Assets/Rangkaian/Ucare.webp";
 import img3 from "../../Assets/Rangkaian/Unveiling.webp";
 import img4 from "../../Assets/Rangkaian/Ulympic.webp";
 import img5 from "../../Assets/Rangkaian/E-Ulympic.webp";
-import CloudVid from "../../Assets/Map/cloud.webm";
+import CloudVid from "../../Assets/Map/cloud.mov";
 import "../../App.css";
 import { Fade } from "react-reveal";
 

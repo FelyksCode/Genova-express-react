@@ -1,5 +1,5 @@
+import IonIcon from "@reacticons/ionicons";
 import React, { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa"; // Import icons from react-icons
 import Button from "./Button";
 import Logo from "../../Assets/Images/UfestLogo.webp";
 import { Link } from "react-router-dom";
@@ -28,7 +28,7 @@ function Navbar() {
           onClick={() => setOpen(!open)}
           className="text-3xl absolute right-8 top-6 cursor-pointer lg:md:hidden"
         >
-          {open ? <FaTimes /> : <FaBars />} {/* Use react-icons here */}
+          <IonIcon name={open ? "close" : "menu"}></IonIcon>
         </div>
         <ul
           className={`rounded-3xl lg:md:flex lg:md:items-center lg:md:pb-0 pb-12 absolute lg:md:static bg-slate-100 lg:md:bg-opacity-0 md:z-auto z-[-1] left-0 w-full lg:md:w-auto lg:md:px-0 px-[120px] transition-all duration-500 ease-in ${

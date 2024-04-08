@@ -1,0 +1,311 @@
+.ulympic {
+  background: linear-gradient(
+    to bottom,
+    #f1c423,
+    #f2bf20,
+    #f3bb1e,
+    #f3b61c,
+    #f4b11a,
+    #f6b417,
+    #f7b614,
+    #f9b911,
+    #fbc50b,
+    #fbd006,
+    #fbdc06,
+    #fae80b
+  );
+  padding: 2%;
+  height: auto;
+}
+.kartukecil {
+  height: 70vh;
+}
+.kartu {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.kartu-inner {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: transform 0.3s;
+}
+
+.kartu:hover .kartu-inner {
+  transform: rotateY(180deg);
+}
+
+.kartu-front,
+.kartu-back {
+  position: absolute;
+  width: 100;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 24px;
+}
+
+.kartu-front {
+  transform: rotateY(0deg);
+}
+
+.kartu-back {
+  transform: rotateY(180deg);
+}
+
+.logo-image {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.logo-image1 {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  border-radius: 10px;
+  justify-content: center;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.bio {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: min-content;
+  grid-gap: 24px;
+}
+
+.listlomba ul {
+  margin-left: 100px;
+  overflow-x: hidden;
+  display: flex;
+  height: 70vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style-type: none;
+  width: 100%;
+  min-width: 100%;
+  flex-direction: column;
+}
+@media only screen and (min-width: 1280px) {
+  .listlomba ul {
+    flex-direction: row;
+  }
+}
+
+.listlomba li {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  cursor: pointer;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.listlomba li:before {
+  content: "";
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.75);
+}
+.listlomba li.active {
+  flex: 6;
+  cursor: default;
+}
+.listlomba li.active:before {
+  background: linear-gradient(180deg, rgba(15, 15, 15, 0) 0%, #111111 100%);
+}
+
+.listlomba h2 {
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .listlomba h2 {
+    font-size: 48px;
+    line-height: 48px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .listlomba h2 {
+    font-size: 64px;
+    line-height: 64px;
+  }
+}
+
+.listlomba h3 {
+  font-weight: bold;
+  white-space: nowrap;
+  position: absolute;
+  z-index: 30;
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+  transition: top 0.35s, opacity 0.15s;
+  transform-origin: 0 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+@media only screen and (min-width: 1280px) {
+  .listlomba h3 {
+    top: 85%;
+    left: 50%;
+    font-size: 24px;
+    transform: translate(-20px, -50%) rotate(-90deg);
+  }
+}
+.active h3 {
+  opacity: 0;
+  top: 200%;
+}
+
+.section-content {
+  position: relative;
+  z-index: 30;
+  opacity: 0;
+  align-self: flex-end;
+  transition: all 0.35s 0.1s ease-out;
+}
+.active .section-content {
+  opacity: 1;
+}
+.section-content .inner {
+  position: absolute;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 1fr;
+  grid-column-gap: 20px;
+  align-items: flex-end;
+  left: 0;
+  bottom: 0;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
+}
+@media only screen and (min-width: 768px) {
+  .section-content .inner {
+    grid-auto-flow: column;
+    grid-template-columns: calc(100% - 340px) 300px;
+    grid-column-gap: 40px;
+    padding: 40px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .section-content .inner {
+    grid-auto-flow: column;
+    grid-template-columns: 460px 200px;
+    grid-column-gap: 40px;
+    padding: 40px;
+  }
+}
+.active .section-content .inner {
+  opacity: 1;
+}
+
+.artist-profile-link {
+  pointer-events: none;
+}
+.active .artist-profile-link {
+  pointer-events: all;
+}
+.bentukbutton {
+  width: 50%;
+  height: 50px;
+  position: relative;
+  background-color: rgb(247, 201, 63);
+  cursor: pointer;
+  border: 2px solid #252525;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #333;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.bentukbutton .btn-txt1 {
+  z-index: 1;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.bentukbutton.type1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: black;
+  border-radius: 30px;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+
+.bentukbutton:hover {
+  box-shadow: 1px 1px 200px #252525;
+  color: black;
+  border: none;
+}
+
+.bentukbutton.type1:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
+}
+
+.descUlympic {
+  background-color: #ffe666;
+  padding: 10px;
+  opacity: 300;
+}
+
+@font-face {
+  font-family: "Forum-Regular";
+  src: local("Akbaal"),
+    url("../../../Assets/Font/Forum/Forum-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Akbaal";
+  src: local("Akbaal"),
+    url("../../../Assets/Font/akbaal/akbaal.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fontt {
+  font-family: "Forum-Regular";
+}
+
+.pilih {
+  margin-top: 10px;
+  font-family: "Akbaal";
+  font-size: 3rem;
+}

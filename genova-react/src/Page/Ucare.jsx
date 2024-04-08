@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../Component/Navbar/Navbar";
-import Tujuan from "../Component/Tujuan/Tujuan";
+import Tujuan from "../Component/Unify/Tujuanunify/Tujuan";
 import { Fade } from "react-reveal";
 import Footer from "../Component/Footer/Footer";
-import Logo from "../Component/Ucare/Logo/Logo"
-import Panti from "../Component/Ucare/DaftarPanti/DaftarPanti"
-import Tombol from "../Component/Ucare/Button/Button"
-
-
+import Logo from "../Component/Ucare/Logo/Logo";
+import Panti from "../Component/Ucare/DaftarPanti/DaftarPanti";
+import Tombol from "../Component/Ucare/Button/Button";
 
 function Home() {
   return (

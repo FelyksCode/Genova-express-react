@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import "./StyleEsports.css";
 import Valorant from "../../../Assets/Images/valorant.webp";
 import Mole from "../../../Assets/Images/mole.webp";
+import FormML from "./FormML";
+import FormValorant from "./FormValorant";
 
 function Esports() {
   const [countdown, setCountdown] = useState({
     days: "00",
     hours: "00",
     minutes: "00",
-    seconds: "00"
+    seconds: "00",
   });
 
   useEffect(() => {
@@ -24,7 +26,7 @@ function Esports() {
           days: "00",
           hours: "00",
           minutes: "00",
-          seconds: "00"
+          seconds: "00",
         });
         return;
       }
@@ -35,10 +37,10 @@ function Esports() {
       const s = Math.floor(diff / 1000) % 60;
 
       setCountdown({
-        days: d < 10 ? '0' + d : d.toString(),
-        hours: h < 10 ? '0' + h : h.toString(),
-        minutes: m < 10 ? '0' + m : m.toString(),
-        seconds: s < 10 ? '0' + s : s.toString()
+        days: d < 10 ? "0" + d : d.toString(),
+        hours: h < 10 ? "0" + h : h.toString(),
+        minutes: m < 10 ? "0" + m : m.toString(),
+        seconds: s < 10 ? "0" + s : s.toString(),
       });
     };
 
@@ -76,7 +78,11 @@ function Esports() {
           </div>
         </div>
 
-        <a className="button-daftar" href="/home"> Daftar </a>
+        {/* <a className="button-daftar" href="/home">
+          {" "}
+          Daftar{" "}
+        </a> */}
+        <FormML />
       </div>
 
       <div className="valorant">
@@ -106,7 +112,11 @@ function Esports() {
           </div>
         </div>
 
-        <a className="button-daftar" href="/home"> Daftar </a>
+        {/* <a className="button-daftar" href="/home">
+          {" "}
+          Daftar{" "}
+        </a> */}
+        <FormValorant />
       </div>
     </div>
   );
