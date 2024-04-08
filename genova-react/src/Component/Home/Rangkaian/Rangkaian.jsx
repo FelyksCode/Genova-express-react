@@ -69,7 +69,7 @@ function Rangkaian() {
               onMouseLeave={() => setIsHovered(true)}
               href={`/${Tujuan[index]}`}
             >
-              <h1 className="px-10">{Titles[index]}</h1>
+              <h1 className="font-custom px-10">{Titles[index]}</h1>
               {isHovered && (
                 <div className="flex items-center justify-end w-full top-full pr-10 mt-2">
                   <img src={logos[index]} className="w-20" alt="LOGO" />
