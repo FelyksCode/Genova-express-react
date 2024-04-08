@@ -5,31 +5,30 @@ import { faEnvelope as regularEnvelope } from "@fortawesome/free-regular-svg-ico
 import {
   faLine,
   faInstagram,
-  faFacebook,
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
   return (
-    <div className="static bottom-0">
+    <div className="static bottom-0" style={{ background: "rgb(72,75,117)" }}>
       <footer className="footer p-10 bg-base-200 text-base-content ">
         <div>
           <div className="flex flex-col lg:flex-row items-center justify-between">
-            <div className="hidden lg:block py-3 w-64">
-              <div className="text-4xl font-bold mb-5">Alamat</div>
+            <div className="hidden lg:block py-3 w-64 text-white">
+              <div className="text-4xl font-bold mb-5 ">Alamat</div>
               <div className="text-md w-80">
                 Universitas Multimedia Nusantara Jl. Scientia Boulevard, Gading
                 Serpong, Tangerang Banten 15811, Indonesia.
               </div>
             </div>
-            <div className="py-3 mx-auto w-64">
+            <div className="py-3 mx-auto w-64 text-white">
               <img src={logo} className=" w-40 mx-auto" alt="Logo" />
               <div className="text-center hidden lg:block">
                 <div>&#9400; UMN Festival 2024</div>
                 <div>By Genova</div>
               </div>
             </div>
-            <div className="py-3 text-center w-64">
+            <div className="py-3 text-center w-64 text-white">
               <div className="text-4xl ps-3 font-bold text-center lg:text-left">
                 Kontak
               </div>
