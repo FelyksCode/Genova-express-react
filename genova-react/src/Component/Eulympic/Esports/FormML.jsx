@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./Eulympic.css";
 import FormTemplate from "./FormTemplate2";
 import axios from "axios";
+import StatusParent from "../../Alert/StatusParent";
 
 const FormML = () => {
   const url = process.env.REACT_APP_URL_BE;
   const port = process.env.REACT_APP_PORT;
+  const [errorMessage, setErrorMessage] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [step, setStep] = useState(1);
   const [teamName, setTeamName] = useState("");
@@ -87,38 +89,39 @@ const FormML = () => {
         `${url}:${port}/users/register/${selectedSportID}`,
         formData
       );
-      const teamId = response.data.data.team.team_id;
+      if (response.data.error) {
+        const message = response.data || "An unexpected error occurred";
+        setErrorMessage(message);
+      } else {
+        const teamId = response.data?.data?.team?.team_id;
+        if (transferProof) {
+          const formProof = new FormData();
+          formProof.append("proof", transferProof);
+          const resProof = await axios.post(
+            `${url}:${port}/team/${teamId}/confirmPayment`,
+            formProof
+          );
+          setErrorMessage({
+            message: "Team registration and payment confirmation succeeded!",
+            error: false,
+          });
+        }
 
-      if (transferProof) {
-        const formProof = new FormData();
-        formProof.append("proof", transferProof);
-        const resProof = await axios.post(
-          `${url}:${port}/team/${teamId}/confirmPayment`,
-          formProof
-        );
+        if (!errorMessage.error) {
+          // Reset form and state after submission
+          setStep(1);
+          setTeamName("");
+          setLeaderIdLine("");
+          setSelectedSport("");
+          setMembers([]);
+          setTransferProof("");
+        }
       }
     } catch (error) {
-      if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
-        console.error("Error: ", error.response.data);
-      } else if (error.request) {
-        // The request was made but no response was received
-        console.error("Error: ", error.request);
-      } else {
-        // Something happened in setting up the request that triggered an Error
-        console.error("Error: ", error.message);
-      }
+      console.error("Error:", error);
+      const message = error.response?.data || "An unexpected error occurred";
+      setErrorMessage(message);
     }
-
-    // Reset form and state after submission
-    setShowModal(false);
-    setStep(1);
-    setTeamName("");
-    setLeaderIdLine("");
-    setSelectedSport("");
-    setMembers([]);
-    setTransferProof("");
   };
 
   const handleCloseModal = () => {
@@ -141,9 +144,10 @@ const FormML = () => {
 
       {showModal && (
         <div
-          className="fixed top-0 right-0 bottom-0 left-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+          className="fixed top-0 right-0 bottom-0 left-0 z-50 flex items-center justify-center bg-black bg-opacity-50 flex-col"
           onClick={toggleModal}
         >
+          {errorMessage && <StatusParent message={errorMessage} />}
           <div
             className="relative p-4 w-full max-w-md bg-white rounded-lg shadow-lg dark:bg-gray-700"
             onClick={(e) => e.stopPropagation()}

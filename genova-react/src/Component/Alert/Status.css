@@ -1,0 +1,33 @@
+.alert {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alert-danger {
+  background-color: #dc3545; /* Red */
+  border-color: #dc3545;
+}
+
+.alert-success {
+  background-color: #28a745; /* Green */
+  border-color: #28a745;
+}
+
+.alert-info {
+  background-color: #17a2b8; /* You can adjust this color based on your design */
+  border-color: #17a2b8;
+}
+
+.alert-close {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.2rem;
+}

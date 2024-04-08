@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import FormData from "form-data";
+import StatusParent from "../../Alert/StatusParent";
 // import fs from "fs";
 
 // Komponen AnggotaTim
@@ -33,12 +34,12 @@ const AnggotaTim = ({ index, handleInputChange }) => {
 const FormTim = () => {
   const url = process.env.REACT_APP_URL_BE;
   const port = process.env.REACT_APP_PORT;
+  const [errorMessage, setErrorMessage] = useState("");
   const [anggotaTim, setAnggotaTim] = useState([]);
   const [namateam, setNamaTeam] = useState("");
   const [idline, setIdLine] = useState("");
   const [transferProof, setTransferProof] = useState("");
   const [selectedSportID, setSelectedSportID] = useState("");
-  let newId = "";
 
   const handleJenisTimChange = (e) => {
     const jenis = e.target.value;
@@ -146,59 +147,77 @@ const FormTim = () => {
           },
         }
       );
-      const teamId = response.data.data.team.team_id;
+      if (response.data.error) {
+        const message = response.data || "An unexpected error occurred";
+        setErrorMessage(message);
+      } else {
+        const teamId = response.data?.data?.team?.team_id;
 
-      if (transferProof) {
-        const formProof = new FormData();
-        formProof.append("proof", transferProof);
-        const resProof = await axios.post(
-          `${url}:${port}/team/${teamId}/confirmPayment`,
-          formProof
-        );
+        if (transferProof) {
+          const formProof = new FormData();
+          formProof.append("proof", transferProof);
+          const resProof = await axios.post(
+            `${url}:${port}/team/${teamId}/confirmPayment`,
+            formProof
+          );
+          setErrorMessage({
+            message: "Team registration and payment confirmation succeeded!",
+            error: false,
+          });
+        }
       }
     } catch (error) {
       console.error("Error:", error);
+      const message = error.response?.data || "An unexpected error occurred";
+      setErrorMessage(message);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Nama Team:</label>
-      <input
-        type="text"
-        name="nameteam"
-        value={namateam}
-        onChange={handleNamaTeamChange}
-      />
-
-      <label>Id Line:</label>
-      <input
-        type="text"
-        name="idline"
-        value={idline}
-        onChange={handleIdLineChange}
-      />
-      <label>Pilih Jenis Tim:</label>
-      <select onChange={handleJenisTimChange}>
-        <option value="">Pilih Jenis Tim</option>
-        <option value="basket">Basket (7 anggota)</option>
-        <option value="badmintonGandaPutra">Badminton (2 anggota)</option>
-        <option value="badmintonGandaCampuran">Badminton (2 anggota)</option>
-        <option value="futsal">Futsal (12 anggota)</option>
-        <option value="volly">Volly (10 anggota)</option>
-      </select>
-      {anggotaTim.map((anggota, index) => (
-        <AnggotaTim
-          key={index}
-          index={index}
-          handleInputChange={(e) => handleInputChange(e, index)}
+    <>
+      {errorMessage && <StatusParent message={errorMessage} />}
+      <form onSubmit={handleSubmit}>
+        <label>Nama Team:</label>
+        <input
+          type="text"
+          name="nameteam"
+          value={namateam}
+          onChange={handleNamaTeamChange}
         />
-      ))}
-      <br />
-      <label>Foto Pembayaran:</label>
-      <input type="file" name={`proof`} onChange={handleTransferProofChange} />
-      <button type="submit">Submit</button>
-    </form>
+
+        <label>Id Line:</label>
+        <input
+          type="text"
+          name="idline"
+          value={idline}
+          onChange={handleIdLineChange}
+        />
+        <label>Pilih Jenis Tim:</label>
+        <select onChange={handleJenisTimChange}>
+          <option value="">Pilih Jenis Tim</option>
+          <option value="basket">Basket (7 anggota)</option>
+          <option value="badmintonGandaPutra">Badminton (2 anggota)</option>
+          <option value="badmintonGandaCampuran">Badminton (2 anggota)</option>
+          <option value="futsal">Futsal (12 anggota)</option>
+          <option value="volly">Volly (10 anggota)</option>
+        </select>
+        {anggotaTim.map((anggota, index) => (
+          <AnggotaTim
+            key={index}
+            index={index}
+            handleInputChange={(e) => handleInputChange(e, index)}
+          />
+        ))}
+        <br />
+        <label>Foto Pembayaran:</label>
+        <input
+          type="file"
+          name={`proof`}
+          onChange={handleTransferProofChange}
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </>
   );
 };
 
