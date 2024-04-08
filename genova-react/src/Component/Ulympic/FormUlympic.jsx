@@ -46,6 +46,7 @@ const FormUlympic = () => {
     basketball: 7,
     badmintonGandaCampuran: 2,
     badmintonGandaPutra: 2,
+    badmintonGandaPutri: 2,
     futsal: 12,
   };
 
@@ -74,6 +75,9 @@ const FormUlympic = () => {
         break;
       case "badmintonGandaPutra":
         newId = process.env.REACT_APP_BADMINTON_GANDA_PUTRA;
+        break;
+      case "badmintonGandaPutri":
+        newId = process.env.REACT_APP_BADMINTON_GANDA_PUTRI;
         break;
       case "futsal":
         newId = process.env.REACT_APP_FUTSAL;
@@ -276,6 +280,9 @@ const FormUlympic = () => {
                       </option>
                       <option value="badmintonGandaPutra">
                         Badminton Ganda Putra
+                      </option>
+                      <option value="badmintonGandaPutri">
+                        Badminton Ganda Putri
                       </option>
                       <option value="futsal">Futsal</option>
                     </select>

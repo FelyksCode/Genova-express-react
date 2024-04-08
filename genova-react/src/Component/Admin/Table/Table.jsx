@@ -23,8 +23,10 @@ export default function BasicTable({ data }) {
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [openTeamModal, setOpenTeamModal] = React.useState(false);
   const [openMemberModal, setOpenMemberModal] = React.useState(false);
+  const [openProofModal, setOpenProofModal] = React.useState(false);
   const [selectedTeam, setSelectedTeam] = React.useState(null);
   const [selectedMember, setSelectedMember] = React.useState(null);
+  const [selectedProof, setSelectedProof] = React.useState(null);
   const [teamMembers, setTeamMembers] = React.useState([]);
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -70,6 +72,12 @@ export default function BasicTable({ data }) {
     setOpenMemberModal(true);
   };
 
+  const paymentProofClick = (row) => {
+    setSelectedProof(row);
+    setOpenProofModal(true);
+    console.log(row);
+  };
+
   return (
     <div className="Table">
       <TableContainer
@@ -88,6 +96,7 @@ export default function BasicTable({ data }) {
               <TableCell align="center">Team Name</TableCell>
               <TableCell align="center">Line Ketua</TableCell>
               <TableCell align="center">Sport</TableCell>
+              <TableCell align="center">Bukti TF</TableCell>
             </TableRow>
           </TableHead>
 
@@ -112,6 +121,18 @@ export default function BasicTable({ data }) {
                 </TableCell>
                 <TableCell align="center" style={{ width: "33.33%" }}>
                   {row.data.races.race_name}
+                </TableCell>
+                <TableCell
+                  onClick={() => paymentProofClick(row)}
+                  align="center"
+                  style={{ width: "33.33%" }}
+                >
+                  <img
+                    src={`${url}:${port}/${row.paymentProof
+                      ?.replace("public\\", "")
+                      .replace(/\\/g, "/")}`}
+                    alt="KTM"
+                  />
                 </TableCell>
               </TableRow>
             ))}
@@ -181,7 +202,7 @@ export default function BasicTable({ data }) {
                           <TableCell align="center">{member.email}</TableCell>
                           <TableCell align="center">
                             <img
-                              src={`${url}:${port}/${selectedMember?.ktm
+                              src={`${url}:${port}/${member.ktm
                                 ?.replace("public\\", "")
                                 .replace(/\\/g, "/")}`}
                               alt="KTM"
@@ -207,6 +228,25 @@ export default function BasicTable({ data }) {
               content={
                 <img
                   src={`${url}:${port}/${selectedMember?.ktm
+                    ?.replace("public\\", "")
+                    .replace(/\\/g, "/")}`}
+                  alt="KTM"
+                />
+              }
+            />
+          )}
+        </DialogContent>
+      </Dialog>
+      <Dialog open={openProofModal} onClose={() => setOpenProofModal(false)}>
+        <DialogContent>
+          {selectedProof && (
+            <Modal
+              open={openProofModal}
+              onClose={() => setOpenProofModal(false)}
+              title={"Bukti TF: " + selectedProof.team_name}
+              content={
+                <img
+                  src={`${url}:${port}/${selectedProof?.paymentProof
                     ?.replace("public\\", "")
                     .replace(/\\/g, "/")}`}
                   alt="KTM"

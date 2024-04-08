@@ -1,13 +1,14 @@
 // Sidebar imports
 import {
   UilEstate,
-  UilClipboardAlt,
-  UilUsersAlt,
+  UilVolleyball,
+  UilBasketball,
   UilPackage,
   UilChart,
-  UilSignOutAlt,
+  UilFootball,
   UilGameStructure,
   UilMobileAndroid,
+  UilTrophy,
 } from "@iconscout/react-unicons";
 import gambar1 from "../../../Assets/imgs/img1.webp";
 
@@ -18,11 +19,11 @@ export const SidebarData = [
     heading: "All Registered",
   },
   {
-    icon: UilClipboardAlt,
+    icon: UilVolleyball,
     heading: "VolleyBall",
   },
   {
-    icon: UilUsersAlt,
+    icon: UilBasketball,
     heading: "Basketball",
   },
   {
@@ -30,11 +31,15 @@ export const SidebarData = [
     heading: "Badminton Ganda Putra",
   },
   {
+    icon: UilTrophy,
+    heading: "Badminton Ganda Putri",
+  },
+  {
     icon: UilChart,
     heading: "Badminton Ganda Campuran",
   },
   {
-    icon: UilSignOutAlt,
+    icon: UilFootball,
     heading: "Futsal",
   },
   {
