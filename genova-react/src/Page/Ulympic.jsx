@@ -1,11 +1,10 @@
 import React from "react";
 import "../Component/Ulympic/Ulympic.css";
-import Intro from "../Component/Home/Intro";
 import Navbar from "../Component/Navbar/Navbar";
 import Tujuan from "../Component/Unify/Tujuanunify/Tujuan";
 import { Fade } from "react-reveal";
 import Footer from "../Component/Footer/Footer";
-import Bracket from "../Component/Home/Callonge/Bracket";
+// import Bracket from "../Component/Home/Callonge/Bracket";
 import UlympicLogo from "../Component/Ulympic/Ulympiclogo";
 import ListLomba from "../Component/Ulympic/ListLomba";
 import FormUlympic from "../Component/Ulympic/FormUlympic";
@@ -30,14 +29,14 @@ function Ulympic() {
           </section>
         </Fade>
 
-        <section>
+        <section className="mt-2">
           <FormUlympic />
         </section>
       </section>
 
       <section className="snap-y snap-mandatory overflow-hidden ">
         <Fade>
-          <Bracket />
+          {/* <Bracket /> */}
           <Footer />
         </Fade>
       </section>

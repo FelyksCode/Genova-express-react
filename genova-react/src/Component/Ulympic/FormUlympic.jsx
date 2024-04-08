@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Ulympic.css";
 import FormTemplate from "./FormTemplate";
 import axios from "axios";
+import StatusParent from "../Alert/StatusParent";
 
 const FormUlympic = () => {
   const url = process.env.REACT_APP_URL_BE;

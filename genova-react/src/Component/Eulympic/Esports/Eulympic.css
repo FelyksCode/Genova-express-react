@@ -230,7 +230,7 @@ body::-webkit-scrollbar {
 .active .artist-profile-link {
   pointer-events: all;
 }
-.bentukbutton {
+.bentukbutton2 {
   width: 50%;
   height: 50px;
   position: relative;
@@ -247,13 +247,13 @@ body::-webkit-scrollbar {
   text-align: center;
 }
 
-.bentukbutton .btn-txt1 {
+.bentukbutton2 .btn-txt1 {
   z-index: 1;
   font-weight: 800;
   letter-spacing: 4px;
 }
 
-.bentukbutton.type1::after {
+.bentukbutton2.type1::after {
   content: "";
   position: absolute;
   left: 0;
@@ -267,13 +267,13 @@ body::-webkit-scrollbar {
   z-index: -1;
 }
 
-.bentukbutton:hover {
+.bentukbutton2:hover {
   box-shadow: 1px 1px 200px #252525;
   color: black;
   border: none;
 }
 
-.bentukbutton.type1:hover::after {
+.bentukbutton2.type1:hover::after {
   visibility: visible;
   transform: scale(100) translateX(2px);
 }

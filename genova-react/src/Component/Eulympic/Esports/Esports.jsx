@@ -16,7 +16,7 @@ function Esports() {
   const [isFormAvailable, setIsFormAvailable] = useState(false);
 
   useEffect(() => {
-    const targetDate = new Date(2024, 3, 10); // Tanggal 10 April 2024
+    const targetDate = new Date(2024, 3, 15); // Tanggal 15 April 2024
 
     const updateCountdown = () => {
       const currentTime = new Date();

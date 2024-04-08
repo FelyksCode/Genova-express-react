@@ -137,7 +137,7 @@ const FormML = () => {
     <>
       <button
         onClick={toggleModal}
-        className="bentukbutton type1 w-full sm:w-auto md:w-full"
+        className="bentukbutton2 type1 w-full sm:w-auto md:w-full"
       >
         <span className="btn-txt1">Daftar Lomba</span>
       </button>
