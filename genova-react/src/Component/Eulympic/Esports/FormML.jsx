@@ -2,34 +2,19 @@ import React, { useState, useEffect } from "react";
 import "./Eulympic.css";
 import FormTemplate from "./FormTemplate2";
 import axios from "axios";
-// "_id": "660ab388747695f586c790b0",
-// "race_name": "Ulympic - Basket",
-
-// "_id": "660ab388747695f586c790b1",
-// "race_name": "Ulympic - Futsal",
-
-// "_id": "660ab388747695f586c790b2",
-// "race_name": "Ulympic - Volly",
-
-// "_id": "660ab388747695f586c790ad",
-// "race_name": "Ulympic - Badminton (Ganda Putra)",
-
-// "_id": "660ab388747695f586c790ac",
-// "race_name": "Ulympic - Badminton (Ganda Campuran)",
 
 const FormML = () => {
-  let id = "";
+  const url = process.env.REACT_APP_URL_BE;
+  const port = process.env.REACT_APP_PORT;
   const [showModal, setShowModal] = useState(false);
   const [step, setStep] = useState(1);
-
   const [teamName, setTeamName] = useState("");
   const [leaderIdLine, setLeaderIdLine] = useState("");
-  const [selectedSport, setSelectedSport] = useState("");
-  const [selectedSportID, setSelectedSportID] = useState("");
-
+  const [selectedSport, setSelectedSport] = useState("Mobile Legends");
+  const selectedSportID = process.env.REACT_APP_MOBILE_LEGENDS;
   const [members, setMembers] = useState([]);
-
   const [transferProof, setTransferProof] = useState("");
+
   const toggleModal = () => {
     setShowModal(!showModal);
   };
@@ -39,11 +24,6 @@ const FormML = () => {
   const handleLeaderIdLineChange = (e) => {
     setLeaderIdLine(e.target.value);
   };
-  const handleSportChange = (e) => {
-    const newSelectedSport = e.target.value;
-    console.log("e.target.value: ", newSelectedSport);
-    setSelectedSport(newSelectedSport);
-  };
 
   const handleNextStep = () => {
     setStep(step + 1);
@@ -52,51 +32,19 @@ const FormML = () => {
   const handlePreviousStep = () => {
     setStep(step - 1);
   };
-  // Define the sports to members mapping outside the component if it doesn't change
-  const sportsToMembersMap = {
-    volleyball: 10,
-    basketball: 7,
-    badmintonCampuran: 2,
-    badmintonPutra: 2,
-    futsal: 12,
-  };
 
   useEffect(() => {
     // Initialize or update members based on the selected sport
-    if (selectedSport) {
-      setMembers(
-        Array.from({ length: sportsToMembersMap[selectedSport] || 0 }, () => ({
-          fullName: "",
-          nim: "",
-          email: "",
-          ktmPhoto: null, // Assuming you want to track the file as null initially
-        }))
-      );
-    }
-    let newId = "";
-    switch (selectedSport) {
-      case "volleyball":
-        newId = "660ab388747695f586c790b2";
-        break;
-      case "basketball":
-        newId = "660ab388747695f586c790b0";
-        break;
-      case "badmintonCampuran":
-        newId = "660ab388747695f586c790ac";
-        break;
-      case "badmintonPutra":
-        newId = "660ab388747695f586c790ad";
-        break;
-      case "futsal":
-        newId = "660ab388747695f586c790b1";
-        break;
-      default:
-        newId = "";
-        break;
-    }
-    setSelectedSportID(newId);
-    console.log(selectedSportID);
-  }, [selectedSport, selectedSportID]);
+    setMembers(
+      Array.from({ length: 6 || 0 }, () => ({
+        fullName: "",
+        nim: "",
+        email: "",
+        username: "",
+        ktmPhoto: null, // Assuming you want to track the file as null initially
+      }))
+    );
+  }, []);
 
   const handleInputChange = (e, index) => {
     const { name, value, files } = e.target;
@@ -125,7 +73,7 @@ const FormML = () => {
       formData.append(`users[${index}][name]`, member.fullName);
       formData.append(`users[${index}][nim]`, member.nim);
       formData.append(`users[${index}][email]`, member.email);
-      formData.append(`users[${index}][game_id]`, selectedSport);
+      formData.append(`users[${index}][game_id]`, member.username);
       // Check if ktmPhoto is not null before appending
       if (member.ktmPhoto) {
         formData.append(`users[${index}][ktm]`, member.ktmPhoto);
@@ -136,7 +84,7 @@ const FormML = () => {
       // Note: You don't need to manually set the `Content-Type` header here.
       // Axios and the browser will handle it when you pass a FormData object.
       const response = await axios.post(
-        `http://127.0.0.1:8090/users/register/${selectedSportID}`,
+        `${url}:${port}/users/register/${selectedSportID}`,
         formData
       );
       const teamId = response.data.data.team.team_id;
@@ -145,7 +93,7 @@ const FormML = () => {
         const formProof = new FormData();
         formProof.append("proof", transferProof);
         const resProof = await axios.post(
-          `http://127.0.0.1:8090/team/${teamId}/confirmPayment`,
+          `${url}:${port}/team/${teamId}/confirmPayment`,
           formProof
         );
       }
@@ -272,23 +220,21 @@ const FormML = () => {
                       Choose Sport
                     </label>
                     <select
+                      value={selectedSport}
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                      disabled
+                    >
+                      <option value="MobileLegends">Mobile Legends</option>
+                    </select>
+                    <select
                       name="sport"
                       id="sport"
                       value={selectedSport}
-                      onChange={handleSportChange}
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                      required
+                      hidden
                     >
-                      <option value="">Select a sport</option>
-                      <option value="volleyball">Volleyball</option>
-                      <option value="basketball">Basketball</option>
-                      <option value="badmintonCampuran">
-                        Badminton Ganda Campuran
+                      <option value="MobileLegends" hidden>
+                        Mobile Legends
                       </option>
-                      <option value="badmintonPutra">
-                        Badminton Ganda Putra
-                      </option>
-                      <option value="futsal">Futsal</option>
                     </select>
                   </div>
                   <button

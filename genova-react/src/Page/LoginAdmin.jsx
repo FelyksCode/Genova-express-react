@@ -6,6 +6,8 @@ function LoginAdmin() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const url = process.env.REACT_APP_URL_BE;
+  const port = process.env.REACT_APP_PORT;
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -20,7 +22,7 @@ function LoginAdmin() {
     formData.append("password", password);
     try {
       const response = await axios.post(
-        `http://127.0.0.1:8090/admin/login`,
+        `${url}:${port}/admin/login`,
         JSON.stringify({ email, password }), // Sending data as JSON
         {
           headers: {

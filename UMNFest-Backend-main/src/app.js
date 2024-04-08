@@ -99,8 +99,34 @@ volly 10
         "U-Care",
         "Unify",
       ];
-      const raceLimitTeams = [0, 16, 32, 12, 12, 12, 12, 7, 0, 10, 1];
-      const raceMemberCount = [0, 6, 6, 2, 2, 1, 1, 0, 10, 14, 6, 0, 0];
+      const raceLimitTeams = [
+        0, // Unveiling
+        16, // E-Ulympic - Valorant
+        32, // E-Ulympic - Mobile Legends
+        12, // Ulympic - Badminton (Ganda Campuran)
+        12, // Ulympic - Badminton (Ganda Putra)
+        12, // Ulympic - Badminton (Tunggal Putra)
+        12, // Ulympic - Badminton (Tunggal Putri)
+        7, // Ulympic - Basket
+        12, // Ulympic - Futsal
+        10, // Ulympic - Volly
+        0, // U-Care
+        0, // Unify
+      ];
+      const raceMemberCount = [
+        0, // Unveiling
+        6, // E-Ulympic - Valorant
+        6, // E-Ulympic - Mobile Legends
+        2, // Ulympic - Badminton (Ganda Campuran)
+        2, // Ulympic - Badminton (Ganda Putra)
+        1, // Ulympic - Badminton (Tunggal Putra)
+        1, // Ulympic - Badminton (Tunggal Putri)
+        7, // Ulympic - Basket
+        12, // Ulympic - Futsal
+        10, // Ulympic - Volly
+        0, // U-Care
+        0, // Unify
+      ];
       if (count === 0 || count != raceNames.length) {
         var i = 0;
         raceNames.forEach((raceName) => {
@@ -132,8 +158,8 @@ volly 10
         password: "HaloPassword!",
       },
       {
-        email: "hehe@gmail.com",
-        password: "howDoYouDo?",
+        email: "admin@gmail.com",
+        password: "admin",
       },
     ];
     const salt = bcrypt.genSaltSync(10);

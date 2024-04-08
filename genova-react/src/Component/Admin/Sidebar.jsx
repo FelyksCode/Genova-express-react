@@ -12,14 +12,15 @@ const Sidebar = ({ setSelectedSection, setResponse }) => {
   const handleMenuItemClick = async (index) => {
     setSelectedSection(index);
 
+    const url = process.env.REACT_APP_URL_BE;
+    const port = process.env.REACT_APP_PORT;
+
     try {
-      const res = await axios.get(`http://127.0.0.1:8090/team`);
+      const res = await axios.get(`${url}:${port}/team`);
 
       // Ensure you're accessing the teams array correctly from the response
       const detailedDataPromises = res.data.teams.map(async (team) => {
-        const resDetail = await axios.get(
-          `http://127.0.0.1:8090/team/${team._id}`
-        );
+        const resDetail = await axios.get(`${url}:${port}/team/${team._id}`);
         return { ...team, ...resDetail.data }; // Correctly merge the team info
       });
 

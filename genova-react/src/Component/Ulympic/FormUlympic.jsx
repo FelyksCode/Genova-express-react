@@ -2,22 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./Ulympic.css";
 import FormTemplate from "./FormTemplate";
 import axios from "axios";
-// "_id": "660ab388747695f586c790b0",
-// "race_name": "Ulympic - Basket",
-
-// "_id": "660ab388747695f586c790b1",
-// "race_name": "Ulympic - Futsal",
-
-// "_id": "660ab388747695f586c790b2",
-// "race_name": "Ulympic - Volly",
-
-// "_id": "660ab388747695f586c790ad",
-// "race_name": "Ulympic - Badminton (Ganda Putra)",
-
-// "_id": "660ab388747695f586c790ac",
-// "race_name": "Ulympic - Badminton (Ganda Campuran)",
 
 const FormUlympic = () => {
+  const url = process.env.REACT_APP_URL_BE;
+  const port = process.env.REACT_APP_PORT;
   let id = "";
   const [showModal, setShowModal] = useState(false);
   const [step, setStep] = useState(1);
@@ -56,8 +44,8 @@ const FormUlympic = () => {
   const sportsToMembersMap = {
     volleyball: 10,
     basketball: 7,
-    badmintonCampuran: 2,
-    badmintonPutra: 2,
+    badmintonGandaCampuran: 2,
+    badmintonGandaPutra: 2,
     futsal: 12,
   };
 
@@ -76,19 +64,19 @@ const FormUlympic = () => {
     let newId = "";
     switch (selectedSport) {
       case "volleyball":
-        newId = "660ab388747695f586c790b2";
+        newId = process.env.REACT_APP_VOLI;
         break;
       case "basketball":
-        newId = "660ab388747695f586c790b0";
+        newId = process.env.REACT_APP_BASKET;
         break;
-      case "badmintonCampuran":
-        newId = "660ab388747695f586c790ac";
+      case "badmintonGandaCampuran":
+        newId = process.env.REACT_APP_BADMINTON_GANDA_CAMPURAN;
         break;
-      case "badmintonPutra":
-        newId = "660ab388747695f586c790ad";
+      case "badmintonGandaPutra":
+        newId = process.env.REACT_APP_BADMINTON_GANDA_PUTRA;
         break;
       case "futsal":
-        newId = "660ab388747695f586c790b1";
+        newId = process.env.REACT_APP_FUTSAL;
         break;
       default:
         newId = "";
@@ -136,7 +124,7 @@ const FormUlympic = () => {
       // Note: You don't need to manually set the `Content-Type` header here.
       // Axios and the browser will handle it when you pass a FormData object.
       const response = await axios.post(
-        `http://127.0.0.1:8090/users/register/${selectedSportID}`,
+        `${url}:${port}/users/register/${selectedSportID}`,
         formData
       );
       const teamId = response.data.data.team.team_id;
@@ -145,7 +133,7 @@ const FormUlympic = () => {
         const formProof = new FormData();
         formProof.append("proof", transferProof);
         const resProof = await axios.post(
-          `http://127.0.0.1:8090/team/${teamId}/confirmPayment`,
+          `${url}:${port}/team/${teamId}/confirmPayment`,
           formProof
         );
       }
@@ -282,10 +270,10 @@ const FormUlympic = () => {
                       <option value="">Select a sport</option>
                       <option value="volleyball">Volleyball</option>
                       <option value="basketball">Basketball</option>
-                      <option value="badmintonCampuran">
+                      <option value="badmintonGandaCampuran">
                         Badminton Ganda Campuran
                       </option>
-                      <option value="badmintonPutra">
+                      <option value="badmintonGandaPutra">
                         Badminton Ganda Putra
                       </option>
                       <option value="futsal">Futsal</option>

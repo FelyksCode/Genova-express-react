@@ -31,6 +31,8 @@ const AnggotaTim = ({ index, handleInputChange }) => {
 
 // Komponen FormTim
 const FormTim = () => {
+  const url = process.env.REACT_APP_URL_BE;
+  const port = process.env.REACT_APP_PORT;
   const [anggotaTim, setAnggotaTim] = useState([]);
   const [namateam, setNamaTeam] = useState("");
   const [idline, setIdLine] = useState("");
@@ -45,13 +47,16 @@ const FormTim = () => {
     let immediateNewId = "";
     switch (jenis) {
       case "volly":
-        immediateNewId = "660ab388747695f586c790b2";
+        immediateNewId = process.env.REACT_APP_VOLI;
         break;
       case "basket":
-        immediateNewId = "660ab388747695f586c790b0";
+        immediateNewId = process.env.REACT_APP_BASKET;
         break;
-      case "badminton": // Note: Make sure this matches the value in your <option>
-        immediateNewId = "660ab388747695f586c790ac"; // Adjusted as per your actual options
+      case "badmintonGandaPutra": // Note: Make sure this matches the value in your <option>
+        immediateNewId = process.env.REACT_APP_BADMINTON_GANDA_PUTRA; // Adjusted as per your actual options
+        break;
+      case "badmintonGandaCampuran": // Note: Make sure this matches the value in your <option>
+        immediateNewId = process.env.REACT_APP_BADMINTON_GANDA_CAMPURAN; // Adjusted as per your actual options
         break;
       case "futsal":
         immediateNewId = "660ab388747695f586c790b1";
@@ -77,7 +82,9 @@ const FormTim = () => {
     switch (jenis) {
       case "basket":
         return 7;
-      case "badminton":
+      case "badmintonGandaPutra":
+        return 2;
+      case "badmintonGandaCampuran":
         return 2;
       case "futsal":
         return 12;
@@ -131,7 +138,7 @@ const FormTim = () => {
       });
 
       const response = await axios.post(
-        `http://127.0.0.1:8090/users/register/${selectedSportID}`,
+        `${url}:${port}/users/register/${selectedSportID}`,
         formData,
         {
           headers: {
@@ -145,7 +152,7 @@ const FormTim = () => {
         const formProof = new FormData();
         formProof.append("proof", transferProof);
         const resProof = await axios.post(
-          `http://127.0.0.1:8090/team/${teamId}/confirmPayment`,
+          `${url}:${port}/team/${teamId}/confirmPayment`,
           formProof
         );
       }
@@ -175,7 +182,8 @@ const FormTim = () => {
       <select onChange={handleJenisTimChange}>
         <option value="">Pilih Jenis Tim</option>
         <option value="basket">Basket (7 anggota)</option>
-        <option value="badminton">Badminton (2 anggota)</option>
+        <option value="badmintonGandaPutra">Badminton (2 anggota)</option>
+        <option value="badmintonGandaCampuran">Badminton (2 anggota)</option>
         <option value="futsal">Futsal (12 anggota)</option>
         <option value="volly">Volly (10 anggota)</option>
       </select>

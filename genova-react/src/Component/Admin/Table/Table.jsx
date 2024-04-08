@@ -15,6 +15,8 @@ import "./Table.css";
 import { anggota } from "../Data/Data";
 
 export default function BasicTable({ data }) {
+  const url = process.env.REACT_APP_URL_BE;
+  const port = process.env.REACT_APP_PORT;
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
   const isWideScreen = windowWidth <= 768;
   const [page, setPage] = React.useState(0);
@@ -179,9 +181,10 @@ export default function BasicTable({ data }) {
                           <TableCell align="center">{member.email}</TableCell>
                           <TableCell align="center">
                             <img
-                              src={member.ktm}
+                              src={`${url}:${port}/${selectedMember?.ktm
+                                ?.replace("public\\", "")
+                                .replace(/\\/g, "/")}`}
                               alt="KTM"
-                              style={{ cursor: "pointer" }}
                             />
                           </TableCell>
                         </TableRow>
@@ -201,7 +204,14 @@ export default function BasicTable({ data }) {
               open={openMemberModal}
               onClose={() => setOpenMemberModal(false)}
               title={selectedMember.nama}
-              content={<img src={selectedMember.ktm} alt="KTM" />}
+              content={
+                <img
+                  src={`${url}:${port}/${selectedMember?.ktm
+                    ?.replace("public\\", "")
+                    .replace(/\\/g, "/")}`}
+                  alt="KTM"
+                />
+              }
             />
           )}
         </DialogContent>
