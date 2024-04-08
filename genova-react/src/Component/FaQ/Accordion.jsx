@@ -16,7 +16,7 @@ function FaqAccordion() {
         <Accordion className="md:w-[800px] w-[400px] mx-auto my-[200px] py-[40px] px-[40px] bg-white/70 rounded-xl">
           <AccordionPanel>
             <AccordionTitle className="text-xl my-2 text-black dark:text-black left-0">
-              What is UMN Festival?
+              Apa itu UMN Festival?
             </AccordionTitle>
             <AccordionContent>
               <p className="mb-2 text-gray-800 dark:text-gray-800 textfaq rounded-md p-2">
@@ -42,7 +42,7 @@ function FaqAccordion() {
           </AccordionPanel>
           <AccordionPanel>
             <AccordionTitle className="text-xl my-2 text-black dark:text-black justify-self-start flex">
-              What is UMN Festival?
+              UMN Festival berlangsung sampai kapan?
             </AccordionTitle>
             <AccordionContent>
               <p className="mb-2 text-gray-800 dark:text-gray-800 textfaq">

@@ -13,8 +13,10 @@ function Esports() {
     seconds: "00",
   });
 
+  const [isFormAvailable, setIsFormAvailable] = useState(false);
+
   useEffect(() => {
-    const targetDate = new Date(2024, 3, 18); // isi sesuai tgl nanti, formatnya tuh YYYY, M, D
+    const targetDate = new Date(2024, 3, 10); // Tanggal 10 April 2024
 
     const updateCountdown = () => {
       const currentTime = new Date();
@@ -28,6 +30,7 @@ function Esports() {
           minutes: "00",
           seconds: "00",
         });
+        setIsFormAvailable(true); // Aktifkan form setelah tanggal 10/04/2024
         return;
       }
 
@@ -78,11 +81,11 @@ function Esports() {
           </div>
         </div>
 
-        {/* <a className="button-daftar" href="/home">
-          {" "}
-          Daftar{" "}
-        </a> */}
-        <FormML />
+        {isFormAvailable ? (
+          <FormML />
+        ) : (
+          <button disabled>Form is not available yet</button>
+        )}
       </div>
 
       <div className="valorant">
@@ -112,11 +115,11 @@ function Esports() {
           </div>
         </div>
 
-        {/* <a className="button-daftar" href="/home">
-          {" "}
-          Daftar{" "}
-        </a> */}
-        <FormValorant />
+        {isFormAvailable ? (
+          <FormValorant />
+        ) : (
+          <button disabled>Form is not available yet</button>
+        )}
       </div>
     </div>
   );

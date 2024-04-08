@@ -7,12 +7,23 @@ import { Fade } from "react-reveal";
 function MapPage() {
   useEffect(() => {
     document.title = "UMN Festival | Rangkaian";
+
+    // Periksa sessionStorage apakah pengguna telah melihat video sebelumnya di sesi saat ini
+    const hasSeenVideo = sessionStorage.getItem("hasSeenVideo");
+    if (hasSeenVideo) {
+      // Jika pengguna telah melihat video di sesi saat ini, set showMapVid menjadi false
+      setShowMapVid(false);
+    }
   }, []);
 
   const [showMapVid, setShowMapVid] = useState(true);
 
   const handleVideoEnd = () => {
+    // Set showMapVid menjadi false saat video selesai
     setShowMapVid(false);
+
+    // Simpan status bahwa pengguna telah melihat video di sesi saat ini ke sessionStorage
+    sessionStorage.setItem("hasSeenVideo", true);
   };
 
   return (
