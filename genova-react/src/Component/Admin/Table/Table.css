@@ -30,9 +30,8 @@ th {
   }
 }
 
-
 @media screen and (max-width: 768px) {
-  .Table{
+  .Table {
     position: relative;
     display: flex;
     flex-direction: column;

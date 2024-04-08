@@ -6,6 +6,8 @@ import {
   UilPackage,
   UilChart,
   UilSignOutAlt,
+  UilGameStructure,
+  UilMobileAndroid,
 } from "@iconscout/react-unicons";
 import gambar1 from "../../../Assets/imgs/img1.webp";
 
@@ -34,6 +36,14 @@ export const SidebarData = [
   {
     icon: UilSignOutAlt,
     heading: "Futsal",
+  },
+  {
+    icon: UilGameStructure,
+    heading: "Valorant",
+  },
+  {
+    icon: UilMobileAndroid,
+    heading: "Mobile Legends",
   },
 ];
 

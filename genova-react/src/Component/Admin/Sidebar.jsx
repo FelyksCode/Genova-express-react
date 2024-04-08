@@ -28,23 +28,26 @@ const Sidebar = ({ setSelectedSection, setResponse }) => {
       switch (index) {
         case 0: // All Regis
           break;
+
         case 1: // Voli
           newData = newData.filter(
             (team) => team.data.races.race_name === "Ulympic - Volly"
           );
-
           break;
+
         case 2: // Basket
           newData = newData.filter(
             (team) => team.data.races.race_name === "Ulympic - Basket"
           );
           break;
+
         case 3: // Badmin Putra Ganda
           newData = newData.filter(
             (team) =>
               team.data.races.race_name === "Ulympic - Badminton (Ganda Putra)"
           );
           break;
+
         case 4: // Badmin Campur Ganda
           newData = newData.filter(
             (team) =>
@@ -52,11 +55,24 @@ const Sidebar = ({ setSelectedSection, setResponse }) => {
               "Ulympic - Badminton (Ganda Campuran)"
           );
           break;
+
         case 5: // Futsal
           newData = newData.filter(
             (team) => team.data.races.race_name === "Ulympic - Futsal"
           );
           break;
+        case 6: // Valorant
+          newData = newData.filter(
+            (team) => team.data.races.race_name === "E-Ulympic - Valorant"
+          );
+          break;
+
+        case 7: // Mobile Legends
+          newData = newData.filter(
+            (team) => team.data.races.race_name === "E-Ulympic - Mobile Legends"
+          );
+          break;
+
         default: // Default All
           break;
       }
