@@ -9,6 +9,8 @@ import {
   UilGameStructure,
   UilMobileAndroid,
   UilTrophy,
+  UilMedal,
+  UilAward,
 } from "@iconscout/react-unicons";
 import gambar1 from "../../../Assets/imgs/img1.webp";
 
@@ -28,15 +30,23 @@ export const SidebarData = [
   },
   {
     icon: UilPackage,
-    heading: "Badminton Ganda Putra",
+    heading: "Badminton Ganda Putra Internal",
   },
   {
     icon: UilTrophy,
-    heading: "Badminton Ganda Putri",
+    heading: "Badminton Ganda Putri Internal",
   },
   {
     icon: UilChart,
-    heading: "Badminton Ganda Campuran",
+    heading: "Badminton Ganda Campuran Internal",
+  },
+  {
+    icon: UilAward,
+    heading: "Badminton Ganda Putra External",
+  },
+  {
+    icon: UilMedal,
+    heading: "Badminton Tunggal Putra External",
   },
   {
     icon: UilFootball,

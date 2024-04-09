@@ -162,7 +162,15 @@ export default function BasicTable({ data }) {
                   <TableHead>
                     <TableRow>
                       <TableCell align="center">Nama</TableCell>
-                      <TableCell align="center">NIM</TableCell>
+                      {teamMembers.races &&
+                      (teamMembers.races.race_name ===
+                        "Ulympic - Badminton (Ganda Putra) External" ||
+                        teamMembers.races.race_name ===
+                          "Ulympic - Badminton (Tunggal Putra) External") ? (
+                        <TableCell align="center">ID LINE</TableCell>
+                      ) : (
+                        <TableCell align="center">NIM</TableCell>
+                      )}
                       {teamMembers.races &&
                       (teamMembers.races.race_name === "E-Ulympic - Valorant" ||
                         teamMembers.races.race_name ===
@@ -173,6 +181,15 @@ export default function BasicTable({ data }) {
                       )}
                       <TableCell align="center">Email</TableCell>
                       <TableCell align="center">KTM</TableCell>
+                      {teamMembers.races &&
+                      (teamMembers.races.race_name ===
+                        "Ulympic - Badminton (Ganda Putra) External" ||
+                        teamMembers.races.race_name ===
+                          "Ulympic - Badminton (Tunggal Putra) External") ? (
+                        <TableCell align="center">Kampus</TableCell>
+                      ) : (
+                        ""
+                      )}
                     </TableRow>
                   </TableHead>
 
@@ -188,17 +205,7 @@ export default function BasicTable({ data }) {
                         >
                           <TableCell align="center">{member.name}</TableCell>
                           <TableCell align="center">{member.nim}</TableCell>
-                          {teamMembers.races &&
-                          (teamMembers.races.race_name ===
-                            "E-Ulympic - Valorant" ||
-                            teamMembers.races.race_name ===
-                              "E-Ulympic - Mobile Legends") ? (
-                            <TableCell align="center">
-                              {member.game_id}
-                            </TableCell>
-                          ) : (
-                            ""
-                          )}
+
                           <TableCell align="center">{member.email}</TableCell>
                           <TableCell align="center">
                             <img
@@ -207,7 +214,29 @@ export default function BasicTable({ data }) {
                                 .replace(/\\/g, "/")}`}
                               alt="KTM"
                             />
+                            {teamMembers.races &&
+                            (teamMembers.races.race_name ===
+                              "E-Ulympic - Valorant" ||
+                              teamMembers.races.race_name ===
+                                "E-Ulympic - Mobile Legends") ? (
+                              <TableCell align="center">
+                                {member.game_id}
+                              </TableCell>
+                            ) : (
+                              ""
+                            )}
                           </TableCell>
+                          {teamMembers.races &&
+                          (teamMembers.races.race_name ===
+                            "Ulympic - Badminton (Ganda Putra) External" ||
+                            teamMembers.races.race_name ===
+                              "Ulympic - Badminton (Tunggal Putra) External") ? (
+                            <TableCell align="center">
+                              {member.game_id}
+                            </TableCell>
+                          ) : (
+                            ""
+                          )}
                         </TableRow>
                       ))}
                   </TableBody>

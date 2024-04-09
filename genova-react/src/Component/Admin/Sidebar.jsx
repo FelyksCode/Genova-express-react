@@ -42,33 +42,58 @@ const Sidebar = ({ setSelectedSection, setResponse }) => {
           );
           break;
 
-        case 3: // Badmin Putra Ganda
-          newData = newData.filter(
-            (team) =>
-              team.data.races.race_name === "Ulympic - Badminton (Ganda Putra)"
-          );
-          break;
-
-        case 4: // Badmin Campur Ganda
+        case 3: // Badmin Putra Ganda - Internal
           newData = newData.filter(
             (team) =>
               team.data.races.race_name ===
-              "Ulympic - Badminton (Ganda Campuran)"
+              "Ulympic - Badminton (Ganda Putra) Internal"
           );
           break;
 
-        case 5: // Futsal
+        case 4: // Badmin Putri Ganda - Internal
+          newData = newData.filter(
+            (team) =>
+              team.data.races.race_name ===
+              "Ulympic - Badminton (Ganda Putri) Internal"
+          );
+          break;
+
+        case 5: // Badmin Campur Ganda - Internal
+          newData = newData.filter(
+            (team) =>
+              team.data.races.race_name ===
+              "Ulympic - Badminton (Ganda Campuran) Internal"
+          );
+          break;
+        case 6: // Badmin Putra Ganda - External
+          newData = newData.filter(
+            (team) =>
+              team.data.races.race_name ===
+              "Ulympic - Badminton (Ganda Putra) External"
+          );
+          break;
+
+        case 7: // Badmin Putra Tunggal - External
+          newData = newData.filter(
+            (team) =>
+              team.data.races.race_name ===
+              "Ulympic - Badminton (Tunggal Putra) External"
+          );
+          break;
+
+        case 8: // Futsal
           newData = newData.filter(
             (team) => team.data.races.race_name === "Ulympic - Futsal"
           );
           break;
-        case 6: // Valorant
+
+        case 9: // Valorant
           newData = newData.filter(
             (team) => team.data.races.race_name === "E-Ulympic - Valorant"
           );
           break;
 
-        case 7: // Mobile Legends
+        case 10: // Mobile Legends
           newData = newData.filter(
             (team) => team.data.races.race_name === "E-Ulympic - Mobile Legends"
           );
