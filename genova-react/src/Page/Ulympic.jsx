@@ -1,28 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../Component/Ulympic/Ulympic.css";
 import Navbar from "../Component/Navbar/Navbar";
 import Tujuan from "../Component/Unify/Tujuanunify/Tujuan";
 import { Fade } from "react-reveal";
 import Footer from "../Component/Footer/Footer";
-// import Bracket from "../Component/Home/Callonge/Bracket";
 import UlympicLogo from "../Component/Ulympic/Ulympiclogo";
 import ListLomba from "../Component/Ulympic/ListLomba";
 import FormUlympic from "../Component/Ulympic/FormUlympic";
 
 function Ulympic() {
-  // State untuk mengontrol apakah FormUlympic harus ditampilkan atau tidak
-  const [showForm, setShowForm] = useState(false);
+  const [countdown, setCountdown] = useState({
+    days: "00",
+    hours: "00",
+    minutes: "00",
+    seconds: "00",
+  });
 
-  // Tanggal yang akan digunakan untuk membandingkan apakah FormUlympic harus ditampilkan
-  const targetDate = new Date("2024-04-15");
+  const [isFormAvailable, setIsFormAvailable] = useState(false);
 
-  // Tanggal hari ini
-  const currentDate = new Date();
+  useEffect(() => {
+    const targetDate = new Date(2024, 8, 20); // Tanggal 20 Agustus 2024
 
-  // Jika tanggal hari ini adalah tanggal target, maka tampilkan FormUlympic
-  if (currentDate.toDateString() === targetDate.toDateString()) {
-    setShowForm(true);
-  }
+    const updateCountdown = () => {
+      const currentTime = new Date();
+      const diff = targetDate - currentTime;
+
+      if (diff <= 0) {
+        clearInterval(timer);
+        setIsFormAvailable(true); // Aktifkan form setelah tanggal 15/04/2024
+        return;
+      }
+
+      const d = Math.floor(diff / 1000 / 60 / 60 / 24);
+      const h = Math.floor(diff / 1000 / 60 / 60) % 24;
+      const m = Math.floor(diff / 1000 / 60) % 60;
+      const s = Math.floor(diff / 1000) % 60;
+
+      setCountdown({
+        days: d < 10 ? "0" + d : d.toString(),
+        hours: h < 10 ? "0" + h : h.toString(),
+        minutes: m < 10 ? "0" + m : m.toString(),
+        seconds: s < 10 ? "0" + s : s.toString(),
+      });
+    };
+
+    const timer = setInterval(updateCountdown, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div>
@@ -36,7 +61,6 @@ function Ulympic() {
       <section className="ulympic snap-y snap-mandatory overflow-hidden">
         <Fade duration={2000}>
           <UlympicLogo />
-
           <section className="snap-y snap-mandatory overflow-hidden">
             <Fade duration={2000}>
               <ListLomba />
@@ -44,8 +68,8 @@ function Ulympic() {
           </section>
         </Fade>
 
-        {/* Menampilkan FormUlympic hanya jika showForm bernilai true */}
-        {showForm && (
+        {/* Menampilkan FormUlympic hanya jika isFormAvailable bernilai true */}
+        {isFormAvailable && (
           <section className="mt-2">
             <FormUlympic />
           </section>
@@ -54,7 +78,6 @@ function Ulympic() {
 
       <section className="snap-y snap-mandatory overflow-hidden ">
         <Fade>
-          {/* <Bracket /> */}
           <Footer />
         </Fade>
       </section>
