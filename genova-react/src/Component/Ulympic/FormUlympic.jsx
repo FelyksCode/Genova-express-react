@@ -10,7 +10,6 @@ const FormUlympic = () => {
   const [showModal, setShowModal] = useState(false);
   const [step, setStep] = useState(1);
   const [errorMessage, setErrorMessage] = useState("");
-  const [isInternal, setIsInternal] = useState(false);
 
   const [teamName, setTeamName] = useState("");
   const [leaderIdLine, setLeaderIdLine] = useState("");
@@ -33,17 +32,6 @@ const FormUlympic = () => {
     const newSelectedSport = e.target.value;
     setSelectedSport(newSelectedSport);
   };
-  const handleInternalChange = (e) => {
-    const selectedSport = e.target.value;
-    if (
-      selectedSport != "badmintonTunggalPutraExternal" &&
-      selectedSport != "badmintonGandaPutraExternal"
-    ) {
-      setIsInternal(true);
-    } else {
-      setIsInternal(false);
-    }
-  };
 
   const handleNextStep = () => {
     setStep(step + 1);
@@ -56,11 +44,9 @@ const FormUlympic = () => {
   const sportsToMembersMap = {
     volleyball: 10,
     basketball: 7,
-    badmintonGandaCampuranInternal: 2,
-    badmintonGandaPutraInternal: 2,
-    badmintonGandaPutriInternal: 2,
-    badmintonTunggalPutraExternal: 1,
-    badmintonGandaPutraExternal: 2,
+    badmintonGandaCampuran: 2,
+    badmintonGandaPutra: 2,
+    badmintonGandaPutri: 2,
     futsal: 12,
   };
 
@@ -84,20 +70,14 @@ const FormUlympic = () => {
       case "basketball":
         newId = process.env.REACT_APP_BASKET;
         break;
-      case "badmintonGandaCampuranInternal":
-        newId = process.env.REACT_APP_BADMINTON_GANDA_CAMPURAN_INTERNAL;
+      case "badmintonGandaCampuran":
+        newId = process.env.REACT_APP_BADMINTON_GANDA_CAMPURAN;
         break;
-      case "badmintonGandaPutraInternal":
-        newId = process.env.REACT_APP_BADMINTON_GANDA_PUTRA_INTERNAL;
+      case "badmintonGandaPutra":
+        newId = process.env.REACT_APP_BADMINTON_GANDA_PUTRA;
         break;
-      case "badmintonGandaPutriInternal":
-        newId = process.env.REACT_APP_BADMINTON_GANDA_PUTRI_INTERNAL;
-        break;
-      case "badmintonTunggalPutraExternal":
-        newId = process.env.REACT_APP_BADMINTON_TUNGGAL_PUTRA_EXTERNAL;
-        break;
-      case "badmintonGandaPutraExternal":
-        newId = process.env.REACT_APP_BADMINTON_GANDA_PUTRA_EXTERNAL;
+      case "badmintonGandaPutri":
+        newId = process.env.REACT_APP_BADMINTON_GANDA_PUTRI;
         break;
       case "futsal":
         newId = process.env.REACT_APP_FUTSAL;
@@ -107,7 +87,7 @@ const FormUlympic = () => {
         break;
     }
     setSelectedSportID(newId);
-    console.log(isInternal, selectedSport);
+    console.log(selectedSportID);
   }, [selectedSport, selectedSportID]);
 
   const handleInputChange = (e, index) => {
@@ -128,37 +108,21 @@ const FormUlympic = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // TEAM INTERNAL REGIS
     const formData = new FormData();
-    if (isInternal) {
-      formData.append("team_name", teamName);
-      formData.append("line_id", leaderIdLine);
+    formData.append("team_name", teamName);
+    formData.append("line_id", leaderIdLine);
 
-      // Append each team member's details to formData
-      members.forEach((member, index) => {
-        formData.append(`users[${index}][name]`, member.fullName);
-        formData.append(`users[${index}][nim]`, member.nim);
-        formData.append(`users[${index}][email]`, member.email);
-        formData.append(`users[${index}][game_id]`, selectedSport);
-        // Check if ktmPhoto is not null before appending
-        if (member.ktmPhoto) {
-          formData.append(`users[${index}][ktm]`, member.ktmPhoto);
-        }
-      });
-    } else {
-      // TEAM EXTERNAL REGIS
-      formData.append("team_name", teamName);
-      formData.append("line_id", leaderIdLine);
-      members.forEach((member, index) => {
-        formData.append(`users[${index}][name]`, member.fullName); // Nama
-        formData.append(`users[${index}][nim]`, member.idLine); // ID LINE per orang
-        formData.append(`users[${index}][email]`, member.email); // Email
-        formData.append(`users[${index}][game_id]`, member.kampus); // Nama Kampus
-        if (member.ktmPhoto) {
-          formData.append(`users[${index}][ktm]`, member.ktmPhoto);
-        }
-      });
-    }
+    // Append each team member's details to formData
+    members.forEach((member, index) => {
+      formData.append(`users[${index}][name]`, member.fullName);
+      formData.append(`users[${index}][nim]`, member.nim);
+      formData.append(`users[${index}][email]`, member.email);
+      formData.append(`users[${index}][game_id]`, selectedSport);
+      // Check if ktmPhoto is not null before appending
+      if (member.ktmPhoto) {
+        formData.append(`users[${index}][ktm]`, member.ktmPhoto);
+      }
+    });
 
     try {
       // Note: You don't need to manually set the `Content-Type` header here.
@@ -304,30 +268,21 @@ const FormUlympic = () => {
                       name="sport"
                       id="sport"
                       value={selectedSport}
-                      onChange={(e) => {
-                        handleSportChange(e);
-                        handleInternalChange(e);
-                      }}
+                      onChange={handleSportChange}
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                       required
                     >
                       <option value="">Select a sport</option>
                       <option value="volleyball">Volleyball</option>
                       <option value="basketball">Basketball</option>
-                      <option value="badmintonGandaCampuranInternal">
-                        Badminton Ganda Campuran - Internal
+                      <option value="badmintonGandaCampuran">
+                        Badminton Ganda Campuran
                       </option>
-                      <option value="badmintonGandaPutraInternal">
-                        Badminton Ganda Putra - Internal
+                      <option value="badmintonGandaPutra">
+                        Badminton Ganda Putra
                       </option>
-                      <option value="badmintonGandaPutriInternal">
-                        Badminton Ganda Putri - Internal
-                      </option>
-                      <option value="badmintonTunggalPutraExternal">
-                        Badminton Tunggal Putra - External
-                      </option>
-                      <option value="badmintonGandaPutraExternal">
-                        Badminton Ganda Putra - External
+                      <option value="badmintonGandaPutri">
+                        Badminton Ganda Putri
                       </option>
                       <option value="futsal">Futsal</option>
                     </select>
@@ -353,10 +308,10 @@ const FormUlympic = () => {
                         handleKtmPhotoChange={(e) =>
                           handleInputChange(e, index)
                         }
-                        isInternal={isInternal}
                       />
                     ))}
                   </div>
+
                   <button
                     type="button"
                     onClick={handlePreviousStep}
@@ -365,7 +320,7 @@ const FormUlympic = () => {
                     Previous
                   </button>
                   <button
-                    type="submit"
+                    type="button"
                     onClick={handleNextStep}
                     className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >

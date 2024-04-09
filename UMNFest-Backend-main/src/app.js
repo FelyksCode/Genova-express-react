@@ -89,11 +89,10 @@ volly 10
         "Unveiling",
         "E-Ulympic - Valorant",
         "E-Ulympic - Mobile Legends",
-        "Ulympic - Badminton (Ganda Campuran) Internal",
-        "Ulympic - Badminton (Ganda Putra) Internal",
-        "Ulympic - Badminton (Ganda Putri) Internal",
-        "Ulympic - Badminton (Tunggal Putra) External",
-        "Ulympic - Badminton (Ganda Putra) External",
+        "Ulympic - Badminton (Ganda Campuran)",
+        "Ulympic - Badminton (Ganda Putra)",
+        "Ulympic - Badminton (Tunggal Putra)",
+        "Ulympic - Badminton (Tunggal Putri)",
         "Ulympic - Basket",
         "Ulympic - Futsal",
         "Ulympic - Volly",
@@ -104,11 +103,10 @@ volly 10
         0, // Unveiling
         16, // E-Ulympic - Valorant
         32, // E-Ulympic - Mobile Legends
-        12, // Ulympic - Badminton (Ganda Campuran) Internal
-        12, // Ulympic - Badminton (Ganda Putra) Internal
-        12, // Ulympic - Badminton (Ganda Putra) Internal
-        16, // Ulympic - Badminton (Tunggal Putra) External
-        16, // Ulympic - Badminton (Ganda Putra) External
+        12, // Ulympic - Badminton (Ganda Campuran)
+        12, // Ulympic - Badminton (Ganda Putra)
+        12, // Ulympic - Badminton (Tunggal Putra)
+        12, // Ulympic - Badminton (Tunggal Putri)
         7, // Ulympic - Basket
         12, // Ulympic - Futsal
         10, // Ulympic - Volly
@@ -119,11 +117,10 @@ volly 10
         0, // Unveiling
         6, // E-Ulympic - Valorant
         6, // E-Ulympic - Mobile Legends
-        2, // Ulympic - Badminton (Ganda Campuran) Internal
-        2, // Ulympic - Badminton (Ganda Putra) Internal
-        2, // Ulympic - Badminton (Ganda Putra) Internal
-        1, // Ulympic - Badminton (Tunggal Putra) External
-        2, // Ulympic - Badminton (Ganda Putra) External
+        2, // Ulympic - Badminton (Ganda Campuran)
+        2, // Ulympic - Badminton (Ganda Putra)
+        1, // Ulympic - Badminton (Tunggal Putra)
+        1, // Ulympic - Badminton (Tunggal Putri)
         7, // Ulympic - Basket
         12, // Ulympic - Futsal
         10, // Ulympic - Volly

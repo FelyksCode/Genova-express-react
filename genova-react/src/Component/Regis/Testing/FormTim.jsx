@@ -53,12 +53,11 @@ const FormTim = () => {
       case "basket":
         immediateNewId = process.env.REACT_APP_BASKET;
         break;
-      case "badmintonGandaPutraInternal": // Note: Make sure this matches the value in your <option>
-        immediateNewId = process.env.REACT_APP_BADMINTON_GANDA_PUTRA_INTERNAL; // Adjusted as per your actual options
+      case "badmintonGandaPutra": // Note: Make sure this matches the value in your <option>
+        immediateNewId = process.env.REACT_APP_BADMINTON_GANDA_PUTRA; // Adjusted as per your actual options
         break;
       case "badmintonGandaCampuran": // Note: Make sure this matches the value in your <option>
-        immediateNewId =
-          process.env.REACT_APP_BADMINTON_GANDA_CAMPURAN_INTERNAL; // Adjusted as per your actual options
+        immediateNewId = process.env.REACT_APP_BADMINTON_GANDA_CAMPURAN; // Adjusted as per your actual options
         break;
       case "futsal":
         immediateNewId = "660ab388747695f586c790b1";
@@ -84,7 +83,7 @@ const FormTim = () => {
     switch (jenis) {
       case "basket":
         return 7;
-      case "badmintonGandaPutraInternal":
+      case "badmintonGandaPutra":
         return 2;
       case "badmintonGandaCampuran":
         return 2;
@@ -197,9 +196,7 @@ const FormTim = () => {
         <select onChange={handleJenisTimChange}>
           <option value="">Pilih Jenis Tim</option>
           <option value="basket">Basket (7 anggota)</option>
-          <option value="badmintonGandaPutraInternal">
-            Badminton (2 anggota)
-          </option>
+          <option value="badmintonGandaPutra">Badminton (2 anggota)</option>
           <option value="badmintonGandaCampuran">Badminton (2 anggota)</option>
           <option value="futsal">Futsal (12 anggota)</option>
           <option value="volly">Volly (10 anggota)</option>
