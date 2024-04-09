@@ -6,8 +6,8 @@ import "./Stylerangkaian.css";
 import image1 from "../../../Assets/NewsEvent/UNVEILING.webp";
 import image2 from "../../../Assets/NewsEvent/E-ULYMPIC.webp";
 import image3 from "../../../Assets/NewsEvent/UCARE.webp";
-import image4 from "../../../Assets/NewsEvent/dumbimg4.webp";
-import image5 from "../../../Assets/NewsEvent/dumbimg4.webp";
+import image4 from "../../../Assets/NewsEvent/ULYMPIC.webp";
+import image5 from "../../../Assets/NewsEvent/UNIFY.webp";
 
 import logo1 from "../../../Assets/Rangkaian/Unveiling.webp";
 import logo2 from "../../../Assets/Rangkaian/E-Ulympic.webp";
@@ -18,6 +18,8 @@ import logo5 from "../../../Assets/Rangkaian/Unify.webp";
 import bg1 from "../../../Assets/NewsEvent/UNVEILING_1.webp";
 import bg2 from "../../../Assets/NewsEvent/E-ULYMPIC_1.webp";
 import bg3 from "../../../Assets/NewsEvent/UCARE_1.webp";
+import bg4 from "../../../Assets/NewsEvent/ULYMPIC_1.webp";
+import bg5 from "../../../Assets/NewsEvent/UNIFY_1.webp";
 
 import gambar1 from "../../../Assets/Rangkaian/Unveiling_1.webp";
 import gambar2 from "../../../Assets/Rangkaian/E-Ulympic_1.webp";
@@ -117,11 +119,7 @@ function Rangkaian() {
           <a href="/ulympic" alt="ulympic" target="_blank">
             <div class="card">
               <div class="wrapper">
-                <img
-                  src="https://ggayane.github.io/css-experiments/cards/force_mage-cover.jpg"
-                  class="cover-image"
-                  alt="coverimage"
-                />
+                <img src={bg4} class="cover-image" alt="coverimage" />
               </div>
               <img src={judul4} class="title" alt="title" />
               <img src={gambar4} class="character4" alt="character" />
@@ -131,11 +129,7 @@ function Rangkaian() {
           <a href="/unify" alt="unify" target="_blank">
             <div class="card">
               <div class="wrapper">
-                <img
-                  src="https://ggayane.github.io/css-experiments/cards/dark_rider-cover.jpg"
-                  class="cover-image"
-                  alt="coverimage"
-                />
+                <img src={bg5} class="cover-image" alt="coverimage" />
               </div>
               <img src={judul5} class="title" alt="title" />
               <img src={gambar5} class="character5" alt="character" />
