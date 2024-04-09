@@ -290,7 +290,11 @@ const FormValorant = () => {
                       htmlFor="transferProof"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Transfer Proof
+                      Pembayaran Registrasi dapat dilakukan dengan cara transfer
+                      melalui rekening Blu BCA / BCA Digital 005951295203 a.n
+                      Petris Glaudya Liuwanda, sebesar Rp 60.000. <br />
+                      Bukti Pembayaran dapat dimasukkan ke dalam form di bawah
+                      ini.
                     </label>
                     <input
                       type="file"

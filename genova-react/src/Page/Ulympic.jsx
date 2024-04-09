@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Component/Ulympic/Ulympic.css";
 import Navbar from "../Component/Navbar/Navbar";
 import Tujuan from "../Component/Unify/Tujuanunify/Tujuan";
@@ -8,7 +8,22 @@ import Footer from "../Component/Footer/Footer";
 import UlympicLogo from "../Component/Ulympic/Ulympiclogo";
 import ListLomba from "../Component/Ulympic/ListLomba";
 import FormUlympic from "../Component/Ulympic/FormUlympic";
+
 function Ulympic() {
+  // State untuk mengontrol apakah FormUlympic harus ditampilkan atau tidak
+  const [showForm, setShowForm] = useState(false);
+
+  // Tanggal yang akan digunakan untuk membandingkan apakah FormUlympic harus ditampilkan
+  const targetDate = new Date("2024-04-15");
+
+  // Tanggal hari ini
+  const currentDate = new Date();
+
+  // Jika tanggal hari ini adalah tanggal target, maka tampilkan FormUlympic
+  if (currentDate.toDateString() === targetDate.toDateString()) {
+    setShowForm(true);
+  }
+
   return (
     <div>
       <Navbar />
@@ -29,9 +44,12 @@ function Ulympic() {
           </section>
         </Fade>
 
-        <section className="mt-2">
-          <FormUlympic />
-        </section>
+        {/* Menampilkan FormUlympic hanya jika showForm bernilai true */}
+        {showForm && (
+          <section className="mt-2">
+            <FormUlympic />
+          </section>
+        )}
       </section>
 
       <section className="snap-y snap-mandatory overflow-hidden ">

@@ -81,11 +81,7 @@ function Esports() {
           </div>
         </div>
 
-        {isFormAvailable ? (
-          <FormML />
-        ) : (
-          <button disabled>Form is not available yet</button>
-        )}
+        {isFormAvailable && <FormML />}
       </div>
 
       <div className="valorant">
@@ -115,11 +111,7 @@ function Esports() {
           </div>
         </div>
 
-        {isFormAvailable ? (
-          <FormValorant />
-        ) : (
-          <button disabled>Form is not available yet</button>
-        )}
+        {isFormAvailable && <FormValorant />}
       </div>
     </div>
   );
