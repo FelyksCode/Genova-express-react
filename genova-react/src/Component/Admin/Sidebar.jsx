@@ -8,7 +8,6 @@ import axios from "axios";
 
 const Sidebar = ({ setSelectedSection, setResponse }) => {
   const [expanded, setExpanded] = useState(true);
-
   const handleMenuItemClick = async (index) => {
     setSelectedSection(index);
 
@@ -48,8 +47,13 @@ const Sidebar = ({ setSelectedSection, setResponse }) => {
               team.data.races.race_name === "Ulympic - Badminton (Ganda Putra)"
           );
           break;
-
-        case 4: // Badmin Campur Ganda
+        case 4: // Badmin Putri Ganda
+          newData = newData.filter(
+            (team) =>
+              team.data.races.race_name === "Ulympic - Badminton (Ganda Putri)"
+          );
+          break;
+        case 5: // Badmin Campur Ganda
           newData = newData.filter(
             (team) =>
               team.data.races.race_name ===
@@ -57,12 +61,13 @@ const Sidebar = ({ setSelectedSection, setResponse }) => {
           );
           break;
 
-        case 5: // Futsal
+        case 6: // Futsal
           newData = newData.filter(
             (team) => team.data.races.race_name === "Ulympic - Futsal"
           );
           break;
-        case 6: // Valorant
+
+        case 7: // Valorant
           newData = newData.filter(
             (team) => team.data.races.race_name === "E-Ulympic - Valorant"
           );
@@ -78,8 +83,6 @@ const Sidebar = ({ setSelectedSection, setResponse }) => {
           break;
       }
 
-      console.log("newData: ", newData);
-
       if (setResponse) setResponse(newData);
     } catch (e) {
       console.log(e);
@@ -91,7 +94,6 @@ const Sidebar = ({ setSelectedSection, setResponse }) => {
     localStorage.removeItem("refreshToken");
     window.location.reload();
   };
-
   return (
     <>
       <motion.div

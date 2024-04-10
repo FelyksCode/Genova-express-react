@@ -91,8 +91,7 @@ volly 10
         "E-Ulympic - Mobile Legends",
         "Ulympic - Badminton (Ganda Campuran)",
         "Ulympic - Badminton (Ganda Putra)",
-        "Ulympic - Badminton (Tunggal Putra)",
-        "Ulympic - Badminton (Tunggal Putri)",
+        "Ulympic - Badminton (Ganda Putri)",
         "Ulympic - Basket",
         "Ulympic - Futsal",
         "Ulympic - Volly",
@@ -105,8 +104,7 @@ volly 10
         32, // E-Ulympic - Mobile Legends
         12, // Ulympic - Badminton (Ganda Campuran)
         12, // Ulympic - Badminton (Ganda Putra)
-        12, // Ulympic - Badminton (Tunggal Putra)
-        12, // Ulympic - Badminton (Tunggal Putri)
+        12, // Ulympic - Badminton (Ganda Putri)
         7, // Ulympic - Basket
         12, // Ulympic - Futsal
         10, // Ulympic - Volly
@@ -119,8 +117,7 @@ volly 10
         6, // E-Ulympic - Mobile Legends
         2, // Ulympic - Badminton (Ganda Campuran)
         2, // Ulympic - Badminton (Ganda Putra)
-        1, // Ulympic - Badminton (Tunggal Putra)
-        1, // Ulympic - Badminton (Tunggal Putri)
+        2, // Ulympic - Badminton (Ganda Putri)
         7, // Ulympic - Basket
         12, // Ulympic - Futsal
         10, // Ulympic - Volly
