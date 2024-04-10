@@ -30,7 +30,12 @@ function Logo() {
         </div>
       </div>
       <div className="flex justify-center">
-        <button className="tombol mb-10">Join Us!</button>
+        {/* invisible buat Hidden */}
+        <button className="tombol mb-10 invisible">
+          <a href="https://forms.gle/9NcXZjr68atMZPVB9" target="_blank">
+            Join Us!
+          </a>
+        </button>
       </div>
     </div>
   );
