@@ -26,7 +26,7 @@ function Navbar() {
         </Link>
         <div
           onClick={() => setOpen(!open)}
-          className="text-3xl absolute right-8 top-6 cursor-pointer lg:md:hidden"
+          className="text-4xl absolute right-8 top-4 cursor-pointer lg:md:hidden p-2"
         >
           <IonIcon name={open ? "close" : "menu"}></IonIcon>
         </div>

@@ -11,22 +11,22 @@ function ListLomba() {
   const Lomba = [
     {
       name: "Badminton",
-      description: `tes`,
+      description: ``,
       backgroundUrl: img1,
     },
     {
       name: "Basket",
-      description: `tes`,
+      description: ``,
       backgroundUrl: img2,
     },
     {
       name: "Futsal",
-      description: `tes`,
+      description: ``,
       backgroundUrl: img3,
     },
     {
       name: "Voli",
-      description: `tes`,
+      description: ``,
       backgroundUrl: img4,
     },
   ];
