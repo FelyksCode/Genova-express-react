@@ -88,51 +88,51 @@ function Rangkaian() {
         <div className="overlaycolor"></div>
         <div className="content">
           <a href="/unveiling" alt="unveiling" target="_blank">
-            <div class="card">
-              <div class="wrapper">
-                <img src={bg1} class="cover-image" alt="coverimage" />
+            <div className="card">
+              <div className="wrapper">
+                <img src={bg1} className="cover-image" alt="coverimage" />
               </div>
-              <img src={judul1} class="title" alt="title" />
-              <img src={gambar1} class="character" alt="character" />
+              <img src={judul1} className="title" alt="title" />
+              <img src={gambar1} className="character" alt="character" />
             </div>
           </a>
 
           <a href="/eulympic" alt="eulympic" target="_blank">
-            <div class="card">
-              <div class="wrapper">
-                <img src={bg2} class="cover-image" alt="coverimage" />
+            <div className="card">
+              <div className="wrapper">
+                <img src={bg2} className="cover-image" alt="coverimage" />
               </div>
-              <img src={judul2} class="title" alt="title" />
-              <img src={gambar2} class="character" alt="charcter" />
+              <img src={judul2} className="title" alt="title" />
+              <img src={gambar2} className="character" alt="charcter" />
             </div>
           </a>
           <a href="/ucare" alt="ucare" target="_blank">
-            <div class="card">
-              <div class="wrapper">
-                <img src={bg3} class="cover-image" alt="coverimage" />
+            <div className="card">
+              <div className="wrapper">
+                <img src={bg3} className="cover-image" alt="coverimage" />
               </div>
-              <img src={judul3} class="title" alt="title" />
-              <img src={gambar3} class="character" alt="character" />
+              <img src={judul3} className="title" alt="title" />
+              <img src={gambar3} className="character" alt="character" />
             </div>
           </a>
 
           <a href="/ulympic" alt="ulympic" target="_blank">
-            <div class="card">
-              <div class="wrapper">
-                <img src={bg4} class="cover-image" alt="coverimage" />
+            <div className="card">
+              <div className="wrapper">
+                <img src={bg4} className="cover-image" alt="coverimage" />
               </div>
-              <img src={judul4} class="title" alt="title" />
-              <img src={gambar4} class="character4" alt="character" />
+              <img src={judul4} className="title" alt="title" />
+              <img src={gambar4} className="character4" alt="character" />
             </div>
           </a>
 
           <a href="/unify" alt="unify" target="_blank">
-            <div class="card">
-              <div class="wrapper">
-                <img src={bg5} class="cover-image" alt="coverimage" />
+            <div className="card">
+              <div className="wrapper">
+                <img src={bg5} className="cover-image" alt="coverimage" />
               </div>
-              <img src={judul5} class="title" alt="title" />
-              <img src={gambar5} class="character5" alt="character" />
+              <img src={judul5} className="title" alt="title" />
+              <img src={gambar5} className="character5" alt="character" />
             </div>
           </a>
         </div>

@@ -18,8 +18,6 @@ import Slideimg12 from "../../../Assets/LogoDivisi_Baru/Visual.webp";
 import Slideimg13 from "../../../Assets/LogoDivisi_Baru/Website.webp";
 
 function Divisihome() {
-  const [focusElement, setFocusElement] = useState(0);
-
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const images = [
@@ -74,7 +72,6 @@ function Divisihome() {
         <div className="main py-[100px] w-screen h-screen pembungkus">
           <FancyCarousel
             images={images}
-            setFocusElement={setFocusElement}
             focusElementStyling={{ border: "5px solid #ba4949" }}
             autoRotateTime={3}
             borderWidth={4}
