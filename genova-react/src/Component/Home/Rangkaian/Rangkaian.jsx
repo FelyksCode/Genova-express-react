@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 // css
 import "./Stylerangkaian.css";
 
@@ -53,11 +54,18 @@ function Rangkaian() {
   const Tujuan = ["unveiling", "eulympic", "ucare", "ulympic", "unify"];
   const [isHovered, setIsHovered] = useState(false);
 
+  // Inside your component
+  const navigate = useNavigate();
+
   if (isWideScreen) {
     return (
       <div className="w-full h-full bg-gray-700">
         {images.map((image, index) => (
-          <div key={index} className="relative w-full h-[200px]">
+          <div
+            key={index}
+            onClick={() => navigate(`/${Tujuan[index]}`)}
+            className="relative w-full h-[200px]"
+          >
             <div className="flex justify-center items-center h-full hover:scale-110">
               <img
                 src={image}
@@ -69,7 +77,7 @@ function Rangkaian() {
               className="inset-0 flex absolute justify-center items-center text-white text-xl font-extrabold bg-black bg-opacity-50 opacity-100 hover:opacity-0 transition-opacity duration-300"
               onMouseEnter={() => setIsHovered(false)}
               onMouseLeave={() => setIsHovered(true)}
-              href={`/${Tujuan[index]}`}
+              // href={`/${Tujuan[index]}`}
             >
               <h1 className="font-custom px-10">{Titles[index]}</h1>
               {isHovered && (
