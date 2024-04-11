@@ -61,11 +61,7 @@ function Rangkaian() {
     return (
       <div className="w-full h-full bg-gray-700">
         {images.map((image, index) => (
-          <div
-            key={index}
-            onClick={() => navigate(`/${Tujuan[index]}`)}
-            className="relative w-full h-[200px]"
-          >
+          <div key={index} className="relative w-full h-[200px]">
             <div className="flex justify-center items-center h-full hover:scale-110">
               <img
                 src={image}
