@@ -25,16 +25,15 @@ function Home() {
     // Set a flag in localStorage indicating that intro has been shown
     localStorage.setItem("introShown", "true");
     setShowIntro(false);
+    window.location.reload();
   };
 
   return (
     <>
       {showIntro ? (
         <Intro onIntroEnd={handleIntroEnd} />
-      ) : (
-        // <div className="text-blue-500">no intro</div>
-        <div className=""></div>
-      )}
+      ) : // <div className="text-blue-500">no intro</div>
+      null}
       <div>
         <Navbar />
         <section className="snap-y overflow-hidden focus:scroll-auto">
