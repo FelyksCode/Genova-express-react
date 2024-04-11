@@ -77,7 +77,7 @@ function Rangkaian() {
               className="inset-0 flex absolute justify-center items-center text-white text-xl font-extrabold bg-black bg-opacity-50 opacity-100 hover:opacity-0 transition-opacity duration-300"
               onMouseEnter={() => setIsHovered(false)}
               onMouseLeave={() => setIsHovered(true)}
-              // href={`/${Tujuan[index]}`}
+              href={`/${Tujuan[index]}`}
             >
               <h1 className="font-custom px-10">{Titles[index]}</h1>
               {isHovered && (
@@ -94,9 +94,10 @@ function Rangkaian() {
     return (
       <div className="rangkaianwrapper">
         <div className="overlaycolor"></div>
+
         <div className="content">
           <a href="/unveiling" alt="unveiling" target="_blank">
-            <div className="card">
+            <div className="card" onClick={() => navigate("/unveiling")}>
               <div className="wrapper">
                 <img src={bg1} className="cover-image" alt="coverimage" />
               </div>
@@ -106,7 +107,7 @@ function Rangkaian() {
           </a>
 
           <a href="/eulympic" alt="eulympic" target="_blank">
-            <div className="card">
+            <div className="card" onClick={() => navigate("/eulympic")}>
               <div className="wrapper">
                 <img src={bg2} className="cover-image" alt="coverimage" />
               </div>
@@ -115,7 +116,7 @@ function Rangkaian() {
             </div>
           </a>
           <a href="/ucare" alt="ucare" target="_blank">
-            <div className="card">
+            <div className="card" onClick={() => navigate("/ucare")}>
               <div className="wrapper">
                 <img src={bg3} className="cover-image" alt="coverimage" />
               </div>
@@ -125,7 +126,7 @@ function Rangkaian() {
           </a>
 
           <a href="/ulympic" alt="ulympic" target="_blank">
-            <div className="card">
+            <div className="card" onClick={() => navigate("/ulympic")}>
               <div className="wrapper">
                 <img src={bg4} className="cover-image" alt="coverimage" />
               </div>
@@ -135,7 +136,7 @@ function Rangkaian() {
           </a>
 
           <a href="/unify" alt="unify" target="_blank">
-            <div className="card">
+            <div className="card" onClick={() => navigate("/unify")}>
               <div className="wrapper">
                 <img src={bg5} className="cover-image" alt="coverimage" />
               </div>
