@@ -9,7 +9,8 @@ import Footer from "../Component/Footer/Footer";
 // import Bracket from "../Component/Home/Callonge/Bracket";
 
 function Home() {
-  const [showIntro, setShowIntro] = useState(true);
+  // NOTE: Sementara di false (ga bakal intro)
+  const [showIntro, setShowIntro] = useState(false);
 
   useEffect(() => {
     // Check if intro has been shown before
@@ -22,10 +23,11 @@ function Home() {
   }, []);
 
   const handleIntroEnd = () => {
+    // Set showIntro false
+    setShowIntro(false);
+
     // Set a flag in localStorage indicating that intro has been shown
     localStorage.setItem("introShown", "true");
-    setShowIntro(false);
-    window.location.reload();
   };
 
   return (
