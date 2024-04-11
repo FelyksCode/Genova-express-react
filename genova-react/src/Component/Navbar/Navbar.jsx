@@ -13,7 +13,7 @@ function Navbar() {
   ];
   let [open, setOpen] = useState(false);
   return (
-    <div className="shadow-md lg:shadow-none md:shadow-none w-[95%] fixed top-2 left-3 md:left-8 z-10 rounded-full">
+    <div className="fixed z-10 shadow-md lg:shadow-none md:shadow-none w-[95%] fixed top-2 left-3 md:left-8 z-10 rounded-full">
       <div className="lg:flex items-center md:flex items-center justify-between bg-slate-100 lg:bg-opacity-0 md:bg-opacity-0 py-4 lg:px-10 md:px-10 px-7 rounded-full">
         <Link
           to="/"
