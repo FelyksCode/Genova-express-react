@@ -41,6 +41,7 @@ function Intro({ onIntroEnd }) {
           autoPlay
           muted
           onEnded={handleVideoEnd}
+          playsInline
           onPlay={() => setVideoPlayed(true)}
         >
           <source src={videoUrl} type="video/mp4" />

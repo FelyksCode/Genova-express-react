@@ -31,6 +31,7 @@ function ImageUnveiling() {
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
         loop
+        playsInline
         muted
       >
         <source src={Trailer} type="video/mp4" />

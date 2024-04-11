@@ -30,6 +30,7 @@ function ImageTwo() {
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
+        playsInline
         loop
         muted
       >

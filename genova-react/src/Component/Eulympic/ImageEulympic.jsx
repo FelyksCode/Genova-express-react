@@ -32,6 +32,7 @@ function ImageEulympic() {
         autoPlay
         loop
         muted
+        playsInline
       >
         <source src={Trailer} type="video/mp4" />
         Your browser does not support the video tag.

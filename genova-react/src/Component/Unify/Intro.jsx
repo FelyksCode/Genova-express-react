@@ -39,6 +39,7 @@ function Intro({ onIntroEnd }) {
             videoPlayed ? "block" : "hidden"
           } `}
           autoPlay
+          playsInline
           muted
           onEnded={handleVideoEnd}
           onPlay={() => setVideoPlayed(true)}

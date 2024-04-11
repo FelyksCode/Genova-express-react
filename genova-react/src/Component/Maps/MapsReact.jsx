@@ -19,6 +19,7 @@ function MapsReact() {
             autoPlay
             muted
             loop
+            playsInline
             src={CloudVid}
             className="absolute top-0 left-0 z-5 w-full h-full object-cover blend-overlay"
             style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}

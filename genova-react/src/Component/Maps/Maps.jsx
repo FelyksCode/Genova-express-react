@@ -31,6 +31,7 @@ function Maps({ onVideoEnd }) {
           muted
           onEnded={handleVideoEnd}
           ref={videoRef}
+          playsInline
           style={{ opacity: videoOpacity }}
         >
           <source src={MapsVid} alt="Video" />
