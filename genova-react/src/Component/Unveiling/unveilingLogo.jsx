@@ -29,11 +29,15 @@ function Logo() {
           </p>
         </div>
       </div>
-      <div className="flex justify-center">
-        {/* invisible buat Hidden */}
-        <button className="tombol mb-10 invisible">
-          <a href="https://forms.gle/9NcXZjr68atMZPVB9" target="_blank">
-            Join Us!
+      <div className="flex justify-center flex-col">
+        <button className="tombol mb-10">
+          <a href="https://forms.gle/tyPEppvJgddPWr2Y8" target="_blank">
+            Early Bird Form Hanya untuk 50 Orang Pertama
+          </a>
+        </button>
+        <button className="tombol mb-10">
+          <a href="https://forms.gle/6R9D1JdEUbACJVj69" target="_blank">
+            Regular Form
           </a>
         </button>
       </div>

@@ -20,8 +20,8 @@ function Home() {
         <section className="snap-y snap-mandatory overflow-hidden isiucare">
           <Fade>
             <Logo />
-            <Panti />
-            <Tombol />
+            {/* <Panti /> */}
+            {/* <Tombol /> */}
           </Fade>
         </section>
         <Footer />

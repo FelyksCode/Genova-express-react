@@ -20,7 +20,7 @@ function PageUnify() {
         <section className="snap-y snap-mandatory overflow-hidden bg">
           <Fade>
             <Unify />
-            <Tombolunify />
+            {/* <Tombolunify /> */}
           </Fade>
         </section>
         <Footer />
