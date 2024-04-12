@@ -5,6 +5,13 @@ import {
   AccordionPanel,
   AccordionTitle,
 } from "flowbite-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope as regularEnvelope } from "@fortawesome/free-regular-svg-icons";
+import {
+  faLine,
+  faInstagram,
+  faTiktok,
+} from "@fortawesome/free-brands-svg-icons";
 
 import "./stylefaq.css";
 
@@ -27,78 +34,61 @@ function FaqAccordion() {
                 UMN Festival 2024 yaitu: 'UNVEILING, E-ULYMPIC, U-CARE, ULYMPIC,
                 DAN UNIFY'
               </p>
-              {/* <p className="text-gray-800 dark:text-gray-400">
-                Check out this guide to learn how to&nbsp;
-                <a
-                  href="https://flowbite.com/docs/getting-started/introduction/"
-                  className="text-cyan-600 hover:underline dark:text-cyan-500"
-                >
-                  get started&nbsp;
-                </a>
-                and start developing websites even faster with components on top
-                of Tailwind CSS.
-              </p> */}
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
-            <AccordionTitle className="text-xl my-2 text-black dark:text-black justify-self-start flex">
-              UMN Festival berlangsung sampai kapan?
+            <AccordionTitle className="text-xl my-2 text-black dark:text-black left-0">
+              Kapan jadwal UMN Festival?
             </AccordionTitle>
             <AccordionContent>
-              <p className="mb-2 text-gray-800 dark:text-gray-800 textfaq">
-                Flowbite is first conceptualized and designed using the Figma
-                software so everything you see in the library has a design
-                equivalent in our Figma file.
-              </p>
-              <p className="text-gray-800 dark:text-gray-800 textfaq">
-                Check out the
-                <a
-                  href="https://flowbite.com/figma/"
-                  className="text-cyan-600 hover:underline dark:text-cyan-600"
-                >
-                  Figma design system
-                </a>
-                based on the utility classes from Tailwind CSS and components
-                from Flowbite.
+              <p className="mb-2 text-gray-800 dark:text-gray-800 textfaq rounded-md p-2">
+                UMN Festival dimulai dari bulan April 2024 sampai bulan November
+                2024
               </p>
             </AccordionContent>
           </AccordionPanel>
           <AccordionPanel>
             <AccordionTitle className="text-xl my-2 text-black dark:text-black">
-              What is UMN Festival?
+              Dimana UMN Festival?
             </AccordionTitle>
             <AccordionContent>
-              <p className="mb-2 text-gray-800 dark:text-gray-800 textfaq">
-                The main difference is that the core components from Flowbite
-                are open source under the MIT license, whereas Tailwind UI is a
-                paid product. Another difference is that Flowbite relies on
-                smaller and standalone components, whereas Tailwind UI offers
-                sections of pages.
+              <p>
+                Alamat:
+                <br /> Universitas Multimedia Nusantara Jl. Scientia Boulevard,
+                Gading Serpong, Tangerang Banten 15811, Indonesia.
               </p>
               <p className="mb-2 text-gray-800 dark:text-gray-800 textfaq">
-                However, we actually recommend using both Flowbite, Flowbite
-                Pro, and even Tailwind UI as there is no technical reason
-                stopping you from using the best of two worlds.
+                Social Media:
               </p>
-              <p className="mb-2 text-gray-800 dark:text-gray-800 textfaq">
-                Learn more about these technologies:
-              </p>
-              <ul className="list-disc pl-5 text-gray-800 dark:text-gray-400">
+              <ul className="list-disc pl-5 text-gray-800 ">
                 <li>
+                  <FontAwesomeIcon icon={regularEnvelope} className="lg:me-2" />
                   <a
-                    href="https://flowbite.com/pro/"
-                    className="text-cyan-600 hover:underline dark:text-cyan-500"
+                    href="mailto:umnfestival@umn.ac.id"
+                    className="block lg:inline-block"
+                    target="_blank"
                   >
-                    Flowbite Pro
+                    umnfestival@umn.ac.id
                   </a>
                 </li>
                 <li>
+                  <FontAwesomeIcon icon={faLine} className="lg:me-2" />
+                  <div className="block lg:inline-block">@877tuixh</div>
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faInstagram} className="lg:me-2" />
                   <a
-                    href="https://tailwindui.com/"
-                    rel="nofollow"
-                    className="text-cyan-600 hover:underline dark:text-cyan-500"
+                    href="https://www.instagram.com/umnfestival/"
+                    target="_blank"
+                    className="block lg:inline-block"
                   >
-                    Tailwind UI
+                    @umnfestival
+                  </a>
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faTiktok} className="lg:me-2" />
+                  <a href="#" className="block lg:inline-block">
+                    @umnfestival
                   </a>
                 </li>
               </ul>
