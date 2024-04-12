@@ -61,7 +61,11 @@ function Rangkaian() {
     return (
       <div className="w-full h-full bg-gray-700">
         {images.map((image, index) => (
-          <div key={index} className="relative w-full h-[200px]">
+          <div
+            key={index}
+            className="relative w-full h-[200px]"
+            onClick={() => navigate(`/${Tujuan[index]}`)}
+          >
             <div className="flex justify-center items-center h-full hover:scale-110">
               <img
                 src={image}
@@ -69,11 +73,13 @@ function Rangkaian() {
                 alt="BACKGROUND"
               />
             </div>
-            <a
+            <div
               className="inset-0 flex absolute justify-center items-center text-white text-xl font-extrabold bg-black bg-opacity-50 opacity-100 hover:opacity-0 transition-opacity duration-300"
               onMouseEnter={() => setIsHovered(false)}
               onMouseLeave={() => setIsHovered(true)}
               href={`/${Tujuan[index]}`}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <h1 className="font-custom px-10">{Titles[index]}</h1>
               {isHovered && (
@@ -81,7 +87,7 @@ function Rangkaian() {
                   <img src={logos[index]} className="w-20" alt="LOGO" />
                 </div>
               )}
-            </a>
+            </div>
           </div>
         ))}
       </div>
@@ -92,54 +98,44 @@ function Rangkaian() {
         <div className="overlaycolor"></div>
 
         <div className="content">
-          <a href="/unveiling" alt="unveiling" target="_blank">
-            <div className="card" onClick={() => navigate("/unveiling")}>
-              <div className="wrapper">
-                <img src={bg1} className="cover-image" alt="coverimage" />
-              </div>
-              <img src={judul1} className="title" alt="title" />
-              <img src={gambar1} className="character" alt="character" />
+          <div className="card" onClick={() => navigate("/unveiling")}>
+            <div className="wrapper">
+              <img src={bg1} className="cover-image" alt="coverimage" />
             </div>
-          </a>
+            <img src={judul1} className="title" alt="title" />
+            <img src={gambar1} className="character" alt="character" />
+          </div>
 
-          <a href="/eulympic" alt="eulympic" target="_blank">
-            <div className="card" onClick={() => navigate("/eulympic")}>
-              <div className="wrapper">
-                <img src={bg2} className="cover-image" alt="coverimage" />
-              </div>
-              <img src={judul2} className="title" alt="title" />
-              <img src={gambar2} className="character" alt="charcter" />
+          <div className="card" onClick={() => navigate("/eulympic")}>
+            <div className="wrapper">
+              <img src={bg2} className="cover-image" alt="coverimage" />
             </div>
-          </a>
-          <a href="/ucare" alt="ucare" target="_blank">
-            <div className="card" onClick={() => navigate("/ucare")}>
-              <div className="wrapper">
-                <img src={bg3} className="cover-image" alt="coverimage" />
-              </div>
-              <img src={judul3} className="title" alt="title" />
-              <img src={gambar3} className="character" alt="character" />
+            <img src={judul2} className="title" alt="title" />
+            <img src={gambar2} className="character" alt="charcter" />
+          </div>
+          <div className="card" onClick={() => navigate("/ucare")}>
+            <div className="wrapper">
+              <img src={bg3} className="cover-image" alt="coverimage" />
             </div>
-          </a>
+            <img src={judul3} className="title" alt="title" />
+            <img src={gambar3} className="character" alt="character" />
+          </div>
 
-          <a href="/ulympic" alt="ulympic" target="_blank">
-            <div className="card" onClick={() => navigate("/ulympic")}>
-              <div className="wrapper">
-                <img src={bg4} className="cover-image" alt="coverimage" />
-              </div>
-              <img src={judul4} className="title" alt="title" />
-              <img src={gambar4} className="character4" alt="character" />
+          <div className="card" onClick={() => navigate("/ulympic")}>
+            <div className="wrapper">
+              <img src={bg4} className="cover-image" alt="coverimage" />
             </div>
-          </a>
+            <img src={judul4} className="title" alt="title" />
+            <img src={gambar4} className="character4" alt="character" />
+          </div>
 
-          <a href="/unify" alt="unify" target="_blank">
-            <div className="card" onClick={() => navigate("/unify")}>
-              <div className="wrapper">
-                <img src={bg5} className="cover-image" alt="coverimage" />
-              </div>
-              <img src={judul5} className="title" alt="title" />
-              <img src={gambar5} className="character5" alt="character" />
+          <div className="card" onClick={() => navigate("/unify")}>
+            <div className="wrapper">
+              <img src={bg5} className="cover-image" alt="coverimage" />
             </div>
-          </a>
+            <img src={judul5} className="title" alt="title" />
+            <img src={gambar5} className="character5" alt="character" />
+          </div>
         </div>
       </div>
     );
