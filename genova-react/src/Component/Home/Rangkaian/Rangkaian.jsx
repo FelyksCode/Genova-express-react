@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 // css
 import "./Stylerangkaian.css";
 
@@ -55,7 +54,6 @@ function Rangkaian() {
   const [isHovered, setIsHovered] = useState(false);
 
   // Inside your component
-  const navigate = useNavigate();
 
   if (isWideScreen) {
     return (
