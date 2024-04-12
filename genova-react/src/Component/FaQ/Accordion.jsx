@@ -12,6 +12,7 @@ import {
   faInstagram,
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 import "./stylefaq.css";
 
@@ -89,6 +90,15 @@ function FaqAccordion() {
                   <FontAwesomeIcon icon={faTiktok} className="lg:me-2" />
                   <a href="#" className="block lg:inline-block">
                     @umnfestival
+                  </a>
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faLink} className="lg:me-2" />
+                  <a
+                    href="linktr.ee/umnfestival2024"
+                    className="block lg:inline-block"
+                  >
+                    umnfestival2024
                   </a>
                 </li>
               </ul>

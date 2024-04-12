@@ -7,7 +7,7 @@ import {
   faInstagram,
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
-
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 function Footer() {
   return (
     <div className="static bottom-0" style={{ background: "rgb(72,75,117)" }}>
@@ -65,10 +65,19 @@ function Footer() {
                       @umnfestival
                     </a>
                   </div>
-                  <div className="text-md lg:text-left">
+                  <div className="text-md my-3 lg:text-left">
                     <FontAwesomeIcon icon={faTiktok} className="lg:me-2" />
                     <a href="#" className="block lg:inline-block">
                       @umnfestival
+                    </a>
+                  </div>
+                  <div className="text-md lg:text-left">
+                    <FontAwesomeIcon icon={faLink} className="lg:me-2" />
+                    <a
+                      href="linktr.ee/umnfestival2024"
+                      className="block lg:inline-block"
+                    >
+                      umnfestival2024
                     </a>
                   </div>
                 </div>
