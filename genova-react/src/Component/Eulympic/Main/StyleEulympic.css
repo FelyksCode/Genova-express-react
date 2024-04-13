@@ -3,50 +3,72 @@
 } */
 
 .Eulympic-section {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .logo-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 45%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* max-width: 45%; */
 }
 
 .logo-section img {
-    max-width: 100%;
+  max-width: 400px; /* Adjust the logo size as needed */
+  animation: bounceIn 1s ease-out;
+  filter: drop-shadow(
+    2px 4px 6px rgba(0, 0, 0, 0.5)
+  ); /* Add shadow effect to the logo */
 }
 
-.explanation-section {
-    border: none;
-    border-radius: 8px;
-    /* box-shadow: 5px 10px 18px #888888; */
-    max-width: 65%;
-    margin-left: 4rem;
-    margin-right: 4rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    /* padding: 2rem 2rem 2rem 2rem; */
+.explanation-section1 {
+  border: none;
+  border-radius: 8px;
+  /* box-shadow: 5px 10px 18px #888888; */
+  max-width: 65%;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background: white;
+  /* padding: 2rem 2rem 2rem 2rem; */
 }
 
-.explanation-section h1{
-    font-size: 40px;
+.explanation-section1 h1 {
+  font-size: 40px;
+  font-family: Akbaal;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #333333; /* Dark grey */
+  animation: slideInRight 1s ease-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-.explanation-section p{
-    font-size: 20px;
-    word-spacing: 0.5px;
+.explanation-section1 p {
+  font-size: 20px;
+  word-spacing: 0.5px;
+  line-height: 1.6;
+  color: #555555; /* Grey */
+  animation: slideInRight 1s ease-out;
 }
 
 @media (max-width: 768px) {
-    .Eulympic-section {
-        flex-direction: column;
-    }
+  .Eulympic-section {
+    flex-direction: column;
+  }
 
-    .logo-section {
-        max-width: 60%;
-    }
+  .logo-section {
+    max-width: 60%;
+  }
+
+  .explanation-section1 h1 {
+    font-size: 20px;
+  }
+
+  .explanation-section1 p {
+    font-size: 15px;
+  }
 }

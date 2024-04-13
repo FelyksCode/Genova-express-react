@@ -14,7 +14,7 @@ function Eulympic() {
         </div>
 
         {/* Explanation Section */}
-        <div className="explanation-section">
+        <div className="explanation-section1 p-6 text-center md:text-start">
           {/* Add your explanatory content here */}
           <h1>E-ulympic</h1>
           <p>

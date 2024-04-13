@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
   let Links = [
     { name: "HOME", link: "/" },
-    { name: "FAQ", link: "/faq" },
+    // { name: "FAQ", link: "/faq" },
     { name: "DIVISION", link: "/division" },
     { name: "MAP", link: "/map" },
   ];

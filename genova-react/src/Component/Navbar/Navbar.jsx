@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
   let Links = [
     { name: "HOME", link: "/" },
-    { name: "FAQ", link: "/faq" },
+    // { name: "FAQ", link: "/faq" },
     { name: "DIVISION", link: "/division" },
     { name: "MAP", link: "/map" },
   ];
@@ -19,9 +19,9 @@ function Navbar() {
           to="/"
           className="font-bold text-2xl cursor-pointer flex items-center lg:text-white text-gray-600 md:text-white text-gray-600 lg:font-[Poppins text-gray-800] md:font-[Poppins text-gray-800]"
         >
-          <span className="w-[40px] mr-5 pt-auto">
+          <a className="w-[40px] mr-5 pt-auto" href="/">
             <img src={Logo} alt="ufest logo" />
-          </span>
+          </a>
           UMN FESTIVAL
         </Link>
         <button

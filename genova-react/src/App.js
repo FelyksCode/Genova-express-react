@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import Home from "./Page/Home";
 import Pagedivisi from "./Page/Pagedivisi";
-import Faqpage from "./Page/Faqpage";
+// import Faqpage from "./Page/Faqpage";
 import MapPage from "./Page/MapPage";
 import Admin from "./Page/Admin";
 import LoginPage from "./Page/LoginAdmin";
@@ -29,7 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/division" element={<Pagedivisi />} />
-        <Route path="/faq" element={<Faqpage />} />
+        {/* <Route path="/faq" element={<Faqpage />} /> */}
         <Route path="/map" element={<MapPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route

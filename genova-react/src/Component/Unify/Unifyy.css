@@ -1,21 +1,101 @@
+/* Unifyy.css */
+
 /* Background for the entire section */
 .bg {
   background: #719ece;
-
-  border:none;
+  border: none;
   background-repeat: no-repeat;
   /* Add other background styles as needed */
 }
 
-
-/* Container for the entire section */
-.unify-section {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
   animation: fadeIn 1s ease-in;
-   /* Fallback for browsers that do not support gradients */
+  /* Fallback for browsers that do not support gradients */
+}
+
+/* Logo Section */
+.logo-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container img {
+  max-width: 400px; /* Adjust the logo size as needed */
+  animation: bounceIn 1s ease-out;
+  filter: drop-shadow(
+    2px 4px 6px rgba(0, 0, 0, 0.5)
+  ); /* Add shadow effect to the logo */
+}
+
+/* Explanation Section */
+.explanation-container {
+  flex: 1;
+  padding: 20px;
+  font-family: Forum-Regular;
+}
+
+.explanation-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@font-face {
+  font-family: "Akbaal";
+  src: local("Akbaal"),
+    url("../../Assets/Font/akbaal/akbaal.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Forum-Regular";
+  src: local("Forum"),
+    url("../../Assets/Font/Forum/Forum-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.explanation-box h1 {
+  font-family: Akbaal;
+  margin-bottom: 20px;
+  font-size: 30px;
+  line-height: 1.6;
+  color: #333333; /* Dark grey */
+  animation: slideInRight 1s ease-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.explanation-box p {
+  font-size: 22px;
+  line-height: 1.6;
+  color: #555555; /* Grey */
+  animation: slideInRight 1s ease-out;
+  /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); */
+}
+
+/* Media Query */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .logo-container,
+  .explanation-container {
+    border-right: none; /* Remove border on smaller screens */
+  }
+  .explanation-box h1 {
+    text-align: center;
+  }
+  .explanation-box p {
+    text-align: center;
+  }
 }
 
 @keyframes fadeIn {
@@ -25,21 +105,6 @@
   100% {
     opacity: 1;
   }
-}
-
-
-.logo-section {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.logo-section img {
-  max-width: 400px; /* Adjust the logo size as needed */
-  animation: bounceIn 1s ease-out;
-  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5)); /* Add shadow effect to the logo */
 }
 
 @keyframes bounceIn {
@@ -53,48 +118,6 @@
     transform: scale(1);
   }
 }
-@font-face {
-  font-family: 'Akbaal';
-  src: local('Akbaal'), url('../../Assets/Font/akbaal/akbaal.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'Forum-Regular';
-  src: local('Forum'), url('../../Assets/Font/Forum/Forum-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-
-.explanation-section {
-  flex: 1;
-  padding: 20px;
-  font-family: Forum-Regular; 
-}
-
-
-.explanation-section p {
-  font-size: 22px;
-  line-height: 1.6;
-  color: #f5f5f5; 
-  animation: slideInRight 1s ease-out;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.8); 
-}
-
-.explanation-section h1 {
-  font-family: Akbaal;
-  justify-content:center;
-  margin-bottom: 20px;
-  font-size: 30px; 
-  line-height: 1.6;
-  color: #f5f5f5; 
-  animation: slideInRight 1s ease-out;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.8); 
-} 
 
 @keyframes slideInRight {
   0% {
@@ -105,26 +128,4 @@
     transform: translateX(0);
     opacity: 1;
   }
-}
-
-
-@media screen and (max-width: 768px) {
-  .unify-section {
-    flex-direction: column;
-  }
-  .logo-section,
-  .explanation-section {
-    border-right: none; /* Remove border on smaller screens */
-  }
-  .explanation-section h1{
-    text-align:center;
-  }
-  .explanation-section p{
-    text-align:center;
-  }
-}
-
-/* Add hover effect to the logo */
-.logo-section img:hover {
-  transform: scale(1.1); /* Slightly enlarge on hover */
 }
