@@ -19,12 +19,11 @@ function UlympicLogo() {
       <div className="descUlympic h-500 rounded-lg shadow-lg">
         <p className="font p-5">
           𝐔𝐋𝐘𝐌𝐏𝐈𝐂 merupakan kegiatan yang akan dilalui bagi #Legions untuk
-          meraih kemenangan 🗡️🔥 Dalam tahap ini akan dipenuhi tantangan yang
+          meraih kemenangan Dalam tahap ini akan dipenuhi tantangan yang
           memerlukan keberanian (Valiant) untuk bertarung serta kegigihan
           (Persistence) dari para #Legions dalam menghadapi pertarungan yang
-          ajaib dan penuh dengan kegembiraan! 🤴🏻👸🏻✨ Join us as we forge ahead,
+          ajaib dan penuh dengan kegembiraan! Join us as we forge ahead,
           conquering with a valiant spirit and embracing the magical revelry!
-          🌟🏆❤️‍🔥
         </p>
       </div>
     </div>

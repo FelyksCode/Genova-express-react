@@ -24,7 +24,7 @@ import Slideimg7 from "../../Assets/LogoDivisi_Baru/Lomba.webp";
 import Slideimg8 from "../../Assets/LogoDivisi_Baru/Perlengkapan.webp";
 import Slideimg9 from "../../Assets/LogoDivisi_Baru/Publikasi.webp";
 import Slideimg10 from "../../Assets/LogoDivisi_Baru/Sponsor.webp";
-import Slideimg11 from "../../Assets/LogoDivisi_Baru/Ticketing.webp";
+import Slideimg11 from "../../Assets/LogoDivisi_Baru/alba.png";
 import Slideimg12 from "../../Assets/LogoDivisi_Baru/Visual.webp";
 import Slideimg13 from "../../Assets/LogoDivisi_Baru/Website.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -101,7 +101,8 @@ function Spinner() {
     {
       image: Slideimg11,
       Judul: "Alba",
-      Text: "Kota Alba dikenal sebagai kota administrasi di Italia. Divisi ticketing yang bertanggung jawab atas administrasi tiket ufest.",
+      // Text: "Kota Alba dikenal sebagai kota administrasi di Italia. Divisi ticketing yang bertanggung jawab atas administrasi tiket ufest.",
+      Text: "Coming Soon...",
       bgColor: "bg-green-800",
     },
     {

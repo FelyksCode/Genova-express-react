@@ -20,12 +20,12 @@ function Logo() {
             className="text-justify"
           >
             𝐔-𝐂𝐀𝐑𝐄 merupakan kegiatan yang akan mempersatukan #Legions untuk
-            berkolaborasi serta menginspirasi satu sama lain🔥🤴🏻👸🏻 Dalam tahap
-            ini, 𝐔-𝐂𝐀𝐑𝐄 mengajak #Legions untuk rela berkorban bagi orang lain
+            berkolaborasi serta menginspirasi satu sama lain Dalam tahap ini,
+            𝐔-𝐂𝐀𝐑𝐄 mengajak #Legions untuk rela berkorban bagi orang lain
             (Altruistic) dengan niat baik (Good-Willed) dalam mencapai
             kebahagiaan bersama, dengan cara aktif terlibat dalam kegiatan
-            sosial ❤️‍🔥🗡️ Embark with us on this extraordinary journey, where we
-            join forces to make a positive impact and spread goodwill! 🤝💫
+            sosial Embark with us on this extraordinary journey, where we join
+            forces to make a positive impact and spread goodwill!
           </p>
         </div>
       </div>

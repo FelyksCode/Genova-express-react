@@ -13,7 +13,7 @@ function Navbar() {
   ];
   let [open, setOpen] = useState(false);
   return (
-    <div className="fixed z-10 shadow-md lg:shadow-none md:shadow-none w-[95%] fixed top-2 left-3 md:left-8 z-10 rounded-full">
+    <div className="fixed z-10 shadow-md lg:shadow-none md:shadow-none w-[95%] top-2 left-3 md:left-8 rounded-full">
       <div className="lg:flex md:flex items-center justify-between bg-slate-100 py-4 lg:px-10 md:px-10 px-7 rounded-full">
         <Link
           to="/"
@@ -22,7 +22,7 @@ function Navbar() {
           <span className="w-[40px] mr-5 pt-auto">
             <img src={Logo} alt="ufest logo" />
           </span>
-          UMN FESTIVAL
+          <span className="font-umn text-[20px] pt-1">UMN FESTIVAL</span>
         </Link>
         <button
           role="button"
@@ -43,14 +43,16 @@ function Navbar() {
             >
               <Link
                 to={link.link}
-                className="text-gray-600 hover:text-gray-600 lg:hover:text-gray-400 md:hover:text-gray-400 duration-500  font-extrabold md:text-[20px] text-[17px]"
+                className="font-nav tracking-wider text-gray-600 hover:text-gray-600 lg:hover:text-gray-400 md:hover:text-gray-400 duration-500  font-extrabold md:text-[20px] text-[17px]"
               >
                 {link.name}
               </Link>
             </li>
           ))}
           <Link to="/eulympic">
-            <Button>Register</Button>
+            <Button>
+              <span className="font-nav tracking-wider">Register</span>
+            </Button>
           </Link>
         </ul>
       </div>

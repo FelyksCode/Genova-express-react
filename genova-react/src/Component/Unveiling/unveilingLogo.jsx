@@ -19,23 +19,23 @@ function Logo() {
           </h1>
           <p className="bg-white rounded-2xl w-[250px] text-sm sm:w-[500px] xl:w-[800px] xl:text-lg mt-5 px-8 pt-5 pb-5 lg:mb-10">
             𝐔𝐍𝐕𝐄𝐈𝐋𝐈𝐍𝐆 merupakan rangkaian awal yang membuka UMN Festival 2024!
-            🗡️💫👸🏻 Didesain untuk memperkenalkan seluruh agenda festival kepada
-            masyarakat Universitas Multimedia Nusantara! 🔥✨ UNVEILING
-            menciptakan keinginan para #Legions untuk mengenal lebih dalam
-            tentang UMN Festival 2024 (Curiosity) dan juga meningkatkan semangat
-            para #Legions untuk menyambut UMN Festival 2024
-            (Enthusiastic)!👸🏻🗡️💫 Join us, to kickstart the excitement, and
-            witness what UMN Festival 2024 has prepared for you!🗡️❤️‍🔥🤴🏻💫
+            Didesain untuk memperkenalkan seluruh agenda festival kepada
+            masyarakat Universitas Multimedia Nusantara! UNVEILING menciptakan
+            keinginan para #Legions untuk mengenal lebih dalam tentang UMN
+            Festival 2024 (Curiosity) dan juga meningkatkan semangat para
+            #Legions untuk menyambut UMN Festival 2024 (Enthusiastic)! Join us,
+            to kickstart the excitement, and witness what UMN Festival 2024 has
+            prepared for you!
           </p>
         </div>
       </div>
-      <div className="flex justify-center flex-col">
-        <button className="tombol mb-10">
+      <div className="flex justify-center flex-col w-full">
+        <button className="tombol mb-10 w-2/4 self-center">
           <a href="https://forms.gle/tyPEppvJgddPWr2Y8" target="_blank">
             Early Bird Form Hanya untuk 50 Orang Pertama
           </a>
         </button>
-        <button className="tombol mb-10">
+        <button className="tombol mb-10 w-2/4 self-center">
           <a href="https://forms.gle/6R9D1JdEUbACJVj69" target="_blank">
             Regular Form
           </a>

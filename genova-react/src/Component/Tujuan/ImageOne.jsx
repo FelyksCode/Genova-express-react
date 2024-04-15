@@ -9,24 +9,24 @@ function ImageOne() {
   const [paddingTop, setPaddingTop] = useState(0);
   const videoRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (videoRef.current) {
-        const scrolled = window.scrollY;
-        videoRef.current.style.transform = `translateY(-${scrolled * 0.5}px)`;
-        setPaddingTop(scrolled * 0.5); // Adjust the padding top based on scroll
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (videoRef.current) {
+  //       const scrolled = window.scrollY;
+  //       videoRef.current.style.transform = `translateY(-${scrolled * 0.5}px)`;
+  //       setPaddingTop(scrolled * 0.5); // Adjust the padding top based on scroll
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []); // Empty dependency array ensures the effect runs only once on component mount
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []); // Empty dependency array ensures the effect runs only once on component mount
 
   return (
-    <div className="relative h-screen overflow-hidden pt-[300px] bg-black">
+    <div className="relative h-screen overflow-hidden p-0 bg-white">
       <video
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
@@ -40,7 +40,7 @@ function ImageOne() {
       </video>
       <div className="absolute inset-0 bg-black" style={{ opacity: 0.6 }}></div>
       <Fade clear duration={3500}>
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-white pt-[35%] md:pt-[15%] lg:pt-[1%]">
           <h1 className="text-4xl md:text-6xl mb-5 font-bold font-custom text-center">
             UMN FESTIVAL
           </h1>

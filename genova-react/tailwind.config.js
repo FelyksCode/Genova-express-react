@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        maps: "url('./Assets/Map/MapsUfestTXT.webp')",
+        maps: "url('./Assets/Map/MapsUfestNoTXT.webp')",
         mobile: "url('./Assets/Map/bgMapmobile.webp')",
       },
     },

@@ -85,6 +85,12 @@ img:hover {
   animation: bounceIn 1s ease-out;
 }
 
+@media screen and (max-width: 768px) {
+  .tombol a {
+    font-size: 18px;
+  }
+}
+
 @keyframes movingBorders {
   0% {
     border-color: #fce4e4;

@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from "react";
 import IonIcon from "@reacticons/ionicons";
 import Trailer from "../../Assets/Videos/Unveiling.mov";
 import { Fade } from "react-reveal";
-import "./Styletujuan.css";
 
 function ImageUnveiling() {
   const [paddingTop, setPaddingTop] = useState(0);

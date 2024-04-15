@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "SanFranBlack";
+  src: local("SanFransiscoBlack"),
+    url("../../Assets/Font/SanFransisco/SF-UI-Display-Black.otf")
+      format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.font-nav {
+  font-family: SanFranBlack;
+}
+
+.font-umn {
+  font-family: Title;
+}

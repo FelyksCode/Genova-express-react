@@ -39,17 +39,17 @@ function Home() {
       <div>
         <Navbar />
         <section className="snap-y overflow-hidden focus:scroll-auto">
-          <Fade duration={5}>
-            <Tujuan />
-          </Fade>
+          {/* <Fade duration={5}> */}
+          <Tujuan />
+          {/* </Fade> */}
         </section>
         <section className="snap-y snap-mandatory overflow-hidden">
-          <Fade duration={5}>
-            <Divisihome />
-            <Rangkaian />
-            {/* <Bracket /> */}
-            <Footer />
-          </Fade>
+          {/* <Fade duration={5}> */}
+          <Divisihome />
+          <Rangkaian />
+          {/* <Bracket /> */}
+          <Footer />
+          {/* </Fade> */}
         </section>
       </div>
     </>

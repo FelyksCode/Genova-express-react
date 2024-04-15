@@ -81,7 +81,9 @@ function Rangkaian() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h1 className="font-custom px-10">{Titles[index]}</h1>
+              <h1 className="font-custom px-10 text-4xl sm:text-5xl">
+                {Titles[index]}
+              </h1>
               {isHovered && (
                 <div className="flex items-center justify-end w-full top-full pr-10 mt-2">
                   <img src={logos[index]} className="w-20" alt="LOGO" />

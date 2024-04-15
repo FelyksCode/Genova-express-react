@@ -3,6 +3,10 @@ import FancyCarousel from "react-fancy-circular-carousel";
 import "react-fancy-circular-carousel/FancyCarousel.css";
 import "./stylehero.css";
 
+// AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import Slideimg1 from "../../../Assets/LogoDivisi_Baru/Acara.webp";
 import Slideimg2 from "../../../Assets/LogoDivisi_Baru/BPH.webp";
 import Slideimg3 from "../../../Assets/LogoDivisi_Baru/Dekorasi.webp";
@@ -37,6 +41,8 @@ function Divisihome() {
   ];
 
   useEffect(() => {
+    AOS.init();
+
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
@@ -67,17 +73,24 @@ function Divisihome() {
         };
 
   return (
-    <div className="carousel  ">
+    <div className="carousel ">
       <a href="/division">
-        <div className="main py-[100px] w-screen h-screen pembungkus">
-          <FancyCarousel
-            images={images}
-            focusElementStyling={{ border: "5px solid #ba4949" }}
-            autoRotateTime={3}
-            borderWidth={4}
-            borderHexColor={"1c364f"}
-            {...carouselProps} // Spread the conditional props
-          />
+        <div className=" pembungkus ">
+          <div
+            className="main py-[100px] w-screen h-screen"
+            data-aos="flip-left"
+            data-aos-duration="1000"
+            data-aos-delay="50"
+          >
+            <FancyCarousel
+              images={images}
+              focusElementStyling={{ border: "5px solid #ba4949" }}
+              autoRotateTime={3}
+              borderWidth={4}
+              borderHexColor={"1c364f"}
+              {...carouselProps} // Spread the conditional props
+            />
+          </div>
         </div>
       </a>
     </div>

@@ -43,7 +43,9 @@ function ImageTwo() {
           <h1 className="text-4xl md:text-6xl font-bold font-custom">
             UMN FESTIVAL
           </h1>
-          <p className="text-lg md:text-xl">SHOW YOUR VALOR FIGHT WITH HONOR</p>
+          <p className="mt-2 font-custom text-lg md:text-xl">
+            SHOW YOUR VALOR FIGHT WITH HONOR
+          </p>
           <IonIcon
             name="caret-down-outline"
             className="mt-10 text-[50px] animate-bounce pt-10"
