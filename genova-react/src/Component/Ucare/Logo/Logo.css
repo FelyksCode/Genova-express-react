@@ -1,21 +1,32 @@
 .isiucare{
-    background: #edffe5;
-    /* background: linear-gradient(to left top, #4dbd65, #55c577, #5fcd88, #69d599, #75dda9, #78e2b2, #7be7ba, #7fecc3, #79f0c8, #71f4cc, #69f7d2, #5ffbd7); */
+    background: #a1a5ca;
 }
 
 .bungkus{
-    height: 50vh;
-    /* background: linear-gradient(to left top, #4dbd65, #55c577, #5fcd88, #69d599, #75dda9, #78e2b2, #7be7ba, #7fecc3, #79f0c8, #71f4cc, #69f7d2, #5ffbd7); */
+    height: 65vh;
 }
 
 .bungkus2{
-    width: 80%;
+    width: 70%;
+    border-bottom: 1px solid rgb(60, 59, 96);
 }
 
-.logo{
-    width: 18em;
-    height: 18em;
+.logoucare{
+    width: 16em;
+    height: 16em;
+    background-color: white;
+    border-radius: 100%;
 }
+
+.judullogoucare{
+    color: rgb(60, 59, 96);
+    text-align: center;
+}
+
+.isilogoucare{
+    color: rgb(60, 59, 96);
+}
+
 @font-face {
     font-family: 'Akbaal';
     src: local('Akbaal'), url('../../../Assets/Font/akbaal/akbaal.ttf') format('truetype');
@@ -30,9 +41,9 @@
     font-style: normal;
 }
 
-@media screen and (max-width:720px) {
+@media screen and (max-width:765px) {
     .bungkus{
-        height: 90vh;
+        height: 100vh;
     }
     .bungkus2{
         display: flex;
@@ -40,7 +51,40 @@
         justify-content: center;
         align-items: center;
     }
+    .logoucare{
+        width: 12em;
+        height: 12em;
+        background-color: white;
+        border-radius: 100%;
+    }
+    .textucare{
+        width: 90%;
+    }
     .judullogoucare{
         text-align: center;
+        font-size: 2em;
+        margin-bottom: 0;
+        margin-top: 1em;
+    }
+    .isilogoucare{
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width:1600px) {
+    .logoucare{
+        width: 13em;
+        height: 13em;
+        background-color: white;
+        border-radius: 100%;
+    }
+
+    .judullogoucare{
+        font-size: 2.5em;
+        margin-bottom: 0.1em;
+    }
+
+    .isilogoucare{
+        font-size: 1em;
     }
 }

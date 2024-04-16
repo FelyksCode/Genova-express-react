@@ -7,7 +7,7 @@ import Logo from "../Component/Ucare/Logo/Logo";
 import Panti from "../Component/Ucare/DaftarPanti/DaftarPanti";
 import Tombol from "../Component/Ucare/Button/Button";
 
-function Home() {
+function Ucare() {
   return (
     <>
       <div>
@@ -30,4 +30,4 @@ function Home() {
   );
 }
 //npm install react-slick --save & npm install slick-carousel --save
-export default Home;
+export default Ucare;

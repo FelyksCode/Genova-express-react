@@ -3,29 +3,43 @@ import "./Logo.css";
 
 function Logo() {
   return (
-    <div className="bungkus flex justify-center">
-      <div className="bungkus2 flex justify-between">
+    <div className="bungkus flex justify-center items-center">
+      <div className="bungkus2 flex justify-between pb-6">
         <div className="content-center kotaklogo">
-          <img className="logo" src={img} alt="Logo Ucare" />
+          <div className="logoucare">
+            <img src={img} alt="Logo Ucare" />
+          </div>
         </div>
-        <div className="content-center w-3/5">
+        <div className="content-center w-3/5 textucare">
           <h1
             style={{ fontFamily: "Akbaal, sans-serif" }}
-            className="judullogoucare text-4xl font-bold mb-5"
+            className="judullogoucare text-5xl font-bold mb-10"
           >
-            U-care
+            U-Care
           </h1>
           <p
             style={{ fontFamily: "Forum-Regular, sans-serif" }}
-            className="text-justify"
+            className="isilogoucare text-xl text-justify mt-6"
           >
             𝐔-𝐂𝐀𝐑𝐄 merupakan kegiatan yang akan mempersatukan #Legions untuk
-            berkolaborasi serta menginspirasi satu sama lain Dalam tahap ini,
-            𝐔-𝐂𝐀𝐑𝐄 mengajak #Legions untuk rela berkorban bagi orang lain
-            (Altruistic) dengan niat baik (Good-Willed) dalam mencapai
+            berkolaborasi serta menginspirasi satu sama lain.
+          </p>
+          <p
+            style={{ fontFamily: "Forum-Regular, sans-serif" }}
+            className="isilogoucare text-xl text-justify mt-6"
+          >
+            Dalam tahap ini,
+            𝐔-𝐂𝐀𝐑𝐄 mengajak #Legions untuk mau berkorban dan memberikan bantuan kepada orang lain
+            (Altruistic) serta dengan niat baik (Good-Willed) dalam mencapai
             kebahagiaan bersama, dengan cara aktif terlibat dalam kegiatan
-            sosial Embark with us on this extraordinary journey, where we join
-            forces to make a positive impact and spread goodwill!
+            sosial.
+          </p>
+          <p
+            style={{ fontFamily: "Forum-Regular, sans-serif" }}
+            className="isilogoucare text-xl text-justify mt-6"
+          >
+            "Embark with us on this extraordinary journey, where we join
+            forces to make a positive impact and spread goodwill!"
           </p>
         </div>
       </div>
