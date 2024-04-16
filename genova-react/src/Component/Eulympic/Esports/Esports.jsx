@@ -6,52 +6,98 @@ import FormML from "./FormML";
 import FormValorant from "./FormValorant";
 
 function Esports() {
-  const [countdown, setCountdown] = useState({
+  const [countdownML, setCountdownML] = useState({
     days: "00",
     hours: "00",
     minutes: "00",
     seconds: "00",
   });
 
-  const [isFormAvailable, setIsFormAvailable] = useState(false);
+  const [countdownValorant, setCountdownValorant] = useState({
+    days: "00",
+    hours: "00",
+    minutes: "00",
+    seconds: "00",
+  });
+
+  const [isFormMLAvailable, setIsFormMLAvailable] = useState(false);
+  const [isFormValAvailable, setIsFormValAvailable] = useState(false);
 
   useEffect(() => {
-    const targetDate = new Date(2024, 3, 15); // Tanggal 15 April 2024
+    const targetDateML = new Date(2024, 4, 1); // Emel sbatesnya sampe 1 mei 2024
+    const targetDateValorant = new Date(2024, 3, 24); // Valorant sampe 24 April 2024
 
-    const updateCountdown = () => {
+    // ML Countdown
+    const timerML = setInterval(() => {
       const currentTime = new Date();
-      const diff = targetDate - currentTime;
+      const diffML = targetDateML - currentTime;
 
-      if (diff <= 0) {
-        clearInterval(timer);
-        setCountdown({
+      if (diffML <= 0) {
+        clearInterval(timerML);
+        setCountdownML({
           days: "00",
           hours: "00",
           minutes: "00",
           seconds: "00",
         });
-        setIsFormAvailable(true); // Aktifkan form setelah tanggal 10/04/2024
+        setIsFormMLAvailable(true);
         return;
       }
 
-      const d = Math.floor(diff / 1000 / 60 / 60 / 24);
-      const h = Math.floor(diff / 1000 / 60 / 60) % 24;
-      const m = Math.floor(diff / 1000 / 60) % 60;
-      const s = Math.floor(diff / 1000) % 60;
+      updateCountdownML(diffML);
+    }, 1000);
 
-      setCountdown({
-        days: d < 10 ? "0" + d : d.toString(),
-        hours: h < 10 ? "0" + h : h.toString(),
-        minutes: m < 10 ? "0" + m : m.toString(),
-        seconds: s < 10 ? "0" + s : s.toString(),
-      });
+    // Valorant Countdown
+    const timerValorant = setInterval(() => {
+      const currentTime = new Date();
+      const diffValorant = targetDateValorant - currentTime;
+
+      if (diffValorant <= 0) {
+        clearInterval(timerValorant);
+        setCountdownValorant({
+          days: "00",
+          hours: "00",
+          minutes: "00",
+          seconds: "00",
+        });
+        setIsFormValAvailable(true);
+        return;
+      }
+
+      updateCountdownValorant(diffValorant);
+    }, 1000);
+    return () => {
+      clearInterval(timerML);
+      clearInterval(timerValorant);
     };
-
-    const timer = setInterval(updateCountdown, 1000);
-
-    return () => clearInterval(timer);
   }, []);
+  function updateCountdownML(diffML) {
+    const days = Math.floor(diffML / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diffML / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diffML / 1000 / 60) % 60);
+    const seconds = Math.floor((diffML / 1000) % 60);
 
+    setCountdownML({
+      days: days < 10 ? "0" + days : days.toString(),
+      hours: hours < 10 ? "0" + hours : hours.toString(),
+      minutes: minutes < 10 ? "0" + minutes : minutes.toString(),
+      seconds: seconds < 10 ? "0" + seconds : seconds.toString(),
+    });
+  }
+
+  function updateCountdownValorant(diffValorant) {
+    const days = Math.floor(diffValorant / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diffValorant / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diffValorant / 1000 / 60) % 60);
+    const seconds = Math.floor((diffValorant / 1000) % 60);
+
+    setCountdownValorant({
+      days: days < 10 ? "0" + days : days.toString(),
+      hours: hours < 10 ? "0" + hours : hours.toString(),
+      minutes: minutes < 10 ? "0" + minutes : minutes.toString(),
+      seconds: seconds < 10 ? "0" + seconds : seconds.toString(),
+    });
+  }
   return (
     <div className="container-esport">
       <div className="mobilelegend">
@@ -61,27 +107,27 @@ function Esports() {
 
         <div className="container-time">
           <div className="time">
-            <h2>{countdown.days}</h2>
+            <h2>{countdownML.days}</h2>
             <small>Days</small>
           </div>
 
           <div className="time">
-            <h2>{countdown.hours}</h2>
+            <h2>{countdownML.hours}</h2>
             <small>Hours</small>
           </div>
 
           <div className="time">
-            <h2>{countdown.minutes}</h2>
+            <h2>{countdownML.minutes}</h2>
             <small>Minutes</small>
           </div>
 
           <div className="time">
-            <h2>{countdown.seconds}</h2>
+            <h2>{countdownML.seconds}</h2>
             <small>Seconds</small>
           </div>
         </div>
 
-        {isFormAvailable && <FormML />}
+        {!isFormMLAvailable && <FormML />}
       </div>
 
       <div className="valorant">
@@ -91,27 +137,27 @@ function Esports() {
 
         <div className="container-time">
           <div className="time">
-            <h2>{countdown.days}</h2>
+            <h2>{countdownValorant.days}</h2>
             <small>Days</small>
           </div>
 
           <div className="time">
-            <h2>{countdown.hours}</h2>
+            <h2>{countdownValorant.hours}</h2>
             <small>Hours</small>
           </div>
 
           <div className="time">
-            <h2>{countdown.minutes}</h2>
+            <h2>{countdownValorant.minutes}</h2>
             <small>Minutes</small>
           </div>
 
           <div className="time">
-            <h2>{countdown.seconds}</h2>
+            <h2>{countdownValorant.seconds}</h2>
             <small>Seconds</small>
           </div>
         </div>
 
-        {isFormAvailable && <FormValorant />}
+        {!isFormValAvailable && <FormValorant />}
       </div>
     </div>
   );
