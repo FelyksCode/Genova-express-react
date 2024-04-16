@@ -1,0 +1,52 @@
+#footer {
+  flex-direction: column;
+  align-items: start;
+  background-color: rgba(70, 67, 110, 255);
+  @media (min-width: 769px) {
+    flex-direction: column;
+  }
+}
+
+.footer-img {
+  filter: brightness(0) invert(1);
+}
+
+strong {
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+}
+
+.Footer-Foot {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  height: 100%;
+  width: 120%;
+  text-align: center;
+  color: rgba(219, 219, 219, 1);
+  background-color: rgb(60, 59, 96);
+
+  font-size: 15px;
+  border-top-left-radius: 60% 120%;
+  border-top-right-radius: 60% 120%;
+
+  .purpleText {
+    color: yellow;
+  }
+
+  @font-face {
+    font-family: "SanFranBold";
+    src: url("../../Assets/Font/SanFransisco/SF-UI-Display-Bold.otf");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  .footer-text {
+    font-family: SanFranBlack;
+  }
+
+  /* 
+    @media screen and (max-width: index.$sm) {
+        font-size: 15px;
+        line-height: 20px;
+    } */
+}
