@@ -129,8 +129,7 @@ export default function BasicTable({ data }) {
                 >
                   <img
                     src={`${url}:${port}/${row.paymentProof
-                      ?.replace("public\\", "")
-                      .replace(/\\/g, "/")}`}
+                      ?.replace(/public[\\\/]/, "").replace(/[\\\/]/g, "/")}`}
                     alt="KTM"
                   />
                 </TableCell>
@@ -203,8 +202,7 @@ export default function BasicTable({ data }) {
                           <TableCell align="center">
                             <img
                               src={`${url}:${port}/${member.ktm
-                                ?.replace("public\\", "")
-                                .replace(/\\/g, "/")}`}
+                                ?.replace(/public[\\\/]/, "").replace(/[\\\/]/g, "/")}`}
                               alt="KTM"
                             />
                           </TableCell>
@@ -228,8 +226,7 @@ export default function BasicTable({ data }) {
               content={
                 <img
                   src={`${url}:${port}/${selectedMember?.ktm
-                    ?.replace("public\\", "")
-                    .replace(/\\/g, "/")}`}
+                    ?.replace(/public[\\\/]/, "").replace(/[\\\/]/g, "/")}`}
                   alt="KTM"
                 />
               }
