@@ -39,7 +39,7 @@ function ImageUnveiling() {
       <div className="absolute inset-0 bg-black" style={{ opacity: 0.6 }}></div>
       <Fade clear duration={3500}>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
-          <h1 className="text-4xl md:text-6xl mb-5 font-bold font-custom">
+          <h1 className="text-4xl md:text-6xl mb-5 font-bold font-custom text-center">
             UMN FESTIVAL
           </h1>
           <p className="text-lg md:text-xl font-custom text-center">
