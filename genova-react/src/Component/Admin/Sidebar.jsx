@@ -73,7 +73,7 @@ const Sidebar = ({ setSelectedSection, setResponse }) => {
           );
           break;
 
-        case 7: // Mobile Legends
+        case 8: // Mobile Legends
           newData = newData.filter(
             (team) => team.data.races.race_name === "E-Ulympic - Mobile Legends"
           );
