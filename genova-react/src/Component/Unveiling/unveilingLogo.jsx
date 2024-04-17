@@ -31,11 +31,6 @@ function Logo() {
       </div>
       <div className="flex justify-center flex-col w-full">
         <button className="tombol mb-10 w-2/4 self-center">
-          <a href="https://forms.gle/tyPEppvJgddPWr2Y8" target="_blank">
-            Early Bird Form Hanya untuk 50 Orang Pertama
-          </a>
-        </button>
-        <button className="tombol mb-10 w-2/4 self-center">
           <a href="https://forms.gle/6R9D1JdEUbACJVj69" target="_blank">
             Regular Form
           </a>
