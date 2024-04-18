@@ -9,7 +9,7 @@ export default function Footer() {
       id="footer"
       className="flex footer px-10 bg-neutral text-neutral-content justify-between pt-5"
     >
-      <div className="flex w-full flex-col justify-evenly items-center py-10">
+      <div className="flex w-full flex-col justify-evenly items-center py-10 lg:py-20">
         <div className="flex items-center center justify-evenly w-full">
           <div className="w-36 flex justify-center">
             <Sparkle>
@@ -22,7 +22,7 @@ export default function Footer() {
           <div className="hidden lg:flex flex-col justify-center items-center">
             <div className="hidden lg:block">
               <Sparkle>
-                <div className="flex flex-col justify-center items-center my-5">
+                <div className="flex flex-col justify-center items-center my-5 lg:my-8">
                   <div className="flex justify-center">
                     <a className="mx-5">
                       <svg
