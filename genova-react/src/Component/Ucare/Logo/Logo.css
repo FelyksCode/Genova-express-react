@@ -25,6 +25,7 @@
 
 .isilogoucare{
     color: rgb(60, 59, 96);
+    font-weight: bold;
 }
 
 @font-face {
@@ -35,13 +36,13 @@
 }
 
 @font-face {
-    font-family: 'Forum-Regular';
-    src: local('Akbaal'), url('../../../Assets/Font/Forum/Forum-Regular.ttf') format('truetype');
-    font-weight: normal;
+    font-family: 'SanFran-Regular';
+    src: local('SanFransisco'), url('../../../Assets/Font/SanFransisco/SF-UI-Display-Regular.otf') format('truetype');
+    font-weight: bold;
     font-style: normal;
 }
 
-@media screen and (max-width:765px) {
+@media screen and (max-width:768px) {
     .bungkus{
         height: 100vh;
     }
@@ -86,5 +87,28 @@
 
     .isilogoucare{
         font-size: 1em;
+    }
+}
+
+@media screen and (max-width:390px) {
+    .bungkus{
+        height: 100vh;
+    }
+
+    .logoucare{
+        width: 8em;
+        height: 8em;
+        background-color: white;
+        border-radius: 100%;
+    }
+
+    .judullogoucare{
+        font-size: 1.5em;
+        margin-bottom: 0.1em;
+    }
+
+    .isilogoucare{
+        font-size: 0.8em;
+        margin-top: 0.5em;
     }
 }

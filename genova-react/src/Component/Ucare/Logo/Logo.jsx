@@ -18,14 +18,14 @@ function Logo() {
             U-Care
           </h1>
           <p
-            style={{ fontFamily: "Forum-Regular, sans-serif" }}
+            style={{ fontFamily: "SanFran-Regular, sans-serif" }}
             className="isilogoucare text-xl text-justify mt-6"
           >
             𝐔-𝐂𝐀𝐑𝐄 merupakan kegiatan yang akan mempersatukan #Legions untuk
             berkolaborasi serta menginspirasi satu sama lain.
           </p>
           <p
-            style={{ fontFamily: "Forum-Regular, sans-serif" }}
+            style={{ fontFamily: "SanFran-Regular, sans-serif" }}
             className="isilogoucare text-xl text-justify mt-6"
           >
             Dalam tahap ini,
@@ -35,7 +35,7 @@ function Logo() {
             sosial.
           </p>
           <p
-            style={{ fontFamily: "Forum-Regular, sans-serif" }}
+            style={{ fontFamily: "SanFran-Regular, sans-serif" }}
             className="isilogoucare text-xl text-justify mt-6"
           >
             "Embark with us on this extraordinary journey, where we join
