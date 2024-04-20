@@ -28,7 +28,6 @@ import Slideimg11 from "../../Assets/LogoDivisi_Baru/alba.png";
 import Slideimg12 from "../../Assets/LogoDivisi_Baru/Visual.webp";
 import Slideimg13 from "../../Assets/LogoDivisi_Baru/Website.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // CSS
 import "./vertical.css";
 import "swiper/css/effect-fade";
@@ -54,7 +53,7 @@ function Spinner() {
       image: Slideimg3,
       Judul: "Florence",
       Text: "Kota Florence dikenal sebagai kota terindah di Italia karena warisan budaya, arsitektur, dan seni yang sangat menakjubkan. Seperti Florence yang dipenuhi dengan keindahan, divisi Dekorasi akan membantu memperindah venue-venue yang akan digunakan oleh UMN Festival 2024.",
-      bgColor: "bg-pink-800",
+      bgColor: "bg-pink-900",
     },
     {
       image: Slideimg4,
@@ -190,7 +189,6 @@ function Spinner() {
   } else {
     return (
       <div className={`w-full h-[100vh] ${bgColor} bungkusan`}>
-        
         <div className=" bg-white/30 w-full h-full flex justify-center items-center">
           <Swiper
             onSlideChange={handleSlideChange}
