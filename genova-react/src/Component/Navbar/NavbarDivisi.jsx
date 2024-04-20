@@ -17,14 +17,12 @@ function Navbar() {
       <div className="lg:flex md:flex items-center justify-between bg-slate-100 py-4 lg:px-10 md:px-10 px-7 rounded-full">
         <Link
           to="/"
-          className="font-bold  text-2xl cursor-pointer flex items-center text-gray-600 lg:font-[Poppins text-gray-800] md:font-[Poppins text-gray-800] "
+          className="font-bold  text-2xl cursor-pointer invisible sm:visible flex items-center text-gray-600 lg:font-[Poppins text-gray-800] md:font-[Poppins text-gray-800] "
         >
-          <span className="w-[40px] mr-5 pt-auto">
+          <span className="w-[40px] mr-5 pt-auto visible">
             <img src={Logo} alt="ufest logo" />
           </span>
-          <span className="invisible sm:visible font-umn text-[20px] pt-1">
-            UMN FESTIVAL
-          </span>
+          <span className="font-umn text-[20px] pt-1">UMN FESTIVAL</span>
         </Link>
         <button
           role="button"
