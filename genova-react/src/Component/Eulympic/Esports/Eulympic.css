@@ -230,6 +230,39 @@ body::-webkit-scrollbar {
 .active .artist-profile-link {
   pointer-events: all;
 }
+
+.descUlympic {
+  background-color: #ffe666;
+  padding: 10px;
+  opacity: 300;
+}
+
+@font-face {
+  font-family: "Forum-Regular";
+  src: local("Akbaal"),
+    url("../../../Assets/Font/Forum/Forum-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Akbaal";
+  src: local("Akbaal"),
+    url("../../../Assets/Font/akbaal/akbaal.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fontt {
+  font-family: "Forum-Regular";
+}
+
+.pilih {
+  margin-top: 10px;
+  font-family: "Akbaal";
+  font-size: 3rem;
+} */
+
 .bentukbutton2 {
   width: 50%;
   height: 50px;
@@ -277,35 +310,3 @@ body::-webkit-scrollbar {
   visibility: visible;
   transform: scale(100) translateX(2px);
 }
-
-.descUlympic {
-  background-color: #ffe666;
-  padding: 10px;
-  opacity: 300;
-}
-
-@font-face {
-  font-family: "Forum-Regular";
-  src: local("Akbaal"),
-    url("../../../Assets/Font/Forum/Forum-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Akbaal";
-  src: local("Akbaal"),
-    url("../../../Assets/Font/akbaal/akbaal.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-.fontt {
-  font-family: "Forum-Regular";
-}
-
-.pilih {
-  margin-top: 10px;
-  font-family: "Akbaal";
-  font-size: 3rem;
-} */
