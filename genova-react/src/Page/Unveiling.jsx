@@ -3,8 +3,8 @@ import Navbar from "../Component/Navbar/Navbar";
 import ImageUnveiling from "../Component/Unveiling/ImageUnveiling";
 import { Fade } from "react-reveal";
 import Footer from "../Component/Footer/Footer";
-import Logo from "../Component/Unveiling/unveilingLogo";
-
+// import Logo from "../Component/Unveiling/unveilingLogo";
+import Unveilingsementara from "../Component/Unveiling/Unveilingsementara/Logo";
 function Unveiling() {
   return (
     <>
@@ -15,9 +15,9 @@ function Unveiling() {
             <ImageUnveiling />
           </Fade>
         </section>
-        <section className="snap-y snap-mandatory overflow-hidden">
+        <section className="snap-y snap-mandatory overflow-hidden isiucare">
           <Fade>
-            <Logo />
+            <Unveilingsementara />
           </Fade>
         </section>
         <Footer />

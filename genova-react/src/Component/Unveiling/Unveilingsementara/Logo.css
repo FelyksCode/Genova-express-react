@@ -1,0 +1,117 @@
+.isiucare {
+  background: #a1a5ca;
+}
+
+.bungkus {
+  height: 65vh;
+}
+
+.bungkus2 {
+  width: 70%;
+  border-bottom: 1px solid rgb(60, 59, 96);
+}
+
+.logoucare {
+  width: 16em;
+  height: 16em;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.judullogoucare {
+  color: rgb(60, 59, 96);
+  text-align: center;
+}
+
+.isilogoucare {
+  color: rgb(60, 59, 96);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Akbaal";
+  src: local("Akbaal"),
+    url("../../../Assets/Font/akbaal/akbaal.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SanFran-Regular";
+  src: local("SanFransisco"),
+    url("../../../Assets/Font/SanFransisco/SF-UI-Display-Regular.otf")
+      format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@media screen and (max-width: 768px) {
+  .bungkus {
+    height: 100vh;
+  }
+  .bungkus2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .logoucare {
+    width: 12em;
+    height: 12em;
+    background-color: white;
+    border-radius: 100%;
+  }
+  .textucare {
+    width: 90%;
+  }
+  .judullogoucare {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 0;
+    margin-top: 1em;
+  }
+  .isilogoucare {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .logoucare {
+    width: 13em;
+    height: 13em;
+    background-color: white;
+    border-radius: 100%;
+  }
+
+  .judullogoucare {
+    font-size: 2.5em;
+    margin-bottom: 0.1em;
+  }
+
+  .isilogoucare {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .bungkus {
+    height: 100vh;
+  }
+
+  .logoucare {
+    width: 8em;
+    height: 8em;
+    background-color: white;
+    border-radius: 100%;
+  }
+
+  .judullogoucare {
+    font-size: 1.5em;
+    margin-bottom: 0.1em;
+  }
+
+  .isilogoucare {
+    font-size: 0.8em;
+    margin-top: 0.5em;
+  }
+}
