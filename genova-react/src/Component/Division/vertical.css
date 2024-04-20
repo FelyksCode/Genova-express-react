@@ -14,6 +14,10 @@
 
 .bungkusan {
   transition: background-color 1s ease; /* Adjust the time and easing function as needed */
+  background-image: url("../../Assets/Bgimg/bg divisi.webp");
+
+  background-size: cover;
+  background-blend-mode: color-dodge;
 }
 
 @media (min-width: 799px) {

@@ -28,7 +28,6 @@ import Slideimg11 from "../../Assets/LogoDivisi_Baru/alba.png";
 import Slideimg12 from "../../Assets/LogoDivisi_Baru/Visual.webp";
 import Slideimg13 from "../../Assets/LogoDivisi_Baru/Website.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // CSS
 import "./vertical.css";
 import "swiper/css/effect-fade";
@@ -190,7 +189,6 @@ function Spinner() {
   } else {
     return (
       <div className={`w-full h-[100vh] ${bgColor} bungkusan`}>
-        
         <div className=" bg-white/30 w-full h-full flex justify-center items-center">
           <Swiper
             onSlideChange={handleSlideChange}
