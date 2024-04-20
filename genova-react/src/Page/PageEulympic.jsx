@@ -24,7 +24,7 @@ function PageEulympic() {
             <div
               style={{
                 background:
-                  "-webkit-linear-gradient(90deg, hsla(52, 82%, 52%, 1) 0%, hsla(1, 92%, 47%, 1) 100%)",
+                  '#a1a5ca',
               }}
             >
               <Main />
