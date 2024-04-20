@@ -1,52 +1,77 @@
-/* Unifyy.css */
-
-/* Background for the entire section */
 .bg {
-  background: #719ece;
+  background: #a9a9d6;
   border: none;
   background-repeat: no-repeat;
+  overflow: hidden;
+
   /* Add other background styles as needed */
 }
 
-.container {
+/* Container for the entire section */
+.unify-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 95px 160px 100px 60px;
   animation: fadeIn 1s ease-in;
   /* Fallback for browsers that do not support gradients */
 }
 
-/* Logo Section */
-.logo-container {
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.logo-section {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.logo-container img {
+.logo-section img {
   max-width: 400px; /* Adjust the logo size as needed */
   animation: bounceIn 1s ease-out;
+  padding-top: 32px;
   filter: drop-shadow(
     2px 4px 6px rgba(0, 0, 0, 0.5)
   ); /* Add shadow effect to the logo */
 }
 
-/* Explanation Section */
-.explanation-container {
-  flex: 1;
-  padding: 20px;
-  font-family: Forum-Regular;
+.logo-radius {
+  width: 300px; /* Sesuaikan lebar dan tinggi container logo */
+  height: 300px;
+  border-radius: 50%; /* Buat lingkaran dengan radius setengah dari lebar atau tinggi */
+  overflow: hidden; /* Masking agar gambar tidak melewati batas lingkaran */
+  background: white;
+  padding: 20px; /* Sesuaikan padding jika diperlukan */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.explanation-box {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.logo-radius img {
+  max-width: 100%; /* Gambar logo agar sesuai dengan ukuran container */
+  max-height: 100%;
+  animation: bounceIn 1s ease-out;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5)); /* Shadow effect */
 }
 
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 @font-face {
   font-family: "Akbaal";
   src: local("Akbaal"),
@@ -63,60 +88,47 @@
   font-style: normal;
 }
 
-.explanation-box h1 {
-  font-family: Akbaal;
-  margin-bottom: 20px;
-  font-size: 30px;
+@font-face {
+  font-family: "SFUIDisplay-Bold";
+  src: local("SF"),
+    url("../../Assets/Font/SanFransisco/SF-UI-Display-Bold.otf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.explanation-section {
+  flex: 1;
+  padding: 20px;
+  margin-left: -90px;
+  font-family: SFUIDisplay-Bold;
+}
+
+.explanation-section p {
+  font-size: 18px;
   line-height: 1.6;
-  color: #333333; /* Dark grey */
+
+  text-align: justify;
+  color: #4d4d60;
+  animation: slideInRight 1s ease-out;
+}
+
+u {
+  text-decoration-style: solid; /* Ensure solid underline style */
+  text-decoration-thickness: 1px; /* Adjust the thickness as needed */
+}
+
+.explanation-section h1 {
+  font-family: Akbaal;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 45px;
+  line-height: 1.6;
+  color: #4d4d60;
   animation: slideInRight 1s ease-out;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-}
-
-.explanation-box p {
-  font-size: 22px;
-  line-height: 1.6;
-  color: #555555; /* Grey */
-  animation: slideInRight 1s ease-out;
-  /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); */
-}
-
-/* Media Query */
-@media screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-  .logo-container,
-  .explanation-container {
-    border-right: none; /* Remove border on smaller screens */
-  }
-  .explanation-box h1 {
-    text-align: center;
-  }
-  .explanation-box p {
-    text-align: center;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes bounceIn {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 
 @keyframes slideInRight {
@@ -128,4 +140,60 @@
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+@media screen and (max-width: 1024px) {
+  .explanation-section {
+    border-right: none; /* Remove border on smaller screens */
+    margin-left: 0px;
+  }
+
+  .unify-section {
+    flex-direction: column;
+    padding: 95px 50px 120px 40px;
+  }
+
+  .footer-line {
+    bottom: unset; /* Reset bottom position */
+    top: calc(100% - 80px); /* Adjust as needed */
+  }
+}
+@media screen and (max-width: 1270px) {
+  .explanation-section {
+    border-right: none; /* Remove border on smaller screens */
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .unify-section {
+    flex-direction: column;
+    padding: 95px 20px;
+  }
+  .logo-section,
+  .explanation-section {
+    border-right: none; /* Remove border on smaller screens */
+    margin-left: 0px;
+  }
+  .explanation-section h1 {
+    text-align: center;
+  }
+  .explanation-section p {
+    text-align: center;
+  }
+}
+
+/* Add hover effect to the logo */
+.logo-section img:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.footer-line {
+  width: calc(100% - 450px); /* Subtract padding from both sides */
+  height: 1px;
+  background-color: #555555; /* Adjust color as needed */
+  margin-bottom: 50px;
+  position: absolute;
+  bottom: 30px;
+  left: 235px;
 }

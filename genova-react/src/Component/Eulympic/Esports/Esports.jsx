@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./StyleEsports.css";
 import Valorant from "../../../Assets/Images/valorant.webp";
-import Mole from "../../../Assets/Images/mole.webp";
+import MoleBaru from "../../../Assets/Images/molelogo.webp";
 import FormML from "./FormML";
 import FormValorant from "./FormValorant";
 
@@ -101,9 +101,10 @@ function Esports() {
   return (
     <div className="container-esport">
       <div className="mobilelegend">
-        <div className="esport-img-wrapper">
-          <img src={Mole} alt="Mole Logo" />
-        </div>
+        <div className="esport-img-wrapper-mole">
+          <img className="mole-image" src={MoleBaru} alt="Mole Logo" />
+          <span>Register Here!</span>
+        </div>  
 
         <div className="container-time">
           <div className="time">
@@ -131,8 +132,9 @@ function Esports() {
       </div>
 
       <div className="valorant">
-        <div className="esport-img-wrapper">
+        <div className="esport-img-wrapper-valorant">
           <img src={Valorant} alt="Valorant Logo" />
+          <span>Register Here!</span>
         </div>
 
         <div className="container-time">
