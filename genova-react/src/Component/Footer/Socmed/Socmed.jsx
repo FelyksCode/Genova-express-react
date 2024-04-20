@@ -2,7 +2,7 @@ function Socmed() {
   return (
     <div className="flex justify-center items-center">
       {/* Line */}
-      <a className="mx-5" href="http://line.me/ti/p/~877tuixh" target="_blank">
+      <a className="mx-5" href="http://line.me/ti/p/~@877tuixh" target="_blank">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
