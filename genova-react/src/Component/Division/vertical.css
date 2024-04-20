@@ -14,13 +14,16 @@
 
 .bungkusan {
   transition: background-color 1s ease; /* Adjust the time and easing function as needed */
-  background-image: url("../../Assets/Bgimg/bg divisi.webp");
-
+  background-image: url("../../Assets/Bgimg/bg_divisikecil.png");
   background-size: cover;
   background-blend-mode: color-dodge;
 }
 
 @media (min-width: 799px) {
+  .bungkusan {
+    background-image: url("../../Assets/Bgimg/bg_divisi.webp");
+  }
+
   .swiper {
     height: 100vh;
     overflow: visible;

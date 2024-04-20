@@ -53,7 +53,7 @@ function Spinner() {
       image: Slideimg3,
       Judul: "Florence",
       Text: "Kota Florence dikenal sebagai kota terindah di Italia karena warisan budaya, arsitektur, dan seni yang sangat menakjubkan. Seperti Florence yang dipenuhi dengan keindahan, divisi Dekorasi akan membantu memperindah venue-venue yang akan digunakan oleh UMN Festival 2024.",
-      bgColor: "bg-pink-800",
+      bgColor: "bg-pink-900",
     },
     {
       image: Slideimg4,
