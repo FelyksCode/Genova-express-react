@@ -72,9 +72,8 @@ export default function Footer() {
             </Sparkle>
           </div>
           <div className="w-36 flex justify-center">
-            <Sparkle>
-              <img className="h-32 footer-img " src={Bem} alt="logo" />
-            </Sparkle>
+            <Sparkle></Sparkle>
+            <img className="h-32 footer-img " src={Bem} alt="logo" />
           </div>
         </div>
         <div className="flex flex-col items-center justify-center ">
