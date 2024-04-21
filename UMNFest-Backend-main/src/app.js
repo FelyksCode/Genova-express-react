@@ -148,15 +148,14 @@ volly 10
       console.log("Error checking race details count:", err);
     });
 
+  const emailAdmin = process.env.ADMIN_EMAIL;
+  const passAdmin = process.env.ADMIN_PASS;
+
   Admin.estimatedDocumentCount().then((count) => {
     const adminList = [
       {
-        email: "yarzcode@gmail.com",
-        password: "HaloPassword!",
-      },
-      {
-        email: "admin@gmail.com",
-        password: "admin",
+        email: emailAdmin,
+        password: passAdmin,
       },
     ];
     const salt = bcrypt.genSaltSync(10);

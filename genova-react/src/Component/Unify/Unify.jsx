@@ -19,7 +19,7 @@ function Unify() {
         <div className="explanation-section">
           {/* Add your explanatory content here */}
           <h1>
-            <u>Unify</u>
+            <span style={{ borderBottom: "1px solid black" }}>Unify</span>
           </h1>
           <p style={{ fontFamily: "SanFran-Regular, sans-serif" }}>
             𝐔𝐍𝐈𝐅𝐘 merupakan puncak serta kegiatan penutup dari segala rangkaian

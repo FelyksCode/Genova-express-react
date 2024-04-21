@@ -15,7 +15,7 @@ function unveilingsementara() {
             style={{ fontFamily: "Akbaal, sans-serif" }}
             className="judullogoucare text-5xl font-bold mb-10"
           >
-            Unveiling
+            <span style={{ borderBottom: "1px solid black" }}>Unveiling</span>
           </h1>
           <p
             style={{ fontFamily: "SanFran-Regular, sans-serif" }}
