@@ -14,7 +14,7 @@
 
 .bungkusan {
   transition: background-color 1s ease; /* Adjust the time and easing function as needed */
-  background-image: url("../../Assets/Bgimg/bg_divisikecil.png");
+  background-image: url("../../Assets/Bgimg/bg_divisikecil.webp");
   background-size: cover;
   background-blend-mode: color-dodge;
 }
