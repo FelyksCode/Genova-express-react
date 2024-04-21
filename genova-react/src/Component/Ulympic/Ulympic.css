@@ -1,13 +1,12 @@
 .ulympic {
-  background:#a1a5ca;
+  background: #a1a5ca;
   padding: 2%;
   height: auto;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   display: none;
 }
-
 
 .bio {
   display: grid;
@@ -15,7 +14,6 @@ body::-webkit-scrollbar{
   grid-template-rows: min-content;
   grid-gap: 24px;
 }
-
 
 .listlomba ul {
   margin-left: 100px;
@@ -36,104 +34,104 @@ body::-webkit-scrollbar{
     margin-top: 20px;
   }
 }
-.bungkuss{
+.bungkuss {
   height: 65vh;
 }
 
-.bungkuss2{
+.bungkuss2 {
   width: 70%;
   border-bottom: 1px solid rgb(60, 59, 96);
 }
 
-.logoulympic{
+.logoulympic {
   width: 16em;
   height: 16em;
   background-color: white;
   border-radius: 100%;
 }
 
-.judullogoulympic{
+.judullogoulympic {
   color: rgb(60, 59, 96);
   text-align: center;
 }
 
-.isilogoulympic{
+.isilogoulympic {
   color: rgb(60, 59, 96);
   font-weight: bold;
 }
-@media screen and (max-width:768px) {
-  .bungkuss{
-      height: auto;
-      margin: auto;
+@media screen and (max-width: 768px) {
+  .bungkuss {
+    height: auto;
+    margin: auto;
   }
-  .bungkuss2{
+  .bungkuss2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    gap: 20px; 
+    gap: 20px;
   }
-  .logoulympic{
-      width: 12em;
-      height: 12em;
-      background-color: white;
-      border-radius: 100%;
+  .logoulympic {
+    width: 12em;
+    height: 12em;
+    background-color: white;
+    border-radius: 100%;
   }
-  .textulympic{
+  .textulympic {
     width: 100%;
     text-align: center;
     align-items: center;
   }
-  .judullogoulympic{
-      text-align: center;
-      font-size: 2.4em !important;
-      margin-bottom: 1em;
+  .judullogoulympic {
+    text-align: center;
+    font-size: 2.4em !important;
+    margin-bottom: 1em;
   }
-  .isilogoulympic{
-      font-size: 0.5em;
-      margin-top: 10px;
-  }
-}
-
-@media screen and (max-width:1600px) {
-  .logoulympic{
-      width: 13em;
-      height: 13em;
-      background-color: white;
-      border-radius: 100%;
-  }
-
-  .judullogoulympic{
-      font-size: 2.5em;
-      margin-bottom: 1em;
-  }
-
-  .isilogoulympic{
-      font-size: 1em;
+  .isilogoulympic {
+    font-size: 0.5em;
+    margin-top: 10px;
   }
 }
 
-@media screen and (max-width:280px) {
-  .bungkuss{
-      height: auto;
+@media screen and (max-width: 1600px) {
+  .logoulympic {
+    width: 13em;
+    height: 13em;
+    background-color: white;
+    border-radius: 100%;
   }
 
-  .logoulympic{
-      width: 6em;
-      height: 6em;
-      background-color: white;
-      border-radius: 100%;
+  .judullogoulympic {
+    font-size: 2.5em;
+    margin-bottom: 1em;
   }
 
-  .judullogoulympic{
-      font-size: 1.5em;
-      margin-bottom: 1em;
+  .isilogoulympic {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .bungkuss {
+    height: auto;
   }
 
-  .isilogoulympic{
-      font-size: 0.8em;
-      margin-top: 0.5em;
+  .logoulympic {
+    width: 6em;
+    height: 6em;
+    background-color: white;
+    border-radius: 100%;
+  }
+
+  .judullogoulympic {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  .isilogoulympic {
+    font-size: 0.8em;
+    margin-top: 0.5em;
   }
 }
 
@@ -267,17 +265,17 @@ body::-webkit-scrollbar{
 .bentukbutton {
   height: 50px;
   position: relative;
-  background-color:rgb(247, 201, 63);
+  background-color: rgb(247, 201, 63);
   cursor: pointer;
   border: 2px solid #252525;
   overflow: hidden;
   border-radius: 30px;
   color: #333;
   transition: all 0.5s ease-in-out;
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  text-align: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .bentukbutton .btn-txt1 {
@@ -311,36 +309,38 @@ body::-webkit-scrollbar{
   transform: scale(100) translateX(2px);
 }
 
-.descUlympic{
+.descUlympic {
   padding: 1px;
 }
-.judullogoulympic{
+.judullogoulympic {
   color: rgb(60, 59, 96);
   text-align: center;
 }
-.deskripsiulympic{
+.deskripsiulympic {
   color: rgb(60, 59, 96);
   font-weight: bold;
 }
 @font-face {
-  font-family: 'Forum-Regular';
-  src: local('Akbaal'), url('../../Assets/Font/Forum/Forum-Regular.ttf') format('truetype');
+  font-family: "Forum-Regular";
+  src: local("Akbaal"),
+    url("../../Assets/Font/Forum/Forum-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Akbaal';
-  src: local('Akbaal'), url('../../Assets/Font/akbaal/akbaal.ttf') format('truetype');
+  font-family: "Akbaal";
+  src: local("Akbaal"),
+    url("../../Assets/Font/akbaal/akbaal.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-.fontt{
-  font-family: 'Forum-Regular';
+.fontt {
+  font-family: "Forum-Regular";
 }
 
-.pilih{
+.pilih {
   margin-top: 10px;
   font-family: "Akbaal";
   font-size: 3rem;

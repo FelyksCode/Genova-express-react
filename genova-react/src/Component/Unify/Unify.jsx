@@ -8,7 +8,7 @@ function Unify() {
     <div className="bg">
       <div className="unify-section">
         {/* Logo Section */}
-        <div className="logo-section">
+        <div className="logo-section content-center">
           {/* UNIFY logo with blue winged emblem */}
           <div className="logo-radius">
             <img src={Unifyy} alt="UNIFY Logo" />
@@ -21,8 +21,8 @@ function Unify() {
           <h1>
             <u>Unify</u>
           </h1>
-          <p>
-            Unify merupakan puncak serta kegiatan penutup dari segala rangkaian
+          <p style={{ fontFamily: "SanFran-Regular, sans-serif" }}>
+            𝐔𝐍𝐈𝐅𝐘 merupakan puncak serta kegiatan penutup dari segala rangkaian
             acara yang telah dilalui oleh #Legions!.
             <br></br>
             <br></br>

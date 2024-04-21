@@ -26,19 +26,20 @@ function ImageOne() {
   // }, []); // Empty dependency array ensures the effect runs only once on component mount
 
   return (
-    <div className="relative h-screen overflow-hidden p-0 bg-white">
-      <video
-        ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover"
-        autoPlay
-        loop
-        muted
-        playsInline
-      >
-        <source src={Trailer} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div className="absolute inset-0 bg-black" style={{ opacity: 0.6 }}></div>
+    <div className="relative h-screen overflow-hidden pt-[300px] bg-black">
+      <div className="absolute inset-0 bg-black" style={{ opacity: 0.6 }}>
+        <video
+          ref={videoRef}
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src={Trailer} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <Fade clear duration={3500}>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-white pt-[35%] md:pt-[15%] lg:pt-[1%]">
           <h1 className="text-4xl md:text-6xl mb-5 font-bold font-custom text-center">

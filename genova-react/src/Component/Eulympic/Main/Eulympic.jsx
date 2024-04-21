@@ -22,14 +22,19 @@ function Eulympic() {
             </div>
           </div>
           <p style={{ fontFamily: "SanFran-Regular, sans-serif" }}>
-            𝐄-𝐔𝐋𝐘𝐌𝐏𝐈𝐂 merupakan rangkaian perlombaan pertama dari UMN Festival 2024. E-Ulympic akan mempertandikan dua permainan E-sports yang banyak di gemari yaitu Valorant dan Mobile Legends.
+            𝐄-𝐔𝐋𝐘𝐌𝐏𝐈𝐂 merupakan rangkaian perlombaan pertama dari UMN Festival
+            2024. E-Ulympic akan mempertandikan dua permainan E-sports yang
+            banyak di gemari yaitu Valorant dan Mobile Legends.
             <br />
             <br />
-            𝐄-𝐔𝐋𝐘𝐌𝐏𝐈𝐂 juga memiliki tujuan yaitu menanamkan dan meningkatkan jiwa kompetitif para #Legions melalui turnamen E-Sports! Diharapkan E-Ulympic dapat menjadi wadah bagi seluruh mahasiswa/i untuk menunjukan bakat dan talenta mereka dalam dunia E-Sports! 
+            𝐄-𝐔𝐋𝐘𝐌𝐏𝐈𝐂 juga memiliki tujuan yaitu menanamkan dan meningkatkan
+            jiwa kompetitif para #Legions melalui turnamen E-Sports! Diharapkan
+            E-Ulympic dapat menjadi wadah bagi seluruh mahasiswa/i untuk
+            menunjukan bakat dan talenta mereka dalam dunia E-Sports!
           </p>
         </div>
       </div>
-      <hr className="custom-hr"/>
+      <hr className="custom-hr" />
     </div>
   );
 }

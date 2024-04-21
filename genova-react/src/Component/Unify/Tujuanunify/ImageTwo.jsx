@@ -8,21 +8,21 @@ function ImageTwo() {
   const [paddingTop, setPaddingTop] = useState(0);
   const videoRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (videoRef.current) {
-        const scrolled = window.scrollY;
-        videoRef.current.style.transform = `translateY(-${scrolled * 0.5}px)`;
-        setPaddingTop(scrolled * 0.5); // Adjust the padding top based on scroll
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (videoRef.current) {
+  //       const scrolled = window.scrollY;
+  //       videoRef.current.style.transform = `translateY(-${scrolled * 0.5}px)`;
+  //       setPaddingTop(scrolled * 0.5); // Adjust the padding top based on scroll
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []); // Empty dependency array ensures the effect runs only once on component mount
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []); // Empty dependency array ensures the effect runs only once on component mount
 
   return (
     <div className="relative h-screen overflow-hidden pt-[300px] bg-black">

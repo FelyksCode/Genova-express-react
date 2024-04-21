@@ -6,7 +6,7 @@ function Logo() {
   return (
     <div className="bg-gradient-to-b from-yellow-400 to-orange-400">
       <div className="content flex flex-col items-center py-8 lg:flex-row lg:justify-evenly xl:items-start lg:py-16">
-        <div className="unveiling-logo mb-8 px-4 bg-white rounded-2xl lg:mb-0 lg:py-5">
+        <div className="unveiling-logo mb-8 px-4 bg-white rounded-2xl lg:mb-0 lg:py-10 ">
           <img
             className="w-56 sm:w-72 lg:w-80 xl:w-96"
             src={logo}

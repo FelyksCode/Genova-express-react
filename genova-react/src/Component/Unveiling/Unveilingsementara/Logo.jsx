@@ -3,9 +3,9 @@ import "./Logo.css";
 
 function unveilingsementara() {
   return (
-    <div className="bungkus flex flex-col justify-center items-center">
+    <div className="bungkus flex flex-col justify-center items-center my-5">
       <div className="bungkus2 flex justify-between pb-6 my-8">
-        <div className="content-center kotaklogo">
+        <div className="content-center kotaklogo py-8">
           <div className="logoucare">
             <img src={img} alt="Logo Unveiling" />
           </div>
@@ -29,7 +29,7 @@ function unveilingsementara() {
             style={{ fontFamily: "SanFran-Regular, sans-serif" }}
             className="isilogoucare text-xl text-justify mt-6"
           >
-            UNVEILING menciptakan keinginan para #Legions untuk mengenal lebih
+            𝐔𝐍𝐕𝐄𝐈𝐋𝐈𝐍𝐆 menciptakan keinginan para #Legions untuk mengenal lebih
             dalam tentang UMN Festival 2024 (Curiosity) dan juga meningkatkan
             semangat para #Legions untuk menyambut UMN Festival 2024
             (Enthusiastic)!
