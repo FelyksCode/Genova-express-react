@@ -2,13 +2,10 @@
   background:#a1a5ca;
   padding: 2%;
   height: auto;
-
-
 }
 
 body::-webkit-scrollbar{
   display: none;
-
 }
 
 
@@ -36,6 +33,107 @@ body::-webkit-scrollbar{
 @media only screen and (min-width: 1280px) {
   .listlomba ul {
     flex-direction: row;
+    margin-top: 20px;
+  }
+}
+.bungkuss{
+  height: 65vh;
+}
+
+.bungkuss2{
+  width: 70%;
+  border-bottom: 1px solid rgb(60, 59, 96);
+}
+
+.logoulympic{
+  width: 16em;
+  height: 16em;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.judullogoulympic{
+  color: rgb(60, 59, 96);
+  text-align: center;
+}
+
+.isilogoulympic{
+  color: rgb(60, 59, 96);
+  font-weight: bold;
+}
+@media screen and (max-width:768px) {
+  .bungkuss{
+      height: auto;
+      margin: auto;
+  }
+  .bungkuss2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px; 
+  }
+  .logoulympic{
+      width: 12em;
+      height: 12em;
+      background-color: white;
+      border-radius: 100%;
+  }
+  .textulympic{
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+  .judullogoulympic{
+      text-align: center;
+      font-size: 2.4em !important;
+      margin-bottom: 1em;
+  }
+  .isilogoulympic{
+      font-size: 0.5em;
+      margin-top: 10px;
+  }
+}
+
+@media screen and (max-width:1600px) {
+  .logoulympic{
+      width: 13em;
+      height: 13em;
+      background-color: white;
+      border-radius: 100%;
+  }
+
+  .judullogoulympic{
+      font-size: 2.5em;
+      margin-bottom: 1em;
+  }
+
+  .isilogoulympic{
+      font-size: 1em;
+  }
+}
+
+@media screen and (max-width:280px) {
+  .bungkuss{
+      height: auto;
+  }
+
+  .logoulympic{
+      width: 6em;
+      height: 6em;
+      background-color: white;
+      border-radius: 100%;
+  }
+
+  .judullogoulympic{
+      font-size: 1.5em;
+      margin-bottom: 1em;
+  }
+
+  .isilogoulympic{
+      font-size: 0.8em;
+      margin-top: 0.5em;
   }
 }
 
