@@ -243,10 +243,8 @@ export default function BasicTable({ data }) {
               title={"Bukti TF: " + selectedProof.team_name}
               content={
                 <img
-                  src={`${url}:${port}/${selectedProof?.paymentProof
-                    ?.replace("public\\", "")
-                    .replace(/\\/g, "/")}`}
-                  alt="KTM"
+                  src={`${url}:${port}/${selectedProof?.paymentProof   
+                    ?.replace(/public[\\\/]/, "").replace(/[\\\/]/g, "/")}`}                  alt="paymentproof"
                 />
               }
             />
