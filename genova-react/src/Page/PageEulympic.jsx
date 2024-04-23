@@ -23,8 +23,7 @@ function PageEulympic() {
           <Fade>
             <div
               style={{
-                background:
-                  '#a1a5ca',
+                background: "#a1a5ca",
               }}
             >
               <Main />

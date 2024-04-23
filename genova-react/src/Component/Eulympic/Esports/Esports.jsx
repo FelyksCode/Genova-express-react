@@ -104,7 +104,7 @@ function Esports() {
         <div className="esport-img-wrapper-mole">
           <img className="mole-image" src={MoleBaru} alt="Mole Logo" />
           <span>Register Here!</span>
-        </div>  
+        </div>
 
         <div className="container-time">
           <div className="time">
@@ -159,7 +159,12 @@ function Esports() {
           </div>
         </div>
 
-        {!isFormValAvailable && <FormValorant />}
+        <button
+          className="bentukbutton2 type1 w-full sm:w-auto md:w-full"
+          disabled
+        >
+          <span className="btn-txt1">FULL</span>
+        </button>
       </div>
     </div>
   );
