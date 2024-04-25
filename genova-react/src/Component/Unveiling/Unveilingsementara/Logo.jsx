@@ -3,7 +3,7 @@ import "./Logo.css";
 
 function unveilingsementara() {
   return (
-    <div className="bungkus flex flex-col justify-center items-center my-5">
+    <div className="bungkus flex flex-col justify-center items-center md:my-10 my-20">
       <div className="bungkus2 flex justify-between pb-6 my-8">
         <div className="content-center kotaklogo py-8">
           <div className="logoucare">
@@ -37,11 +37,11 @@ function unveilingsementara() {
         </div>
       </div>
       <div className="flex justify-center flex-col w-full ">
-        <button className="tombol mb-10 w-2/4 self-center">
+        {/* <button className="tombol mb-10 w-2/4 self-center">
           <a href="https://forms.gle/6R9D1JdEUbACJVj69" target="_blank">
             Regular Form
           </a>
-        </button>
+        </button> */}
       </div>
     </div>
   );

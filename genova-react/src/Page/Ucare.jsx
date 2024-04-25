@@ -17,7 +17,7 @@ function Ucare() {
             <Tujuan />
           </Fade>
         </section>
-        <section className="snap-y snap-mandatory overflow-hidden isiucare">
+        <section className="snap-y snap-mandatory overflow-hidden isiucare py-20">
           <Fade>
             <Logo />
             {/* <Panti /> */}
