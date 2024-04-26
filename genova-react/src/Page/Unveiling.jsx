@@ -15,7 +15,7 @@ function Unveiling() {
             <ImageUnveiling />
           </Fade>
         </section>
-        <section className="snap-y snap-mandatory overflow-hidden isiucare py-20">
+        <section className="snap-y snap-mandatory overflow-hidden isiucare py-5">
           <Fade>
             <Unveilingsementara />
           </Fade>
