@@ -24,7 +24,7 @@ function Esports() {
   const [isFormValAvailable, setIsFormValAvailable] = useState(false);
 
   useEffect(() => {
-    const targetDateML = new Date(2024, 4, 1); // Emel sbatesnya sampe 1 mei 2024
+    const targetDateML = new Date(2024, 4, 3); // Emel sbatesnya sampe 1 mei 2024
     const targetDateValorant = new Date(2024, 3, 24); // Valorant sampe 24 April 2024
 
     // ML Countdown
