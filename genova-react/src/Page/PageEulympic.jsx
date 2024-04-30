@@ -4,6 +4,7 @@ import Footer from "../Component/Footer/Footer";
 import ImageEulympic from "../Component/Eulympic/ImageEulympic";
 import Main from "../Component/Eulympic/Main/Eulympic";
 import Esports from "../Component/Eulympic/Esports/Esports";
+import BracketValo from "../Component/Eulympic/Esports/BracketValo";
 
 import { Fade } from "react-reveal";
 
@@ -28,6 +29,7 @@ function PageEulympic() {
             >
               <Main />
               <Esports />
+              <BracketValo />
             </div>
           </Fade>
         </section>
