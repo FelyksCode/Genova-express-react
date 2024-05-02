@@ -128,7 +128,12 @@ function Esports() {
           </div>
         </div>
 
-        {!isFormMLAvailable && <FormML />}
+        <button
+          className="bentukbutton2 type1 w-full sm:w-auto md:w-full"
+          disabled
+        >
+          <span className="btn-txt1">FULL</span>
+        </button>
       </div>
 
       <div className="valorant">
