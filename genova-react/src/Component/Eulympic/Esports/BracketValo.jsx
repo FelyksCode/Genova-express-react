@@ -21,7 +21,7 @@ function BracketValo() {
         frameborder="0"
         scrolling="auto"
         allowtransparency="true"
-        className="mx-auto rounded-sm w-full h-[90%] lg:w-[50%] "
+        className="mx-auto rounded-sm w-full h-[90%] lg:w-[70%] "
       ></iframe>
     </div>
   );
